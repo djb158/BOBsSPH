@@ -1,0 +1,300 @@
+{
+   <MPI_Init_1>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_nem_init
+   fun:MPIDI_CH3_Init
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_2>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPIDI_CH3I_Seg_commit
+   fun:MPID_nem_init
+   fun:MPIDI_CH3_Init
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_3>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPIU_Find_local_and_external
+   fun:MPIR_Comm_commit
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_4>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_5>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPIU_Find_local_and_external
+   fun:MPIR_Comm_commit
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_6>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPIDI_PG_Create
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_7>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_nem_tcp_sm_init
+   fun:MPID_nem_tcp_init
+   fun:MPID_nem_init
+   fun:MPIDI_CH3_Init
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_8>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_Dataloop_struct_alloc
+   fun:MPID_Dataloop_create_struct
+   fun:MPID_Dataloop_create_pairtype
+   fun:MPID_Type_create_pairtype
+   fun:MPIR_Datatype_init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_9>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPIDI_PG_InitConnKVS
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_10>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_nem_tcp_send_init
+   fun:MPID_nem_tcp_init
+   fun:MPID_nem_init
+   fun:MPIDI_CH3_Init
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_11>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_nem_vc_init
+   fun:MPIDI_CH3_VC_Init
+   fun:MPIDI_CH3_Init
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_12>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_Dataloop_alloc_and_copy
+   fun:MPID_Dataloop_alloc
+   fun:MPID_Dataloop_create_contiguous
+   fun:MPID_Dataloop_create_indexed
+   fun:MPID_Dataloop_create_struct
+   fun:MPID_Dataloop_create_pairtype
+   fun:MPID_Type_create_pairtype
+   fun:MPIR_Datatype_init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+}
+{
+   <MPI_Init_13>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_nem_mpich2_init
+   fun:MPID_nem_init
+   fun:MPIDI_CH3_Init
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_14>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_Dataloop_alloc_and_copy
+   fun:MPID_Dataloop_alloc
+   fun:MPID_Dataloop_create_indexed
+   fun:MPID_Dataloop_create_struct
+   fun:MPID_Dataloop_create_pairtype
+   fun:MPID_Type_create_pairtype
+   fun:MPIR_Datatype_init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_15>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPIU_SHMW_Seg_create_attach_templ
+   fun:MPIDI_CH3I_Seg_commit
+   fun:MPID_nem_init
+   fun:MPIDI_CH3_Init
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_16>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_VCRT_Create
+   fun:MPIR_Comm_commit
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Init_17>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_VCRT_Create
+   fun:MPID_Init
+   fun:MPIR_Init_thread
+   fun:PMPI_Init
+   fun:PMPI_Init
+   fun:main
+}
+{
+   <MPI_Group_incl_1>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPIR_Group_create
+   fun:PMPI_Group_incl
+   fun:PMPI_Group_incl
+   fun:main
+}
+{
+   <MPI_Comm_group_1>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPIR_Group_create
+   fun:MPIR_Comm_group_impl
+   fun:PMPI_Comm_group
+   fun:PMPI_Comm_group
+   fun:main
+}
+{
+   <MPI_Comm_create_1>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_VCRT_Create
+   fun:MPIR_Comm_create_create_and_map_vcrt
+   fun:PMPI_Comm_create
+   fun:PMPI_Comm_create
+   fun:main
+}
+{
+   <MPI_Comm_create_2>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPID_VCRT_Create
+   fun:MPIR_Comm_commit
+   fun:PMPI_Comm_create
+   fun:PMPI_Comm_create
+   fun:main
+}
+{
+   <MPI_Comm_create_3>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:MPIU_Find_local_and_external
+   fun:MPIR_Comm_commit
+   fun:PMPI_Comm_create
+   fun:PMPI_Comm_create
+   fun:main
+}
+{
+   <MPI_Comm_create_4>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:MPID_VCRT_Create
+   fun:MPIR_Comm_commit
+   fun:PMPI_Comm_create
+   fun:PMPI_Comm_create
+   fun:main
+}

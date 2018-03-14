@@ -1,0 +1,5 @@
+#!/bin/bash -f
+
+set -e
+
+/usr/local/bin/mpiexec --hostfile /home/djb/local/install/SPH/machines /home/djb/local/install/SPH/bin/pbobs $@

@@ -1,0 +1,33 @@
+############################# END 0 ##########################################
+
+
+ rank: 0 Step: 60  time =         0.0177000000 nparticles = 339011 
+ n_interior = 321132 
+ nPts = 339011 DIMENSIONS = 2 
+ rank: 0 right exceeded 
+ Rank: 0 receiving 272458 from rank 1 
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0805a1de in ReIndexDownRecv (particles_3=0x8080fd0, particles_4=0x1d9ff210, comm_down=0x807c6c0, pars=0x807e2d0) at re_index_down_recv.c:449
+449           particles_3[0].nn[l_B][n]      = ai[n_b3i++];
+Missing separate debuginfos, use: debuginfo-install glibc-2.12-1.47.el6_2.9.i686 libgcc-4.4.6-3.el6.i686 libstdc++-4.4.6-3.el6.i686
+(gdb)  Rank: 1  instructing rank 0 to remove 272456 
+Undefined command: "Rank".  Try "help".
+(gdb)  Rank: 1  instructing rank 0 to remove 272640 
+
+
+
+ 
+############################# END 0 ##########################################
+
+
+ rank: 1 Step: 60  time =         0.0177000000 nparticles = 330660 
+ n_interior = 321948 
+ nPts = 330660 DIMENSIONS = 2 
+ rank: 1 left exceeded 
+ rank: 1 right exceeded 
+ rank: 1 LEFT BURN TRIGGERED 
+ Rank: 1  sending 272458 to rank = 0 
+ Rank: 1  instructing rank 0 to remove 272640 
+ Rank: 1  instructing rank 0 to remove 272741 
+

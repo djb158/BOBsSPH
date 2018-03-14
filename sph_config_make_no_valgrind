@@ -1,0 +1,22 @@
+make clean; make distclean;
+#
+#
+\rm -f /home/djb/SPH/git/SPH/bin/sph;
+#
+#
+./bootstrap
+#
+#
+#
+./configure --prefix=/home/djb/SPH/git/SPH \
+     CFLAGS="-ggdb -D_FILE_OFFSET_BITS=64" \
+     CPPFLAGS="-I/home/djb/SPH/ann_1.1.2/include -I/home/djb/SPH/ann_1.1.2/include/ANN -Wall" \
+     CXXFLAGS="-ggdb" \
+     LDFLAGS="-L/home/djb/SPH/ann_1.1.2/lib -lANN -lm -lpthread" \
+     --enable-shared=no \
+     --with-pic \
+     --with-mpi=yes
+#
+make -j4
+#
+make install

@@ -1,0 +1,4 @@
+SUBDIRS = \
+	libsph \
+        libutil \
+        libsplash
