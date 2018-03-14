@@ -1,0 +1,181 @@
+2016-10-19  David Brown  <djb158@bigpond.com>
+   * added header guards to all header files
+
+2016-08-21  David Brown  <djb158@bigpond.com>
+    * renamed src/sph/sph.c to  src/sph/main.c
+
+2015-12-06  David Brown  <djb158@bigpond.com>
+    * bumped to version 3.0.2
+    * uses neighbour node
+    * introduces push/pull to neighbour node to determine offnode values of
+    all parameters. These are stored in x_particles.
+
+2015-07-11  David Brown  <djb158@bigpond.com>
+    * libsrc/libsph/update_rij.c: removed and replaced with .cpp code, was not
+    * libsrc/libsph/update_rij.c: removed and replaced with .cpp code, was not
+    freeing memory
+    * libsrc/libsph/update_rij.cpp: corrected memory leakage problem
+    * configure.ac: updated version to 2.0.2
+
+2015-06-21  David Brown  <djb158@bigpond.com>
+
+    * configure.ac: version 2.0.1 initial commit
+    * src/sph/Makefile.am: initial commit
+    * src/sph/Makefile.in: initial commit
+    * src/sph/sph.c: initial commit
+    * src/sph/sph_commands.txt: initial commit
+    * include/assemble_node_descrip.h: initial commit
+    * include/assemble_particle.h: initial commit
+    * include/assemble_pbob.h: initial commit
+    * include/big_or_little_endian.h: initial commit
+    * include/calculate_divergence_v.h: initial commit
+    * include/calculate_particle_acceleration_boundary.h: initial commit
+    * include/calculate_particle_acceleration_interior.h: initial commit
+    * include/calculate_particle_energy_deriv_boundary.h: initial commit
+    * include/calculate_particle_energy_deriv_interior.h: initial commit
+    * include/check_for_nan.h: initial commit
+    * include/copy_density.h: initial commit
+    * include/copy_h.h: initial commit
+    * include/create_particles.h: initial commit
+    * include/dfdx.h: initial commit
+    * include/dfdy.h: initial commit
+    * include/dfdz.h: initial commit
+    * include/dwdf.h: initial commit
+    * include/dwdx.h: initial commit
+    * include/dwdy.h: initial commit
+    * include/dwdz.h: initial commit
+    * include/equation_of_state.h: initial commit
+    * include/free_matrix.h: initial commit
+    * include/free_particles.h: initial commit
+    * include/get_neighbours.h: initial commit
+    * include/get_node_info_struct.h: initial commit
+    * include/get_pars.h: initial commit
+    * include/get_particle_acceleration.h: initial commit
+    * include/get_particle_energy_deriv.h: initial commit
+    * include/get_particle_energy.h: initial commit
+    * include/get_particle_position.h: initial commit
+    * include/get_particle_velocity.h: initial commit
+    * include/initialize_neighbours.h: initial commit
+    * include/integrate_particle_acceleration_boundary.h: initial commit
+    * include/integrate_particle_acceleration_interior.h: initial commit
+    * include/integrate_particle_energy_boundary.h: initial commit
+    * include/integrate_particle_energy_interior.h: initial commit
+    * include/integrate_particle_velocity_boundary.h: initial commit
+    * include/integrate_particle_velocity_interior.h: initial commit
+    * include/inter_node_copy.h: initial commit
+    * include/Makefile.am: initial commit
+    * include/Makefile.in: initial commit
+    * include/nearest_integer.h: initial commit
+    * include/node_descrip.h: initial commit
+    * include/numeric_constants.h: initial commit
+    * include/pars.h: initial commit
+    * include/pars_include.h: initial commit
+    * include/particle.h: initial commit
+    * include/particles.h: initial commit
+    * include/pbob: initial commit
+    * include/pbob_1.c: initial commit
+    * include/pbob.c: initial commit
+    * include/pbob.h: initial commit
+    * include/read_node_info.h: initial commit
+    * include/read_particle_info.h: initial commit
+    * include/re_index_down_recv.h: initial commit
+    * include/re_index_down_send.h: initial commit
+    * include/re_index_up.h: initial commit
+    * include/set_burn_mark.h: initial commit
+    * include/set_initial_particles_state.h: initial commit
+    * include/set_particle_acceleration.h: initial commit
+    * include/set_particle_density_boundary.h: initial commit
+    * include/set_particle_density_interior.h: initial commit
+    * include/set_particle_energy_deriv.h: initial commit
+    * include/set_particle_energy.h: initial commit
+    * include/set_particle_position.h: initial commit
+    * include/set_particle_velocity.h: initial commit
+    * include/sorting_functions.h: initial commit
+    * include/sph.h: initial commit
+    * include/sph_main.h: initial commit
+    * include/sph_types.h: initial commit
+    * include/synchronize_rank_info.h: initial commit
+    * include/update_kernel.h: initial commit
+    * include/update_rij.h: initial commit
+    * include/write_node_info.h: initial commit
+    * include/write_particle.h: initial commit
+    * include/write_particle_info.h: initial commit
+    * include/write_particles.h: initial commit
+    * libsrc/libutil/contains_string.c: initial commit
+    * libsrc/libutil/copy_after_equal.c: initial commit
+    * libsrc/libutil/Makefile.am: initial commit
+    * libsrc/libutil/Makefile.in: initial commit
+    * libsrc/libutil/maximum_double.c: initial commit
+    * libsrc/libutil/maximum_int.c: initial commit
+    * libsrc/libutil/minimum_double.c: initial commit
+    * libsrc/libutil/minimum_int.c: initial commit
+    * libsrc/libutil/sorting_functions.c: initial commit
+    * libsrc/libsph/assemble_node_descrip.c: initial commit
+    * libsrc/libsph/assemble_particle.c: initial commit
+    * libsrc/libsph/assemble_pbob.c: initial commit
+    * libsrc/libsph/big_or_little_endian.c: initial commit
+    * libsrc/libsph/calculate_divergence_v.c: initial commit
+    * libsrc/libsph/calculate_particle_acceleration_boundary.c: initial commit
+    * libsrc/libsph/calculate_particle_acceleration_interior.c: initial commit
+    * libsrc/libsph/calculate_particle_energy_deriv_boundary.c: initial commit
+    * libsrc/libsph/calculate_particle_energy_deriv_interior.c: initial commit
+    * libsrc/libsph/check_for_nan.c: initial commit
+    * libsrc/libsph/copy_density.c: initial commit
+    * libsrc/libsph/copy_h.c: initial commit
+    * libsrc/libsph/create_particles.c: initial commit
+    * libsrc/libsph/dfdx.c: initial commit
+    * libsrc/libsph/dfdy.c: initial commit
+    * libsrc/libsph/dfdz.c: initial commit
+    * libsrc/libsph/dwdf.c: initial commit
+    * libsrc/libsph/dwdx.c: initial commit
+    * libsrc/libsph/dwdy.c: initial commit
+    * libsrc/libsph/dwdz.c: initial commit
+    * libsrc/libsph/equation_of_state.c: initial commit
+    * libsrc/libsph/free_matrix.c: initial commit
+    * libsrc/libsph/free_particles.c: initial commit
+    * libsrc/libsph/get_node_info_struct.c: initial commit
+    * libsrc/libsph/get_pars.c: initial commit
+    * libsrc/libsph/get_particle_acceleration.c: initial commit
+    * libsrc/libsph/get_particle_energy.c: initial commit
+    * libsrc/libsph/get_particle_energy_deriv.c: initial commit
+    * libsrc/libsph/get_particle_position.c: initial commit
+    * libsrc/libsph/get_particle_velocity.c: initial commit
+    * libsrc/libsph/integrate_particle_acceleration_boundary.c: initial commit
+    * libsrc/libsph/integrate_particle_acceleration_interior.c: initial commit
+    * libsrc/libsph/integrate_particle_energy_boundary.c: initial commit
+    * libsrc/libsph/integrate_particle_energy_interior.c: initial commit
+    * libsrc/libsph/integrate_particle_velocity_boundary.c: initial commit
+    * libsrc/libsph/integrate_particle_velocity_interior.c: initial commit
+    * libsrc/libsph/Makefile.am: initial commit
+    * libsrc/libsph/Makefile.in: initial commit
+    * libsrc/libsph/nearest_integer.c: initial commit
+    * libsrc/libsph/read_node_descrip.c: initial commit
+    * libsrc/libsph/read_node_info.c: initial commit
+    * libsrc/libsph/read_particle.c: initial commit
+    * libsrc/libsph/read_particle_info.c: initial commit
+    * libsrc/libsph/read_pbob.c: initial commit
+    * libsrc/libsph/re_index_down_recv.c: initial commit
+    * libsrc/libsph/re_index_down_send.c: initial commit
+    * libsrc/libsph/set_burn_mark.c: initial commit
+    * libsrc/libsph/set_initial_particles_state.c: initial commit
+    * libsrc/libsph/set_particle_acceleration.c: initial commit
+    * libsrc/libsph/set_particle_density_boundary.c: initial commit
+    * libsrc/libsph/set_particle_density_interior.c: initial commit
+    * libsrc/libsph/set_particle_energy.c: initial commit
+    * libsrc/libsph/set_particle_energy_deriv.c: initial commit
+    * libsrc/libsph/set_particle_position.c: initial commit
+    * libsrc/libsph/set_particle_velocity.c: initial commit
+    * libsrc/libsph/synchronize_rank_info.c: initial commit
+    * libsrc/libsph/test_read: initial commit
+    * libsrc/libsph/test_read.c: initial commit
+    * libsrc/libsph/update_kernel.c: initial commit
+    * libsrc/libsph/update_rij.c: initial commit
+    * libsrc/libsph/verbosity.c: initial commit
+    * libsrc/libsph/w2D.c: initial commit
+    * libsrc/libsph/w.c: initial commit
+    * libsrc/libsph/write_node_info.c: initial commit
+    * libsrc/libsph/write_particle.c: initial commit
+    * libsrc/libsph/write_particle_info.c: initial commit
+    * libsrc/Makefile.am
+    * Makefile.am
+    * src/Makefile.am

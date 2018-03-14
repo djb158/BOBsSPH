@@ -1,0 +1,102 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+.deps
+.libs
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+
+# http://www.gnu.org/software/automake
+#
+Makefile.in
+Makefile
+src/sph/Makefile.in
+ltmain.sh
+#
+# http://www.gnu.org/software/autoconf
+#
+autom4te.cache/*
+/aclocal.m4
+/compile
+/configure
+/depcomp
+/install-sh
+/missing
+/stamp-h1
+config.log
+config.status
+config.h
+config.h.in
+config/compile
+libtool
+autom4te.cache/output.1
+/autom4te.cache/output.2
+#
+# sph specific
+#
+src/sph/sph
+src/pbobs/pbobs
+
+#
+# http://www.gnu.org/software/autoconf -again
+#
+/Makefile
+/Makefile.in
+/aclocal.m4
+/autom4te.cache/
+/config.*
+/configure
+/depcomp
+/install-sh
+/libtool
+/ltmain.sh
+/m4/
+/missing
+/stamp-h?
+.deps/
+.dirstamp
+.libs/
+*.l[ao]
+*~
+aclocal.m4
+config.h.in
+config.h.in~
+config/config.guess
+config/config.sub
+config/depcomp
+config/install-sh
+config/ltmain.sh
+config/missing
+m4/libtool.m4
+m4/ltoptions.m4
+m4/ltsugar.m4
+m4/ltversion.m4
+m4/lt~obsolete.m4
+src/machines

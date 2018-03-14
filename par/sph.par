@@ -1,0 +1,84 @@
+############################### ASCII HEADER###################################
+#                                                                             #
+#  REF 001                                                                    #
+#                                                                             #
+#  The Sigalotti 2D two-gas shock problem:                                    #
+#                                                                             #
+#  LHS:  RHO = 1.0  (kg/m^3) U = 2.5   (J)                                    #
+#  RHS:  RHO = 0.25 (kg/m^3) U = 1.795 (J)                                    #
+#                                                                             #
+#  Notes:                                                                     #
+#    i. ideal gas law                                                         #
+#   ii. computational domain:  X = [-0.6,0.6]              metres             #
+#                              Y = [0.0,0.0]               metres             #
+#                              X = [0.0,0.625384615]       metres             #
+#  iii. particle mass          M = 5.836084990862528e-07   kg                 #
+#   iv. time step              t = 0.0003                  sec                #
+#    v. total particles        N = 835218                                     #
+#   vi. neighbour particles NN_K = 51                                         #
+#  vii. Gaussian kernel                                                       #
+# viii. the ann_1.1.2 nearest neighbor code is used to determine the          #
+#       neighbours for each particle (David Mount   mount@cs.umd.edu)         #
+#  ix.  compute-node multi-threading enabled                                  #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+#  SPECIES:                                                                   #
+#       id =   512:   interior particles                                      #
+#       id =  1024:   ghost particles                                         #
+#       id =  2048:   boundary particles                                      #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+SHORT_TITLE=Sigalotti 2D shock
+N_STEPS=10
+RESTART=no
+TIME_STEPS_TO_WRITE=1
+GRAVITY=9.80665
+NEIGHBOUR_THREADS=1
+COMPUTE_THREADS=2
+DIMENSIONS=2
+PARTICLE_MASS=5.836084990862528e-07
+PARTICLES_IN_X=1200
+PARTICLES_IN_Y=1
+PARTICLES_IN_Z=835
+NN_K=51
+X0=-0.6
+X1=0.6
+Y0=0.0
+Y1=0.0
+Z0=0.0
+Z1=0.625384615
+ALPHA=1.0
+GAMMA=1.4
+BETA=1.0
+ETA=0.1
+KAPPA=0.7
+EPSILON=0.4
+G1=0.02
+G2=0.4
+D=2.0
+KERNEL_ID=1
+H0=0.001
+out_dir=/media/disk-5/SPH/out
+prefix=/home/djb/SPH
+EXTRA=100000
+NN_EPS=0.0
+ACCURACY=1.0
+OFFSET=0.0
+VERBOSITY=1
+KERNEL_WIDTH=3.0
+CENTRE_POINT=800
+ZERO=10
+LENGTH_UNITS=metres
+TIME_UNITS=seconds
+MASS_UNITS=kg
+INTERNAL_ENERGY_UNITS=joules
