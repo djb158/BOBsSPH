@@ -22,9 +22,9 @@
 #ifndef BOBSSPH_SET_PARTICLE_DENSITY_H
 #define BOBSSPH_SET_PARTICLE_DENSITY_H
 
-#include <sph_main.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern double W(double q,double h);
 

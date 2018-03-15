@@ -22,8 +22,8 @@
 #ifndef BOBSSPH_DWDY_H
 #define BOBSSPH_DWDY_H
 
-#include <sph_main.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "numeric_constants.h"
 
 extern double W(double q,double h,int dim,double kernel_width);
 

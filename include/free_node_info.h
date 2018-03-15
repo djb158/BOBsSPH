@@ -22,9 +22,9 @@
 #ifndef BOBSSPH_FREE_NODE_INFO_H
 #define BOBSSPH_FREE_NODE_INFO_H
 
-#include <sph_main.h>
-#include <numeric_constants.h>
-#include <pars.h>
+#include "sph_main.h"
+#include "numeric_constants.h"
+#include "pars.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 

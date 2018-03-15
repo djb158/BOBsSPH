@@ -22,7 +22,7 @@
 #ifndef BOBSSPH_PARTICLES_H
 #define BOBSSPH_PARTICLES_H
 
-#include <nn_index.h>
+#include "nn_index.h"
 
 #define STEPS_TO_REINDEX  (2)
 #define N_WIN             (2)

@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_CALCULATE_DIVERGENCE_H
 #define BOBSSPH_CALCULATE_DIVERGENCE_H
 
-#include <sph_main.h>
+#include "sph_main.h"
 #include <pthread.h>
 #include "pars.h"
-#include <particles.h>
+#include "particles.h"
 #include "numeric_constants.h"
 #include "thread_data.h"
 

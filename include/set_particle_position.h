@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_SET_PARTICLE_POSITION_H
 #define BOBSSPH_SET_PARTICLE_POSITION_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <numeric_constants.h>
-#include <particles.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "numeric_constants.h"
+#include "particles.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 

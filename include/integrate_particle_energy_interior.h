@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_INTEGRATE_PARTICLE_ENERGY_INTERIOR_H
 #define BOBSSPH_INTEGRATE_PARTICLE_ENERGY_INTERIOR_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 double *IntegrateParticleEnergy_INTERIOR(double *U_0,double *dUdt_0,double dt,PARS *pars);

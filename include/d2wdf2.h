@@ -22,8 +22,8 @@
 #ifndef BOBSSPH_D2WDF2_H
 #define BOBSSPH_D2WDF2_H
 
-#include <sph_main.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "numeric_constants.h"
 
 extern real_t W2D(real_t f,real_t h,real_t kernel_width);
 

@@ -22,12 +22,12 @@
 #ifndef BOBSSPH_SET_PARTICLE_DENSITY_INTERIOR_THREAD_WRAPPER_H
 #define BOBSSPH_SET_PARTICLE_DENSITY_INTERIOR_THREAD_WRAPPER_H
 
-#include <sph_main.h>
+#include "sph_main.h"
 #include <pthread.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
-#include <thread_data.h>
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
+#include "thread_data.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 extern void *SetParticleDensity_INTERIOR(void *dtd);

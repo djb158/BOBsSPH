@@ -22,7 +22,7 @@
 #ifndef BOBSSPH_DFDZ_H
 #define BOBSSPH_DFDZ_H
 
-#include <sph_main.h>
+#include "sph_main.h"
 
 double dfdz(double z1,double z2,double f);
 

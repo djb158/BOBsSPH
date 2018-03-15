@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_EQUATION_OF_STATE_H
 #define BOBSSPH_EQUATION_OF_STATE_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 int EquationOfState(PARTICLES *particles,PARS *pars);

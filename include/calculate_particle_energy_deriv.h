@@ -22,9 +22,9 @@
 #ifndef BOBSSPH_CALCULATE_PARTICLE_ENERGY_DERIVATIVE_H
 #define BOBSSPH_CALCULATE_PARTICLE_ENERGY_DERIVATIVE_H
 
-#include <sph_main.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern double dWdf(double f,double h);
 extern double dfdx(double x1,double x2,double h);

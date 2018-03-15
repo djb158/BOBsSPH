@@ -22,12 +22,12 @@
 #ifndef BOBSSPH_CALCULATE_PARTICLE_ENERGY_DERIVATIVE_INTERIOR_H
 #define BOBSSPH_CALCULATE_PARTICLE_ENERGY_DERIVATIVE_INTERIOR_H
 
-#include <sph_main.h>
-#include <pars.h>
+#include "sph_main.h"
+#include "pars.h"
 #include <pthread.h>
-#include <particles.h>
-#include <numeric_constants.h>
-#include <thread_data.h>
+#include "particles.h"
+#include "numeric_constants.h"
+#include "thread_data.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 extern double dWdf(double f,double h,int dim,double kernel_width);

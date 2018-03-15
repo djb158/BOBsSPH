@@ -22,8 +22,8 @@
 #ifndef BOBSSPH_INTEGRATE_PARTICLE_ACCELERATION_H
 #define BOBSSPH_INTEGRATE_PARTICLE_ACCELERATION_H
 
-#include <sph_main.h>
-#include <particles.h>
+#include "sph_main.h"
+#include "particles.h"
 
 double **IntegrateParticleAcceleration(double **vel_x,double **accel_x,double dt);
 

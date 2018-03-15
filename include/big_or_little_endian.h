@@ -22,7 +22,7 @@
 #ifndef BOBSSPH_BIG_OR_LITTLE_ENDIAN_H
 #define BOBSSPH_BIG_OR_LITTLE_ENDIAN_H
 
-#include <sph_main.h>
+#include "sph_main.h"
 
 int BigOrLittleEndian();
 

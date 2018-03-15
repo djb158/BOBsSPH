@@ -22,11 +22,11 @@
 #ifndef BOBSSPH_WRITE_PARTICLES_H
 #define BOBSSPH_WRITE_PARTICLES_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <numeric_constants.h>
-#include <pbob.h>
-#include <node_descrip.h>
+#include "stdlib.h"
+#include "stdio.h"
+#include "numeric_constants.h"
+#include "pbob.h"
+#include "node_descrip.h"
 #include <mpi.h>
 
 int WriteParticles(PBOB *pbob,NODE_DESCRIP *node_descrip,PARTICLE *particle,int nparticles);

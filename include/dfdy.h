@@ -22,7 +22,7 @@
 #ifndef BOBSSPH_DFDY_H
 #define BOBSSPH_DFDY_H
 
-#include <sph_main.h>
+#include "sph_main.h"
 
 double dfdy(double y1,double y2,double f);
 

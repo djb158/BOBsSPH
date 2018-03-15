@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_GET_NEIGHBOURS_H
 #define BOBSSPH_GET_NEIGHBOURS_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 int GetNeighbours(int *nn,int *iptr,int index,int *recursion_level,PARTICLES *particles,PARS *pars,int nn_size);
 

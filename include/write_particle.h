@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_WRITE_PARTICLE_H
 #define BOBSSPH_WRITE_PARTICLE_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <numeric_constants.h>
-#include <particle.h>
+#include "stdlib.h"
+#include "stdio.h"
+#include "numeric_constants.h"
+#include "particle.h"
 #include <mpi.h>
 
 int WriteParticle(PARTICLE *particle,int nparticles,int rank,char *out_dir,int time_slice);

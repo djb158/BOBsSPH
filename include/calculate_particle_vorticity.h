@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_CALCULATE_PARTICLE_VORTICITY_H
 #define BOBSSPH_CALCULATE_PARTICLE_VORTICITY_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 extern double dWdf(double f,double h,int dim,double kernel_width);

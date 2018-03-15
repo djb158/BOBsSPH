@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_GET_PARTICLE_ENERGY_H
 #define BOBSSPH_GET_PARTICLE_ENERGY_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <numeric_constants.h>
-#include <particles.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "numeric_constants.h"
+#include "particles.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 double *GetParticleEnergy(PARTICLES *particles,PARS *pars);

@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_SET_INITIAL_PARTICLE_STATE_H
 #define BOBSSPH_SET_INITIAL_PARTICLE_STATE_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 
 typedef struct

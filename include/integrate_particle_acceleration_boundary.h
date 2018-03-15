@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_INTEGRATE_PARTICLE_ACCELERATION_BOUNDARY_H
 #define BOBSSPH_INTEGRATE_PARTICLE_ACCELERATION_BOUNDARY_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 int IntegrateParticleAcceleration_BOUNDARY(double **vel,PARS *pars);

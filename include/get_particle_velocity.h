@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_GET_PARTICLE_VELOCITY_H
 #define BOBSSPH_GET_PARTICLE_VELOCITY_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 double **GetParticleVelocity(PARTICLES *particles,PARS *pars);

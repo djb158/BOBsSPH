@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_INITIALIZE_NEIGHBOURS_H
 #define BOBSSPH_INITIALIZE_NEIGHBOURS_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern int BruteForceNeighbourSearch(int l,PARTICLES *particles,PARS *pars);
 

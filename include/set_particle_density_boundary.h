@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_SET_PARTICLE_DENSITY_BOUNDARY_H
 #define BOBSSPH_SET_PARTICLE_DENSITY_BOUNDARY_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 extern double W(double q,double h,int dim,double kernel_width);

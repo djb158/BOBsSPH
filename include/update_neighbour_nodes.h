@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_UPDATE_NEIGHBOUR_NODES_H
 #define BOBSSPH_UPDATE_NEIGHBOUR_NODES_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 #include <mpi.h>
 
 extern void verbosity(int k, char fname[],PARS *pars);
