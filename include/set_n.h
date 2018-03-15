@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_SET_N_H
 #define BOBSSPH_SET_N_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 #include <mpi.h>
 
 extern int UpdateRij(int **NN,double **all_points,PARS *pars);

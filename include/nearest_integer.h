@@ -21,7 +21,7 @@
 #ifndef BOBSSPH_NEAREST_INTEGER_H
 #define BOBSSPH_NEAREST_INTEGER_H
 
-#include <sph_main.h>
+#include "sph_main.h"
 
 long NearestInteger(double x);
 

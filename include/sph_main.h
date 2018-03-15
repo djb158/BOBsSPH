@@ -28,9 +28,9 @@
 #include "config.h"
 #include <string.h>
 #include <math.h>
-#include <sph_types.h>
+#include "sph_types.h"
 #include "mpi.h"
-#include <node_info.h>
+#include "node_info.h"
 
 #define BURN_TRIGGER_LEFT  ((EXIT_FAILURE + EXIT_SUCCESS)*100)
 #define BURN_TRIGGER_RIGHT ((EXIT_FAILURE + EXIT_SUCCESS)*200)

@@ -22,11 +22,11 @@
 #ifndef BOBSSPH_WRITE_PBOB_NODE_DESCRIP_H
 #define BOBSSPH_WRITE_PBOB_NODE_DESCRIP_H
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <numeric_constants.h>
-#include <pbob.h>
-#include <node_descrip.h>
+#include "stdlib.h"
+#include "stdio.h"
+#include "numeric_constants.h"
+#include "pbob.h"
+#include "node_descrip.h"
 #include <mpi.h>
 
 int WritePbobNodeDescrip(PBOB *pbob,NODE_DESCRIP *node_descrip,char *out_dir,int rank,int time_slice);

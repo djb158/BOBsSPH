@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_FREE_PARTICLES_H
 #define BOBSSPH_FREE_PARTICLES_H
 
-#include <sph_main.h>
-#include <particles.h>
-#include <pars.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "particles.h"
+#include "pars.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 int FreeParticles(PARTICLES **particles,PARS *pars,int N);

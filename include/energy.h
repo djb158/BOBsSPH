@@ -22,8 +22,8 @@
 #ifndef BOBSSPH_ENERGY_H
 #define BOBSSPH_ENERGY_H
 
-#include <sph_main.h>
-#include <particles.h>
+#include "sph_main.h"
+#include "particles.h"
 
 extern double dWdx(double r_ij,int i,int k);
 double *Energy(PARTICLES *particles);

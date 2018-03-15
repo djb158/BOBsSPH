@@ -22,13 +22,13 @@
 #ifndef BOBSSPH_SPH_H
 #define BOBSSPH_SPH_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <particle.h>
-#include <node_descrip.h>
-#include <pbob.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "particle.h"
+#include "node_descrip.h"
+#include "pbob.h"
+#include "numeric_constants.h"
 
 extern  int ForceBoundary(PARTICLES *particles_3,PARS *pars);
 extern  int CheckBoundaryPenetration(double **x_3,double **v_3,PARS *pars);

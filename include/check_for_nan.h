@@ -22,11 +22,11 @@
 #ifndef BOBSSPH_CHECK_FOR_NAN_H
 #define BOBSSPH_CHECK_FOR_NAN_H
 
-#include <sph_main.h>
+#include "sph_main.h"
 #include <math.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 extern int is_nan_or_inf(double x,char *s,int l);

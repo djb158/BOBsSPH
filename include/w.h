@@ -22,9 +22,9 @@
 #ifndef BOBSSPH_W_H
 #define BOBSSPH_W_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "numeric_constants.h"
 
 double W(double q,double h,int dim,double kernel_width);
 

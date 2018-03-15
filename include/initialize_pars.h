@@ -22,9 +22,9 @@
 #ifndef BOBSSPH_INITIALIZE_PARS_H
 #define BOBSSPH_INITIALIZE_PARS_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "numeric_constants.h"
 
 int InitializePars(PARS *pars);
 

@@ -22,8 +22,8 @@
 #ifndef BOBSSPH_DWDF_H
 #define BOBSSPH_DWDF_H
 
-#include <sph_main.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "numeric_constants.h"
 
 extern double W(double f,double h,int dim,double kernel_width);
 extern real_t W2D(real_t f,real_t h,real_t kernel_width);

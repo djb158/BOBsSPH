@@ -19,10 +19,10 @@
 |                                                                             |
 \*---------------------------------------------------------------------------*/
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 int CheckBoundaryPenetration(double **x_3,double **v_3,PARS *pars);

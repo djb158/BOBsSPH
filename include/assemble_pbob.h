@@ -22,13 +22,13 @@
 #ifndef BOBSSPH_ASSEMBLE_PBOB_H
 #define BOBSSPH_ASSEMBLE_PBOB_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particle.h>
-#include <node_descrip.h>
-#include <pbob.h>
 #include <string.h>
-#include <numeric_constants.h>
+#include "numeric_constants.h"
+#include "sph_main.h"
+#include "pars.h"
+#include "particle.h"
+#include "node_descrip.h"
+#include "pbob.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 extern int BigOrLittleEndian();

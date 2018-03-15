@@ -21,8 +21,8 @@
 #ifndef BOBSSPH_INTEGRATE_PARTICLE_VELOCITY_H
 #define BOBSSPH_INTEGRATE_PARTICLE_VELOCITY_H
 
-#include <sph_main.h>
-#include <particles.h>
+#include "sph_main.h"
+#include "particles.h"
 
 double **IntegrateParticleVelocity(double **x_0,double **v_0,double dt);
 

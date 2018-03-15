@@ -22,9 +22,9 @@
 #ifndef BOBSSPH_COPY_UP_TO_COLON_H
 #define BOBSSPH_COPY_UP_TO_COLON_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 char *CopyUpToColon(char **arg, PARS *pars);

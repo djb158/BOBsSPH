@@ -22,8 +22,8 @@
 #ifndef BOBSSPH_INTEGRATE_PARTICLE_ENERGY_H
 #define BOBSSPH_INTEGRATE_PARTICLE_ENERGY_H
 
-#include <sph_main.h>
-#include <particles.h>
+#include "sph_main.h"
+#include "particles.h"
 
 double *IntegrateParticleEnergy(double *U_0,double *dUdt_0,double dt);
 

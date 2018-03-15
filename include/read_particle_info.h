@@ -22,10 +22,10 @@
 #ifndef BOBSSPH_READ_PARTICLE_INFO_H
 #define BOBSSPH_READ_PARTICLE_INFO_H
 
-#include <sph_main.h>
-#include <pars.h>
-#include <particles.h>
-#include <numeric_constants.h>
+#include "sph_main.h"
+#include "pars.h"
+#include "particles.h"
+#include "numeric_constants.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 extern PARTICLES *CreateParticles(int N, PARS *pars);

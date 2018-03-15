@@ -19,7 +19,7 @@
 |                                                                             |
 \*---------------------------------------------------------------------------*/
 
-#include <sph_main.h>
-#include <particles.h>
+#include "sph_main.h"
+#include "particles.h"
 
 int RecordNodeOffset(PARTICLES *particles,int rank);
