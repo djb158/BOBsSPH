@@ -1,0 +1,17 @@
+BOBsSPH: A CFD software package that performs Smoothed-Particle-Hydrodynamics (SPH) in a linux-MPI environment.
+
+This is a first-attempt, preliminary investigation into the world of SPH, with thee goals in mind:
+  a. learn SPH
+  b. learn how to code MPI in a C-linux environment
+  c. ultimately and hopefully get some useful results concerning the decay of strong shocks from a large atmospheric explosion through to the linear far-field.
+  d. learn how to use puppet to manage my nodes.
+
+Publications: https://magazine.odroid.com/wp-content/uploads/ODROID-Magazine-201607.pdf#page=10 
+
+So far:
+  1. have adapted ANN nearest neighbour technique (David M. Mount and Sunil Arya) to perform nearest neighbour estimation, but the ANN libs that I am using is not multi-threading, so have to place locations of all particles on a single node and then do the calcaultion, -will change this. I have included 'code blocks'  in main.c to send and receive data from the neighbour node.
+  1. have successfully propagated a 2D shock using the Sigalottti configurtion
+      a. Sigalotti LDG, López H, Trujillo L (2009) An adaptive SPH method for strong shocks. J Comput
+         Phys 228:58885907
+  3. have successfully modelled KH billows in shear flows.
+  4. have created my own binary output files.  Daniel Price of Monash Uni. has kindly included a module in the splash libraries to allow a graphical display of the results.
