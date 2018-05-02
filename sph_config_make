@@ -14,9 +14,9 @@ make uninstall; make clean; make distclean;
 #
 ./configure --prefix=$HOME/local/install/SPH \
      CFLAGS="-ggdb -D_FILE_OFFSET_BITS=64" \
-     CPPFLAGS="-I$HOME/local/ann_1.1.2/include -I$HOME/local/ann_1.1.2/include/ANN -Wall" \
+     CPPFLAGS="-I/usr/local/ann_1.1.2/include -I/usr/local/ann_1.1.2/include/ANN -Wall" \
      CXXFLAGS="-ggdb" \
-     LDFLAGS="-L$HOME/local/ann_1.1.2/lib -lANN -lm -lpthread" \
+     LDFLAGS="-L/usr/local/ann_1.1.2/lib -lANN -lm -lpthread" \
      --enable-shared=no \
      --with-pic \
      --with-mpi=yes
@@ -25,7 +25,7 @@ make -j4
 #
 make install
 #
-cp $PWD/par/sph.par       $HOME/local/install/SPH/par
-cp $PWD/src/scripts/bobs  $HOME/local/install/SPH/bin
-cp $PWD/src/machines      $HOME/local/install/SPH
+#cp $PWD/par/sph.par       $HOME/local/install/SPH/par
+#cp $PWD/src/scripts/bobs  $HOME/local/install/SPH/bin
+#cp $PWD/src/machines      $HOME/local/install/SPH
 #
