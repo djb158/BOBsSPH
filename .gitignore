@@ -77,7 +77,6 @@ src/pbobs/pbobs
 /install-sh
 /libtool
 /ltmain.sh
-/m4/
 /missing
 /stamp-h?
 .deps/
