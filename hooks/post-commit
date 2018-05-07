@@ -5,4 +5,4 @@
 #
 # To enable this hook, rename this file to "post-commit".
 
-/usr/bin/git pull
+/usr/bin/git pull origin master
