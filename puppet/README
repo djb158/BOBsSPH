@@ -1,0 +1,28 @@
+                             ~~ ON puppet ~~
+export RUBYLIB=/opt/puppetlabs/puppet/lib/ruby/vendor_ruby
+export JETTY_HOME=/etc/jetty.project/jetty-server/src/main/config
+iptables -I OUTPUT -p tcp --dport 8140  -j ACCEPT; iptables -I INPUT -p tcp --dport 8140  -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 61613 -j ACCEPT; iptables -I INPUT -p tcp --dport 61613 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 4040  -j ACCEPT; iptables -I INPUT -p tcp --dport 4040  -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 80    -j ACCEPT; iptables -I INPUT -p tcp --dport 80    -j ACCEPT
+add manifests to:
+/etc/puppetlabs/code/environments/production/manifests/site.pp
+
+ACTIVEMQ:
+edit: /opt/apache-activemq-5.15.3/conf/activemq.xml
+run:  /opt/apache-activemq-5.15.3/bin/linux-x86-64/activemq console &
+
+MCOLLECTIVE
+/opt/puppetlabs/puppet/bin/mcollectived --config=/etc/puppetlabs/mcollective/client.cfg --pidfile=/var/run/puppetlabs/mcollective.pid
+
+
+
+                             ~~ ON nodes  ~~
+export RUBYLIB=/usr/lib/ruby/vendor_ruby 
+iptables -I OUTPUT -p tcp --dport 8140  -j ACCEPT; iptables -I INPUT -p tcp --dport 8140  -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 61613 -j ACCEPT; iptables -I INPUT -p tcp --dport 61613 -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 4040  -j ACCEPT; iptables -I INPUT -p tcp --dport 4040  -j ACCEPT
+iptables -I OUTPUT -p tcp --dport 80    -j ACCEPT; iptables -I INPUT -p tcp --dport 80    -j ACCEPT
+
+MCOLLECTIVE
+/usr/sbin/mcollectived --config=/usr/share/mcollective/server.cfg
