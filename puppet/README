@@ -21,7 +21,6 @@ MCOLLECTIVE
 export RUBYLIB=/usr/lib/ruby/vendor_ruby 
 iptables -I OUTPUT -p tcp --dport 8140  -j ACCEPT; iptables -I INPUT -p tcp --dport 8140  -j ACCEPT
 iptables -I OUTPUT -p tcp --dport 61613 -j ACCEPT; iptables -I INPUT -p tcp --dport 61613 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 4040  -j ACCEPT; iptables -I INPUT -p tcp --dport 4040  -j ACCEPT
 iptables -I OUTPUT -p tcp --dport 80    -j ACCEPT; iptables -I INPUT -p tcp --dport 80    -j ACCEPT
 
 MCOLLECTIVE
