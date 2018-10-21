@@ -356,7 +356,7 @@ PARTICLES *SetInitialParticlesState1D(PARS *pars,int particles_num,char *rank_na
         l3++;
         break;
       case 1024:
-        node_info[rank].ghost[l]         = l;
+        node_info[rank].ghost[l2]        = l;
         node_info[rank].ghost_mirror[l2] = ids[0].l_mirror;
         l2++;
         break;
