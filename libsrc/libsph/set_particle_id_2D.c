@@ -12,7 +12,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
   double z0                            = LARGE_NEGATIVE_DOUBLE;
 
   int exit_status                      = EXIT_FAILURE;
-  int species                               = EXIT_FAILURE;
+  int species                          = EXIT_FAILURE;
   int i                                = LARGE_NEGATIVE_INT;
   int j                                = LARGE_NEGATIVE_INT;
   int l                                = LARGE_NEGATIVE_INT;
@@ -21,7 +21,9 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
   char   fname[]                       = "...SetParticleID_2D";
 
 #include "pars_include.h"
-  verbosity(1,fname,pars);
+/*
+  verbosity(1,fname,pars);  Need to handle later
+*/
 
   ids = (IDS *)calloc(1,sizeof(IDS));
   ids[0].species   = LARGE_NEGATIVE_INT;

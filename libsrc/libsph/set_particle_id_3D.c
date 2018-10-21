@@ -20,7 +20,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
   char   fname[]                       = "...SetParticleID_3D";
 
 #include "pars_include.h"
+/*
   verbosity(1,fname,pars);
+*/
 
   ids = (IDS *)calloc(1,sizeof(IDS));
   ids[0].species   = LARGE_NEGATIVE_INT;
