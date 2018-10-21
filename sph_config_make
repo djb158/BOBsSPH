@@ -8,7 +8,7 @@ make uninstall; make clean; make distclean;
 \rm -f $HOME/local/install/SPH/lib/*
 #
 #
-./bootstrap
+./bootstrap         |& tee /tmp/sph_config_make.log
 #
 #
 #
@@ -20,13 +20,13 @@ echo "Calling configure: " >> /tmp/junk.txt
      LDFLAGS="-L/usr/local/ann_1.1.2/lib -lANN -lm -lpthread" \
      --enable-shared=no \
      --with-pic \
-     --with-mpi=yes
+     --with-mpi=yes |& tee /tmp/sph_config_make.log
 #
 echo "Calling make: " >> /tmp/junk.txt
-make -j4
+make -j4            |& tee /tmp/sph_config_make.log
 #
 echo "Calling make install: " >> /tmp/junk.txt
-make install
+make install        |& tee /tmp/sph_config_make.log
 #
 #cp $PWD/par/sph.par       $HOME/local/install/SPH/par
 #cp $PWD/src/scripts/bobs  $HOME/local/install/SPH/bin
