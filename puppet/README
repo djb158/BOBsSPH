@@ -1,10 +1,10 @@
                              ~~ ON puppet ~~
-export RUBYLIB=/opt/puppetlabs/puppet/lib/ruby/vendor_ruby
-export JETTY_HOME=/etc/jetty.project/jetty-server/src/main/config
-iptables -I OUTPUT -p tcp --dport 8140  -j ACCEPT; iptables -I INPUT -p tcp --dport 8140  -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 61613 -j ACCEPT; iptables -I INPUT -p tcp --dport 61613 -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 4040  -j ACCEPT; iptables -I INPUT -p tcp --dport 4040  -j ACCEPT
-iptables -I OUTPUT -p tcp --dport 80    -j ACCEPT; iptables -I INPUT -p tcp --dport 80    -j ACCEPT
+export RUBYLIB=/opt/puppetlabs/puppet/lib/ruby/vendor_ruby;
+export JETTY_HOME=/etc/jetty.project/jetty-server/src/main/config;
+iptables -I OUTPUT -p tcp --dport 8140  -j ACCEPT; iptables -I INPUT -p tcp --dport 8140  -j ACCEPT;
+iptables -I OUTPUT -p tcp --dport 61613 -j ACCEPT; iptables -I INPUT -p tcp --dport 61613 -j ACCEPT;
+iptables -I OUTPUT -p tcp --dport 4040  -j ACCEPT; iptables -I INPUT -p tcp --dport 4040  -j ACCEPT;
+iptables -I OUTPUT -p tcp --dport 80    -j ACCEPT; iptables -I INPUT -p tcp --dport 80    -j ACCEPT;
 add manifests to:
 /etc/puppetlabs/code/environments/production/manifests/site.pp
 
