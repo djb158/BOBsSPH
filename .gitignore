@@ -84,6 +84,7 @@ src/pbobs/pbobs
 .libs/
 *.l[ao]
 *~
+.*.swp
 aclocal.m4
 config.h.in
 config.h.in~
