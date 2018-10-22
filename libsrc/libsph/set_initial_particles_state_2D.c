@@ -138,7 +138,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   switch (RESTART)
   {
     case 0:
-    printf(" here 0 \n");
   raw_particle               = (RAW_PARTICLE *)calloc(1,sizeof(RAW_PARTICLE));
   raw_particle[0].x          = (double **)calloc(3,sizeof(double *));
   raw_particle[0].x[0]       = (double *)calloc(TOTAL_PARTICLES_GUESS,sizeof(double));
@@ -156,7 +155,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     raw_particle[0].U[i]          = 0.0;
     raw_particle[0].raw_index[i]  = LARGE_NEGATIVE_INT;
   }
-    printf(" here 1 \n");
 /*                                                                            */
 /*                 left state                                                 */
 /*                                                                            */
@@ -180,7 +178,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   dz2 = 2.0*dz;
   d   = dx2/2.0;
   raw_index = 0;
-    printf(" here 2 \n");
   for (i=0;i<PARTICLES_IN_X;i++)
   {
     if (i <= CENTRE_POINT)
@@ -248,7 +245,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       }
     }
   }
-    printf(" here 3 \n");
   TOTAL_PARTICLES = raw_index; 
   NPARTICLES = TOTAL_PARTICLES/cluster_size;
   pars[0].TOTAL_PARTICLES = TOTAL_PARTICLES;
@@ -291,7 +287,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       nparticles++;
     }
   }
-    printf(" here 4 \n");
 
   if ( (EquationOfState(particles,pars))==EXIT_FAILURE )
   {
@@ -322,7 +317,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   l4 = 0;
   j  =  PARTICLES_IN_Z_H/2;
   z3 =  Z0 + (double)(j)*dz2;
-    printf(" here 5 \n");
 
   for(l=0;l<nparticles;l++)
   {
@@ -388,7 +382,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     free(ids); ids = NULL;
     particles[0].species[l] = node_info[rank].species[l];
   }
-    printf(" here 6 \n");
 
   node_info[rank].n_interior              = l0;
   node_info[rank].n_boundary              = l1;
@@ -405,7 +398,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
 /*                                                                           */
 /*                                                                           */
 /*                                                                           */
-    printf(" here 7 \n");
   if ( (UpdateKernel(particles,pars) == EXIT_FAILURE) )
   {
     printf(" %s() -error return from UpdateKernel() \n",fname);
@@ -418,12 +410,10 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     }
     goto RETURN;
   } 
-    printf(" here 8 \n");
 /*                                                                           */
 /*                                                                           */
    break;
   case 1:
-    printf(" here 9 \n");
     if ((particles=ReadParticleInfo(pars,particles_num)) == NULL)
     {
       if (FreeParticles(&particles,pars,NPARTICLES) == EXIT_FAILURE)
