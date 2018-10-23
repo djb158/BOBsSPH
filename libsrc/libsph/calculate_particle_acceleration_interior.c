@@ -330,6 +330,14 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
         {
           f = 1.0;
         }
+
+/*  start */
+      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
+      {
+        printf(" fact_p = %20.10f r_ij/h_ij = %20.10f r_ij = %20.10f h_ij = %20.10f x_i = %20.10f x_j = %20.10f \n",fact_p,r_ij/h_ij,x_i,x_j);
+      }
+/* end */
+      
         sum_0 = sum_0 - fact_p*dWdf(r_ij/h_ij,h_ij,dim,KERNEL_WIDTH)*dfdx(x_i,x_j,r_ij*h_ij);
         sum_2 = sum_2 - fact_p*dWdf(r_ij/h_ij,h_ij,dim,KERNEL_WIDTH)*dfdz(z_i,z_j,r_ij*h_ij);
 
@@ -346,6 +354,14 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
       td->matrix[0][i] = sum_0 + sum_vx;
       td->matrix[1][i] = 0.0;
       td->matrix[2][i] = sum_2 + sum_vz;
+
+/*  start */
+      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
+      {
+        printf(" sum_vx = %20.10f \n",sum_vx);
+      }
+/* end */
+      
       if (is_nan_or_inf(sum_0,(char *)"a0",i) == EXIT_FAILURE) goto RETURN;
       if (is_nan_or_inf(sum_2,(char *)"a2",i) == EXIT_FAILURE) goto RETURN;
     }
