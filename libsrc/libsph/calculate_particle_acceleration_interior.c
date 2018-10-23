@@ -342,7 +342,7 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
 /*  djb start */
       if ( (rank ==2) && ((i == 470) || (i == 69775)) )
       {
-        printf(" i = %i node = %i fact_p = %12.5f r_ij/h_ij = %12.5f r_ij = %12.5f h_ij = %12.5f x_i = %12.5f x_j = %12.5f \n",i,node,fact_p,r_ij/h_ij,x_i,x_j);
+        printf(" i = %i node = %i fact_p = %12.5f r_ij/h_ij = %12.5f r_ij = %12.5f h_ij = %12.5f x_i = %12.5f x_j = %12.5f \n",i,node,fact_p,r_ij/h_ij,r_ij,h_ij,x_i,x_j);
       }
 /* djb end */
       
