@@ -327,6 +327,14 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
         {
           PII_ij = 0.0;
         }
+
+/*  djb start */
+      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
+      {
+        printf(" i = %i  m_j = %12.5f p_i = %12.5f rho2_i = %12.5f p_j = %12.5f rho2_j = %12.5f PII_ij = %12.5f\n",i,m_j,p_i,rho2_i,p_j,rho2_j,PII_ij);
+      }
+/* djb end */
+      
         fact_p   = m_j*(p_i/rho2_i + p_j/rho2_j+PII_ij);
         fact_vx  = m_j*MU_mom*(vx_j-vx_i)/rhom_ij;
         fact_vz  = m_j*MU_mom*(vz_j-vz_i)/rhom_ij;
