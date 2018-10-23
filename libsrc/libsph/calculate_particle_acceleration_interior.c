@@ -334,7 +334,7 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
 /*  start */
       if ( (rank ==2) && ((i == 470) || (i == 69775)) )
       {
-        printf(" i = %i node = %i fact_p = %20.10f r_ij/h_ij = %20.10f r_ij = %20.10f h_ij = %20.10f x_i = %20.10f x_j = %20.10f \n",i,node,fact_p,r_ij/h_ij,x_i,x_j);
+        printf(" i = %i node = %i fact_p = %12.5f r_ij/h_ij = %12.5f r_ij = %12.5f h_ij = %12.5f x_i = %12.5f x_j = %12.5f \n",i,node,fact_p,r_ij/h_ij,x_i,x_j);
       }
 /* end */
       
@@ -358,7 +358,7 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
 /*  start */
       if ( (rank ==2) && ((i == 470) || (i == 69775)) )
       {
-        printf(" sum_vx = %20.10f \n",sum_vx);
+        printf(" sum_vx = %12.5f \n",sum_vx);
       }
 /* end */
       
