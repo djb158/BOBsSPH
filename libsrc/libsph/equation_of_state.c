@@ -67,6 +67,13 @@ int EquationOfState(PARTICLES *particles,PARS *pars)
     particles->p[i] = (GAMMA-1.0)*(particles->rho[i])*(particles->U[i]);
   }
 
+/*  djb start */
+      printf("here 5:   i = %i rho_i = %12.5f  U_i \n",i,particles[0].rho[470],particles[0].U[470]);
+      printf("here 5:   i = %i rho_i = %12.5f  U_i \n",i,particles[0].rho[69775],particles[0].U[69775]);
+/* djb end */
+
+
+
   exit_status = EXIT_SUCCESS;
 
 RETURN:
