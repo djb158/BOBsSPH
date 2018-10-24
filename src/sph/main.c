@@ -257,6 +257,15 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 12:   i = %i U_i = %12.5f  \n",i,particles_2[0].U[470]);
+        printf("here 12:   i = %i U_i = %12.5f  \n",i,particles_2[0].U[69775]);
+      }
+/* djb end */
+
+
       i_step++;
       nparticles = node_info[rank].nparticles;
       printf("\n\n Rank: %i Step: %i  time = %20.10f nparticles = %i \n",rank,i_step,time,node_info[rank].nparticles);
@@ -284,6 +293,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 11:   i = %i U_i = %12.5f  \n",i,particles_2[0].U[470]);
+        printf("here 11:   i = %i U_i = %12.5f  \n",i,particles_2[0].U[69775]);
+      }
+/* djb end */
+
 /*                                                                           */
 /*                 retrieve particle2 energy                                 */
 /*                                                                           */
@@ -293,6 +311,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 10:   i = %i U_i = %12.5f  \n",i,U_2[470]);
+        printf("here 10:   i = %i U_i = %12.5f  \n",i,U_2[69775]);
+      }
+/* djb end */
+
 /*                                                                           */
 /*                 retrieve particle1 acceleration                           */
 /*                                                                           */
@@ -682,11 +709,29 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 15:   i = %i U_i = %12.5f  \n",i,U_2[470]);
+        printf("here 15:   i = %i U_i = %12.5f  \n",i,U_2[69775]);
+      }
+/* djb end */
+
       if ((U_4=IntegrateParticleEnergy_INTERIOR(U_2,dUdt_3,dt,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 14:   i = %i U_i = %12.5f  \n",i,U_4[470]);
+        printf("here 14:   i = %i U_i = %12.5f  \n",i,U_4[69775]);
+      }
+/* djb end */
+
       if (
           ((IntegrateParticleEnergy_BOUNDARY(U_4,pars))==EXIT_FAILURE)
                                    ||
@@ -696,6 +741,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 13:   i = %i U_i = %12.5f  \n",i,U_4[470]);
+        printf("here 13:   i = %i U_i = %12.5f  \n",i,U_4[69775]);
+      }
+/* djb end */
+
       if ( (SetParticleAcceleration(particles_3,a_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
