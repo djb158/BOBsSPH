@@ -285,7 +285,7 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
 /*  djb start */
       if ( (rank ==2) && ((i == 470) || (i == 69775)) )
       {
-        printf(" i = %i h_i = %12.5f  h_j = %12.5f \n",h_i,h_j);
+        printf(" i = %i h_i = %12.5f  h_j = %12.5f \n",i,h_i,h_j);
       }
 /* djb end */
       
