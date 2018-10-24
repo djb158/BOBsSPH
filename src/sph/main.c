@@ -406,6 +406,15 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 integrate particle energy interior                        */
 /*                                                                           */
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 9:   i = %i U_i = %12.5f  \n",i,U_2[470]);
+        printf("here 9:   i = %i U_i = %12.5f  \n",i,U_2[69775]);
+      }
+/* djb end */
+
       if ((U_3=IntegrateParticleEnergy_INTERIOR(U_2,dUdt_1,dt/2.0,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
@@ -414,11 +423,29 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 integrate particle energy boundary                        */
 /*                                                                           */
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 8:   i = %i U_i = %12.5f  \n",i,U_3[470]);
+        printf("here 8:   i = %i U_i = %12.5f  \n",i,U_3[69775]);
+      }
+/* djb end */
+
       if ( (IntegrateParticleEnergy_BOUNDARY(U_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 7:   i = %i U_i = %12.5f  \n",i,U_3[470]);
+        printf("here 7:   i = %i U_i = %12.5f  \n",i,U_3[69775]);
+      }
+/* djb end */
+
 /*                                                                           */
 /*                 particle energy                                           */
 /*                                                                           */
@@ -427,6 +454,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 6:   i = %i U_i = %12.5f  \n",i,particles_3[0].U[470]);
+        printf("here 6:   i = %i U_i = %12.5f  \n",i,particles_3[0].U[69775]);
+      }
+/* djb end */
+
 
 /*###########################################################################*/
 /*                                                                           */
@@ -500,8 +536,8 @@ int main(int argc, char *argv[])
 /*  djb start */
       if (rank ==2)
       {
-        printf("here 4:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[470]);
-        printf("here 4:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[69775]);
+        printf("here 4:   i = %i U_i = %12.5f  \n",i,particles_3[0].U[470]);
+        printf("here 4:   i = %i U_i = %12.5f  \n",i,particles_3[0].U[69775]);
       }
 /* djb end */
 
