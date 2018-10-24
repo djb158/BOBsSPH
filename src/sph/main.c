@@ -498,9 +498,10 @@ int main(int argc, char *argv[])
 /*###########################################################################*/
 
 /*  djb start */
-      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
+      if (rank ==2)
       {
-        printf("here 4:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[i]);
+        printf("here 4:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[470]);
+        printf("here 4:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[69775]);
       }
 /* djb end */
 
@@ -515,9 +516,10 @@ int main(int argc, char *argv[])
       }
 
 /*  djb start */
-      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
+      if (rank ==2)
       {
-        printf("here 3:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[i]);
+        printf("here 3:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[470]);
+        printf("here 3:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[69775]);
       }
 /* djb end */
 
@@ -538,9 +540,10 @@ int main(int argc, char *argv[])
 /*###########################################################################*/
 
 /*  djb start */
-      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
+      if (rank ==2)
       {
-        printf("here 2:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[i]);
+        printf("here 2:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[470]);
+        printf("here 2:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[69775]);
       }
 /* djb end */
 
@@ -555,9 +558,10 @@ int main(int argc, char *argv[])
       }
 
 /*  djb start */
-      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
+      if (rank ==2)
       {
-        printf("here 1:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[i]);
+        printf("here 1:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[470]);
+        printf("here 1:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[69775]);
       }
 /* djb end */
 
@@ -578,9 +582,10 @@ int main(int argc, char *argv[])
 /*###########################################################################*/
 
 /*  djb start */
-      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
+      if (rank ==2)
       {
-        printf("here 0:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[i]);
+        printf("here 0:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[470]);
+        printf("here 0:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[69775]);
       }
 /* djb end */
 
