@@ -435,6 +435,7 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
 
       td->vector[i] = sum + sum_v;
       
+    }
 
 /*  djb start */
       if (rank ==2)
@@ -446,7 +447,6 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
       }
 /* djb end */
 
-    }
   }
 
   if (DIMENSIONS == 3)
