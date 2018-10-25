@@ -671,6 +671,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 15a:   i = %i U_i = %12.5f  \n",i,dUdt_3[470]);
+        printf("here 15a:   i = %i U_i = %12.5f  \n",i,dUdt_3[69775]);
+      }
+/* djb end */
+
       if(
           ((CalculateParticleEnergyDeriv_BOUNDARY(dUdt_3,pars))==EXIT_FAILURE )
                                           ||
@@ -680,6 +689,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
+/*  djb start */
+      if (rank ==2)
+      {
+        printf("here 15b:   i = %i U_i = %12.5f  \n",i,dUdt_3[470]);
+        printf("here 15b:   i = %i U_i = %12.5f  \n",i,dUdt_3[69775]);
+      }
+/* djb end */
+
       if ( (vorticity=CalculateParticleVorticity(particles_3,x_particles,pars))==NULL )
       {
         exit_status = EXIT_FAILURE;
