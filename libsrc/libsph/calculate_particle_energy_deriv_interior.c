@@ -438,7 +438,7 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
       {
         if ( (i==470)  || (i==69775) )
         {
-          printf("here 20:   l = %i fact_h0 = %12.5f fact_h2  = %12.5f fact_v = %12.5f\n",l,fact_h0,fact_h2,fact_v);
+          printf("here 20:   l = %i fact_h0 = %12.5f fact_h2  = %12.5f fact_v = %12.5f sum_v = %20.10f \n",i,fact_h0,fact_h2,fact_v,sum_v);
         }
       }
 /* djb end */
