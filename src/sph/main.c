@@ -666,6 +666,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
       if ((dUdt_3=CalculateParticleEnergyDeriv_INTERIOR_thread_wrapper(particles_3,x_particles,pars))==NULL )
       {
         exit_status = EXIT_FAILURE;
