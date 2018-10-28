@@ -65,12 +65,8 @@ int EquationOfState(PARTICLES *particles,PARS *pars)
   for (i=0;i<NPARTICLES;i++)
   {
     particles->p[i] = (GAMMA-1.0)*(particles->rho[i])*(particles->U[i]);
+    printf(" i = %i x = %20.10 z = %20.10 U = %20.10f rho = %20.10f \n",i,particles->x[0][i],particles->x[2][i],particles[0].U[i],particles[0].rho[i]);
   }
-
-/*  djb start */
-      printf("here 5:   i = %i rho_i = %12.5f  U_i  = %12.5f \n",i,particles[0].rho[474],particles[0].U[474]);
-/* djb end */
-
 
 
   exit_status = EXIT_SUCCESS;
