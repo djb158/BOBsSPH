@@ -178,6 +178,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   dz2 = 2.0*dz;
   d   = dx2/2.0;
   raw_index = 0;
+  printf("here 200 Z0 = %20.10f \n",Z0);
   for (i=0;i<PARTICLES_IN_X;i++)
   {
     if (i <= CENTRE_POINT)
@@ -476,6 +477,7 @@ RETURN:
   }
 
   verbosity(2,fname,pars);
+  exit(1);
 
   return particles;
 }
