@@ -310,6 +310,7 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
         if (node == rank)
         {
           p_j    = particles[0].p[j];
+          if ( (i == 470) && (j == 471) ) printf(" HERE 101 \n");
           d_j    = particles[0].divV[j];
           rho_j  = particles[0].rho[j];
           x_j    = particles[0].x[0][j];
@@ -322,6 +323,7 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
         }
         else
         {
+          if ( (i == 470) && (j == 471) ) printf(" HERE 100 \n");
           num = particles[0].nn_index[j].num;
           if (num == 0)
           {
