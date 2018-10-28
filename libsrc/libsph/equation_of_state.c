@@ -68,8 +68,7 @@ int EquationOfState(PARTICLES *particles,PARS *pars)
   }
 
 /*  djb start */
-      printf("here 5:   i = %i rho_i = %12.5f  U_i  = %12.5f \n",i,particles[0].rho[470],particles[0].U[470]);
-      printf("here 5:   i = %i rho_i = %12.5f  U_i  = %12.5f \n",i,particles[0].rho[69775],particles[0].U[69775]);
+      printf("here 5:   i = %i rho_i = %12.5f  U_i  = %12.5f \n",i,particles[0].rho[474],particles[0].U[474]);
 /* djb end */
 
 
