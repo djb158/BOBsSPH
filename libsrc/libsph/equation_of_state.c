@@ -67,7 +67,7 @@ int EquationOfState(PARTICLES *particles,PARS *pars)
     particles->p[i] = (GAMMA-1.0)*(particles->rho[i])*(particles->U[i]);
     if (i < 1000)
     {
-      printf(" i = %i x = %20.10 z = %20.10f U = %20.10f rho = %20.10f \n",i,particles->x[0][i],particles->x[2][i],particles[0].U[i],particles[0].rho[i]);
+      printf(" i = %i x = %20.10f z = %20.10f U = %20.10f rho = %20.10f \n",i,particles->x[0][i],particles->x[2][i],particles[0].U[i],particles[0].rho[i]);
     }
   }
 
