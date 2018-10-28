@@ -418,9 +418,9 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
 /*  djb start */
       if (rank ==2)
       {
-        if ( (i=470)  && (j = 474) )
+        if ( (i==470)  && (j == 474) )
         {
-          printf("here 21:   i = %i j = %i fact_h0 = %20.10f m_j = %20.10f p_i = %20.10f p_j = %20.10f rho2_i = %20.10f rho2_j = %20.10f PI_ij = %20.10f \n",i,j,fact_h0,m_j,p_i,p_j,rho2_i,rho2_j,PI_ij);
+          printf("here 21:   i = %i j = %i fact_h0 = %20.10f m_j = %20.10f p_i = %20.10f p_j = %20.10f rho2_i = %20.10f rho2_j = %20.10f PI_ij = %20.10f \n",i,j,fact_h0,m_j,p_i,p_j,rho2_i,rho2_j,PII_ij);
         }
       }
 /* djb end */
