@@ -440,7 +440,7 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
 /*  djb start */
       if (rank ==2)
       {
-        if ( (i>470-10)  || (i < 470+10) )
+        if ( (i>470-10)  && (i < 470+10) )
         {
           printf("here 20:   l = %i fact_h0 = %20.10f fact_h2  = %20.10f fact_v = %20.10f sum_v = %20.10f \n",i,fact_h0,fact_h2,fact_v,sum_v);
         }
