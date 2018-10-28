@@ -415,6 +415,15 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
         fact_h0  = m_j*((p_i/rho2_i + p_j/rho2_j+PII_ij)*(vx_j-vx_i) + 2.0*H_ij*(x_j-x_i));
         fact_h2  = m_j*((p_i/rho2_i + p_j/rho2_j+PII_ij)*(vz_j-vz_i) + 2.0*H_ij*(z_j-z_i));
         fact_v   = m_j*MU_en*(U_j-U_i)/rhom_ij;
+/*  djb start */
+      if (rank ==2)
+      {
+        if ( (i>470-10)  && (i < 470+10) )
+        {
+          printf("here 20:   i = %i j = %i fact_h0 = %20.10f fact_h2  = %20.10f fact_v = %20.10f sum_v = %20.10f \n",i,j,fact_h0,fact_h2,fact_v,sum_v);
+        }
+      }
+/* djb end */
 
         f        = r_ij/h_ij;
         f        = r_ij;
@@ -436,15 +445,9 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
       td->vector[i] = sum + sum_v;
       
 
-/*  djb start */
-      if (rank ==2)
-      {
-        if ( (i>470-10)  && (i < 470+10) )
-        {
-          printf("here 20:   l = %i fact_h0 = %20.10f fact_h2  = %20.10f fact_v = %20.10f sum_v = %20.10f \n",i,fact_h0,fact_h2,fact_v,sum_v);
-        }
-      }
-/* djb end */
+
+
+
     }
 
   }
