@@ -480,7 +480,6 @@ RETURN:
   }
 
   verbosity(2,fname,pars);
-  exit(1);
 
   return particles;
 }
