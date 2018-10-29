@@ -282,6 +282,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       particles[0].x[2][nparticles]             = raw_particle[0].x[2][t]; 
       
       if ( (nparticles < 1000) ) printf(" here 500 l = %i x = %20.10f z = %20.10f \n",nparticles,raw_particle[0].x[0][t],raw_particle[0].x[2][t]);
+      if ( (nparticles > 139203 - 1000) ) printf(" here 501 l = %i x = %20.10f z = %20.10f \n",nparticles,raw_particle[0].x[0][t],raw_particle[0].x[2][t]);
       particles[0].rho[nparticles]              = raw_particle[0].rho[t];
       particles[0].U[nparticles]                = raw_particle[0].U[t]; 
       particles[0].raw_index[nparticles]        = raw_index;
