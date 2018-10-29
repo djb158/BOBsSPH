@@ -75,8 +75,11 @@ int IntegrateParticleEnergy_BOUNDARY(double *U,PARS *pars)
   {
     l = node_info[rank].ghost[index];
     i_mirror_raw = node_info[rank].ghost_mirror[l];
-    l_mirror = node_info[rank].inv_raw_index[i_mirror_raw];
-    U[l] = U[l_mirror];
+    if (i_mirror_raw > LARGE_NEGATIVE_INT)
+    {
+      l_mirror = node_info[rank].inv_raw_index[i_mirror_raw];
+      U[l] = U[l_mirror];
+    }
   }
 /*                                                                           */
 /*                                                                           */
