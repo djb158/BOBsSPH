@@ -192,7 +192,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
           raw_particle[0].x[0][raw_index]       = x;
           raw_particle[0].x[1][raw_index]       = 0.0;
           raw_particle[0].x[2][raw_index]       = z;
-          if (raw_index < 500) printf(" here 500 l = %i z = %20.10f \n",raw_index,z);
+          if (raw_index < 900) printf(" here 500 l = %i z = %20.10f \n",raw_index,z);
           raw_particle[0].rho[raw_index]        = RHO_l;
           raw_particle[0].U[raw_index]          = U_l;
           raw_particle[0].raw_index[raw_index]  = raw_index;
