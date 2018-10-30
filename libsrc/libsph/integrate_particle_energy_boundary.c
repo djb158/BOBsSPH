@@ -62,6 +62,7 @@ int IntegrateParticleEnergy_BOUNDARY(double *U,PARS *pars)
   int n_ghost                          = LARGE_NEGATIVE_INT;
   int nparticles                       = LARGE_NEGATIVE_INT;
   int index                            = LARGE_NEGATIVE_INT;
+  int species                          = LARGE_NEGATIVE_INT;
 
 #include "pars_include.h"
   verbosity(1,fname,pars);
