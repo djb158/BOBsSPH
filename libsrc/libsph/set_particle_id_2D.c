@@ -204,7 +204,6 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
   else if (z < Z0 - EPSILON_DOUBLE)
   {
     ids[0].species = 1027;
-    printf(" setting 1027 \n");
     dist = fabs(Z0-z);
     found = 0;
     for (j=0;j<NPARTICLES;j++)
