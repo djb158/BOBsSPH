@@ -78,7 +78,9 @@ int IntegrateParticleEnergy_BOUNDARY(double *U,PARS *pars)
     i_mirror_raw = node_info[rank].ghost_mirror[index];
     l_mirror     = node_info[rank].inv_raw_index[i_mirror_raw];
     U[l]         = U[l_mirror];
+/*
     printf(" l = %i l_mirror = %i U = %20.10f \n",l,l_mirror,U[l]);
+*/
   }
 /*                                                                           */
 /*                                                                           */
