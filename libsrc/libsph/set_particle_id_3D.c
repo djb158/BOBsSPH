@@ -53,7 +53,7 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                 x = X0                                                    */
 /*                                                                           */
   else if (
-            ( (x - X0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X0) < EPSILON_DOUBLE )
                  &&
             (z > Z0 + EPSILON_DOUBLE)
                  &&
@@ -70,7 +70,7 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                 x = X1                                                    */
 /*                                                                           */
   else if (
-            ( (x - X1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X1) < EPSILON_DOUBLE )
                  &&
             (z > Z0 + EPSILON_DOUBLE)
                  &&
@@ -87,7 +87,7 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                  z = Z0                                                   */
 /*                                                                           */
   else if (
-            ( (z - Z0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z0) < EPSILON_DOUBLE )
                  &&
             (y > Y0 + EPSILON_DOUBLE)
                  &&
@@ -104,7 +104,7 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                  z = Z1                                                   */
 /*                                                                           */
   else if (
-            ( (z - Z1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z1) < EPSILON_DOUBLE )
                  &&
             (y > Y0 + EPSILON_DOUBLE)
                  &&
@@ -121,7 +121,7 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                  y = Y0                                                   */
 /*                                                                           */
   else if (
-            ( (y - Y0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y0) < EPSILON_DOUBLE )
                  &&
             (z > Z0 + EPSILON_DOUBLE)
                  &&
@@ -138,7 +138,7 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                  y = Y1                                                   */
 /*                                                                           */
   else if (
-            ( (y - Y1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y1) < EPSILON_DOUBLE )
                  &&
             (z > Z0 + EPSILON_DOUBLE)
                  &&
@@ -155,9 +155,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                 now do 12 wire frames                                      */
 /*                                                                           */
   else if (
-            ( (x - X0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X0) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z0) < EPSILON_DOUBLE )
                         &&
             (y > Y0 + EPSILON_DOUBLE)
                         &&
@@ -167,9 +167,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2055;
   }
   else if (
-            ( (x - X0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X0) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z1) < EPSILON_DOUBLE )
                         &&
             (y > Y0 + EPSILON_DOUBLE)
                         &&
@@ -179,9 +179,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2056;
   }
   else if (
-            ( (x - X1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X1) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z0) < EPSILON_DOUBLE )
                         &&
             (y > Y0 + EPSILON_DOUBLE)
                         &&
@@ -191,9 +191,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2057;
   }
   else if (
-            ( (x - X1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X1) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z1) < EPSILON_DOUBLE )
                         &&
             (y > Y0 + EPSILON_DOUBLE)
                         &&
@@ -203,9 +203,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2058;
   }
   else if (
-            ( (x - X0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X0) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y0) < EPSILON_DOUBLE )
                         &&
             (z > Z0 + EPSILON_DOUBLE)
                         &&
@@ -215,9 +215,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2059;
   }
   else if (
-            ( (x - X1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X1) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y0) < EPSILON_DOUBLE )
                         &&
             (z > Z0 + EPSILON_DOUBLE)
                         &&
@@ -227,9 +227,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2060;
   }
   else if (
-            ( (x - X0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X0) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y1) < EPSILON_DOUBLE )
                         &&
             (z > Z0 + EPSILON_DOUBLE)
                         &&
@@ -239,9 +239,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2061;
   }
   else if (
-            ( (x - X1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X1) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y1) < EPSILON_DOUBLE )
                         &&
             (z > Z0 + EPSILON_DOUBLE)
                         &&
@@ -251,9 +251,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2062;
   }
   else if (
-            ( (z - Z0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z0) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y0) < EPSILON_DOUBLE )
                         &&
             (x > X0 + EPSILON_DOUBLE)
                         &&
@@ -263,9 +263,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2063;
   }
   else if (
-            ( (z - Z0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z0) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y1) < EPSILON_DOUBLE )
                         &&
             (x > X0 + EPSILON_DOUBLE)
                         &&
@@ -275,9 +275,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2064;
   }
   else if (
-            ( (z - Z1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z1) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y0) < EPSILON_DOUBLE )
                         &&
             (x > X0 + EPSILON_DOUBLE)
                         &&
@@ -287,9 +287,9 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
     ids[0].species = 2065;
   }
   else if (
-            ( (z - Z1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z1) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y1) < EPSILON_DOUBLE )
                         &&
             (x > X0 + EPSILON_DOUBLE)
                         &&
@@ -302,81 +302,81 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                 now do 8 corner points                                    */
 /*                                                                           */
   else if (
-            ( (x - X0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X0) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y0) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z0) < EPSILON_DOUBLE )
           )
   {
     ids[0].species = 2067;
   }
   else if (
-            ( (x - X1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X1) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y0) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z0) < EPSILON_DOUBLE )
           )
   {
     ids[0].species = 2068;
   }
   else if (
-            ( (x - X0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X0) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y0) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z1) < EPSILON_DOUBLE )
           )
   {
     ids[0].species = 2069;
   }
   else if (
-            ( (x - X1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X1) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y0) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z1) < EPSILON_DOUBLE )
           )
   {
     ids[0].species = 2070;
   }
   else if (
-            ( (x - X0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X0) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y1) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z0) < EPSILON_DOUBLE )
           )
   {
     ids[0].species = 2071;
   }
   else if (
-            ( (x - X0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X0) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y1) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z1) < EPSILON_DOUBLE )
           )
   {
     ids[0].species = 2072;
   }
   else if (
-            ( (x - X1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X1) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y1) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z0) < EPSILON_DOUBLE )
           )
   {
     ids[0].species = 2073;
   }
   else if (
-            ( (x - X1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X1) < EPSILON_DOUBLE )
                         &&
-            ( (y - Y1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(y - Y1) < EPSILON_DOUBLE )
                         &&
-            ( (z - Z1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(z - Z1) < EPSILON_DOUBLE )
           )
   {
     ids[0].species = 2074;
