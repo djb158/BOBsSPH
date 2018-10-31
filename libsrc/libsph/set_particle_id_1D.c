@@ -46,7 +46,7 @@ IDS *SetParticleID_1D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                 x = X0                                                    */
 /*                                                                           */
   else if (
-            ( (x - X0) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X0) < EPSILON_DOUBLE )
           )
   {
     ids[0].species = 2049;
@@ -55,7 +55,7 @@ IDS *SetParticleID_1D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                 x = X1                                                    */
 /*                                                                           */
   else if (
-            ( (x - X1) < fabs(EPSILON_DOUBLE) )
+            ( fabs(x - X1) < EPSILON_DOUBLE )
           )
   {
     ids[0].species = 2050;
