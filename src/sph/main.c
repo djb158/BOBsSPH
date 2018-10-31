@@ -256,15 +256,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 12:   i = %i U_i = %12.5f  \n",i,particles_2[0].U[470]);
-        printf("here 12:   i = %i U_i = %12.5f  \n",i,particles_2[0].U[69775]);
-      }
-/* djb end */
-
+      PrintHere(particles_3,1,rank);
 
       i_step++;
       nparticles = node_info[rank].nparticles;
@@ -294,14 +286,6 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 11:   i = %i U_i = %12.5f  \n",i,particles_2[0].U[470]);
-        printf("here 11:   i = %i U_i = %12.5f  \n",i,particles_2[0].U[69775]);
-      }
-/* djb end */
-
 /*                                                                           */
 /*                 retrieve particle2 energy                                 */
 /*                                                                           */
@@ -311,14 +295,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 10:   i = %i U_i = %12.5f  \n",i,U_2[470]);
-        printf("here 10:   i = %i U_i = %12.5f  \n",i,U_2[69775]);
-      }
-/* djb end */
 
 /*                                                                           */
 /*                 retrieve particle1 acceleration                           */
@@ -397,6 +373,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,2,rank);
 
 /*###########################################################################*/
 /*                                                                           */
@@ -434,14 +411,6 @@ int main(int argc, char *argv[])
 /*                 integrate particle energy interior                        */
 /*                                                                           */
 
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 9:   i = %i U_i = %12.5f  \n",i,U_2[470]);
-        printf("here 9:   i = %i U_i = %12.5f  \n",i,U_2[69775]);
-      }
-/* djb end */
-
       if ((U_3=IntegrateParticleEnergy_INTERIOR(U_2,dUdt_1,dt/2.0,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
@@ -451,28 +420,11 @@ int main(int argc, char *argv[])
 /*                 integrate particle energy boundary                        */
 /*                                                                           */
 
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 8:   i = %i U_i = %12.5f  \n",i,U_3[470]);
-        printf("here 8:   i = %i U_i = %12.5f  \n",i,U_3[69775]);
-      }
-/* djb end */
-
       if ( (IntegrateParticleEnergy_BOUNDARY(U_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 7:   i = %i U_i = %12.5f  \n",i,U_3[470]);
-        printf("here 7:   i = %i U_i = %12.5f  \n",i,U_3[69775]);
-      }
-/* djb end */
-
 /*                                                                           */
 /*                 particle energy                                           */
 /*                                                                           */
@@ -481,15 +433,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 6:   i = %i U_i = %12.5f  \n",i,particles_3[0].U[470]);
-        printf("here 6:   i = %i U_i = %12.5f  \n",i,particles_3[0].U[69775]);
-      }
-/* djb end */
-
+      PrintHere(particles_3,3,rank);
 
 /*###########################################################################*/
 /*                                                                           */
@@ -559,16 +503,6 @@ int main(int argc, char *argv[])
 /*                               BLOCK 5: END                                */
 /*                                                                           */
 /*###########################################################################*/
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 4:   i = %i U_i = %12.5f  \n",i,particles_3[0].U[470]);
-        printf("here 4:   i = %i U_i = %12.5f  \n",i,particles_3[0].U[69775]);
-      }
-/* djb end */
-
-
 /*                                                                           */
 /*                 pressure                                                  */
 /*                                                                           */
@@ -577,15 +511,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 3:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[470]);
-        printf("here 3:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[69775]);
-      }
-/* djb end */
-
 
 /*###########################################################################*/
 /*                                                                           */
@@ -602,15 +527,6 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*###########################################################################*/
 
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 2:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[470]);
-        printf("here 2:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[69775]);
-      }
-/* djb end */
-
-
 /*                                                                           */
 /*                 divergence                                                */
 /*                                                                           */
@@ -619,15 +535,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 1:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[470]);
-        printf("here 1:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[69775]);
-      }
-/* djb end */
-
 
 /*###########################################################################*/
 /*                                                                           */
@@ -643,14 +550,6 @@ int main(int argc, char *argv[])
 /*                               BLOCK 7: END                                */
 /*                                                                           */
 /*###########################################################################*/
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 0:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[470]);
-        printf("here 0:   i = %i p_i = %12.5f  \n",i,particles_3[0].p[69775]);
-      }
-/* djb end */
 
       if ((a_3=CalculateParticleAcceleration_INTERIOR_thread_wrapper(particles_3,x_particles,pars))==NULL)
       {
@@ -673,14 +572,6 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 15a:   i = %i U_i = %12.5f  \n",i,dUdt_3[470]);
-        printf("here 15a:   i = %i U_i = %12.5f  \n",i,dUdt_3[69775]);
-      }
-/* djb end */
-
       if(
           ((CalculateParticleEnergyDeriv_BOUNDARY(dUdt_3,pars))==EXIT_FAILURE )
                                           ||
@@ -690,14 +581,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 15b:   i = %i U_i = %12.5f  \n",i,dUdt_3[470]);
-        printf("here 15b:   i = %i U_i = %12.5f  \n",i,dUdt_3[69775]);
-      }
-/* djb end */
 
       if ( (vorticity=CalculateParticleVorticity(particles_3,x_particles,pars))==NULL )
       {
@@ -729,27 +612,11 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 15:   i = %i U_i = %12.5f  \n",i,U_2[470]);
-        printf("here 15:   i = %i U_i = %12.5f  \n",i,U_2[69775]);
-      }
-/* djb end */
-
       if ((U_4=IntegrateParticleEnergy_INTERIOR(U_2,dUdt_3,dt,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 14:   i = %i U_i = %12.5f  \n",i,U_4[470]);
-        printf("here 14:   i = %i U_i = %12.5f  \n",i,U_4[69775]);
-      }
-/* djb end */
 
       if (
           ((IntegrateParticleEnergy_BOUNDARY(U_4,pars))==EXIT_FAILURE)
@@ -760,14 +627,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 13:   i = %i U_i = %12.5f  \n",i,U_4[470]);
-        printf("here 13:   i = %i U_i = %12.5f  \n",i,U_4[69775]);
-      }
-/* djb end */
 
       if ( (SetParticleAcceleration(particles_3,a_3,pars))==EXIT_FAILURE )
       {
@@ -817,7 +676,7 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
-      PrintHere(particles_3,3,rank);
+      PrintHere(particles_3,4,rank);
       particles_1 = particles_3;
       particles_2 = particles_4;
       particles_3 = NULL;
