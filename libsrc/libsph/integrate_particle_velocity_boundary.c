@@ -245,20 +245,20 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
         x[2][l]  =        x[2][l_mirror];
         break;
 /*                                                                           */
-/*                 TOP boundary                                              */
+/*                 BOTTOM boundary                                           */
 /*                                                                           */
       case 1027:
         x[0][l]  =        x[0][l_mirror];
         x[1][l]  =        x[1][l_mirror];
-        x[2][l]  =  Z1 - (x[2][l_mirror] - Z1);
+        x[2][l]  =  Z0 - (x[2][l_mirror] - Z0);
         break;
 /*                                                                           */
-/*                 BOTTOM boundary                                           */
+/*                 TOP boundary                                              */
 /*                                                                           */
       case 1028:
         x[0][l]  =        x[0][l_mirror];
         x[1][l]  =        x[1][l_mirror];
-        x[2][l]  =  Z0 - (x[2][l_mirror] - Z0);
+        x[2][l]  =  Z1 - (x[2][l_mirror] - Z1);
         break;
 /*                                                                           */
 /*                 FRONT boundary                                            */
