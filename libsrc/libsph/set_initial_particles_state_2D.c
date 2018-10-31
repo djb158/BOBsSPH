@@ -178,7 +178,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   dz2 = 2.0*dz;
   d   = dx2/2.0;
   raw_index = 0;
-  printf("here 200 Z0 = %20.10f \n",Z0);
   for (i=0;i<PARTICLES_IN_X;i++)
   {
     if (i <= CENTRE_POINT)
@@ -280,11 +279,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       particles[0].x[0][nparticles]             = raw_particle[0].x[0][t];
       particles[0].x[1][nparticles]             = raw_particle[0].x[1][t];
       particles[0].x[2][nparticles]             = raw_particle[0].x[2][t]; 
-      
-/*
-      if ( (nparticles < 1000) ) printf(" here 500 l = %i x = %20.10f z = %20.10f \n",nparticles,raw_particle[0].x[0][t],raw_particle[0].x[2][t]);
-      if ( (nparticles > 139203 - 1000) ) printf(" here 501 l = %i x = %20.10f z = %20.10f \n",nparticles,raw_particle[0].x[0][t],raw_particle[0].x[2][t]);
-*/
       particles[0].rho[nparticles]              = raw_particle[0].rho[t];
       particles[0].U[nparticles]                = raw_particle[0].U[t]; 
       particles[0].raw_index[nparticles]        = raw_index;
@@ -330,7 +324,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     x = particles[0].x[0][l];
     y = particles[0].x[1][l];
     z = particles[0].x[2][l];
-    if (z < 0.0) printf(" yes \n");
     if (fabs(z-z3)<EPSILON_DOUBLE ) 
     {
       node_info[rank].marker[l4] = l;
@@ -484,7 +477,5 @@ RETURN:
 
   verbosity(2,fname,pars);
  
-  exit(1);
-
   return particles;
 }
