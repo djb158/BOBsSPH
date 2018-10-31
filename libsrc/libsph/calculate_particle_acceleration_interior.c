@@ -281,14 +281,6 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
         c_j     = sqrt(GAMMA*p_j/rho_j);
         c_ij    = 0.5*(c_i+c_j);
         h_ij    = 0.5*(h_i+h_j);
-
-/*  djb start */
-      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
-      {
-        printf(" i = %i h_i = %12.5f  h_j = %12.5f \n",i,h_i,h_j);
-      }
-/* djb end */
-      
         h2_ij   = h_ij*h_ij;
         r_ij    = sqrt((x_i-x_j)*(x_i-x_j)
                 +      (z_i-z_j)*(z_i-z_j) );
@@ -327,14 +319,6 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
         {
           PII_ij = 0.0;
         }
-
-/*  djb start */
-      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
-      {
-        printf(" i = %i  m_j = %12.5f p_i = %12.5f rho2_i = %12.5f p_j = %12.5f rho2_j = %12.5f PII_ij = %12.5f\n",i,m_j,p_i,rho2_i,p_j,rho2_j,PII_ij);
-      }
-/* djb end */
-      
         fact_p   = m_j*(p_i/rho2_i + p_j/rho2_j+PII_ij);
         fact_vx  = m_j*MU_mom*(vx_j-vx_i)/rhom_ij;
         fact_vz  = m_j*MU_mom*(vz_j-vz_i)/rhom_ij;
@@ -346,14 +330,6 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
         {
           f = 1.0;
         }
-
-/*  djb start */
-      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
-      {
-        printf(" i = %i node = %i fact_p = %12.5f r_ij/h_ij = %12.5f r_ij = %12.5f h_ij = %12.5f x_i = %12.5f x_j = %12.5f \n",i,node,fact_p,r_ij/h_ij,r_ij,h_ij,x_i,x_j);
-      }
-/* djb end */
-      
         sum_0 = sum_0 - fact_p*dWdf(r_ij/h_ij,h_ij,dim,KERNEL_WIDTH)*dfdx(x_i,x_j,r_ij*h_ij);
         sum_2 = sum_2 - fact_p*dWdf(r_ij/h_ij,h_ij,dim,KERNEL_WIDTH)*dfdz(z_i,z_j,r_ij*h_ij);
 
