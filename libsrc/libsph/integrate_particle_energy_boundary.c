@@ -74,16 +74,10 @@ int IntegrateParticleEnergy_BOUNDARY(double *U,PARS *pars)
   n_ghost = node_info[rank].n_ghost;
   for (index=0;index<n_ghost;index++)
   {
-    l = node_info[rank].ghost[index];
-    species      = node_info[rank].species[l];
-    printf(" here 2000:  l = %i species = %i \n",l,species);
+    l            = node_info[rank].ghost[index];
     i_mirror_raw = node_info[rank].ghost_mirror[index];
-    if (i_mirror_raw > LARGE_NEGATIVE_INT)
-    {
-      l_mirror = node_info[rank].inv_raw_index[i_mirror_raw];
-      printf(" l_mirror = %i \n",l_mirror);
-      U[l] = U[l_mirror];
-    }
+    l_mirror     = node_info[rank].inv_raw_index[i_mirror_raw];
+    U[l]         = U[l_mirror];
   }
 /*                                                                           */
 /*                                                                           */
