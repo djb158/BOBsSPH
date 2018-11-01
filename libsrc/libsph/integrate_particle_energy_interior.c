@@ -73,15 +73,6 @@ double *IntegrateParticleEnergy_INTERIOR(double *U_0,double *dUdt_0,double dt,PA
 /*                                                                           */
 /*                                                                           */
 /*                                                                           */
-
-/*  djb start */
-      if (rank ==2)
-      {
-        printf("here 16:   i = %i U_i = %12.5f dUdt = %12.5f \n",i,U_0[470],dUdt_0[470]);
-        printf("here 16:   i = %i U_i = %12.5f dUdt = %12.5f \n",i,U_0[69775],dUdt_0[69775]);
-      }
-/* djb end */
-
   n_interior_and_boundary = node_info[rank].n_interior_and_boundary; 
   for (index=0;index<n_interior_and_boundary;index++)
   {
