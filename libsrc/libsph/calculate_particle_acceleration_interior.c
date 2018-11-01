@@ -346,14 +346,6 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
       td->matrix[0][i] = sum_0 + sum_vx;
       td->matrix[1][i] = 0.0;
       td->matrix[2][i] = sum_2 + sum_vz;
-
-/*  start */
-      if ( (rank ==2) && ((i == 470) || (i == 69775)) )
-      {
-        printf(" sum_vx = %12.5f \n",sum_vx);
-      }
-/* end */
-      
       if (is_nan_or_inf(sum_0,(char *)"a0",i) == EXIT_FAILURE) goto RETURN;
       if (is_nan_or_inf(sum_2,(char *)"a2",i) == EXIT_FAILURE) goto RETURN;
     }

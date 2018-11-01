@@ -60,25 +60,19 @@ int WriteNodeInfo(PARS *pars)
 
   int exit_status                      = EXIT_FAILURE;
 
-  printf(" gere 00 \n");
 
 #include  "pars_include.h"
-  printf(" gere 01 \n");
   verbosity(1,fname,pars);
-  printf(" gere 02 \n");
 
   out_file_name = (char *)calloc(MAX_CHARS,sizeof(char));
-  printf(" gere 03 \n");
 
   sprintf(out_file_name,"%s/node.%i",out_dir,rank);
-  printf(" gere 04 \n");
   if ((out_file_ptr=fopen(out_file_name,"wb"))==NULL)
   {
     printf(" %s() -unable to open %s for writing \n",fname,out_file_name);
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
-  printf(" gere 05 \n");
 
   fwrite(node_info[rank].node_name,sizeof(char),64,out_file_ptr);
   fwrite(node_info[rank].species,sizeof(int),NPARTICLES,out_file_ptr);

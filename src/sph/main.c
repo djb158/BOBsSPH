@@ -256,7 +256,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,1,rank);
 
       i_step++;
       nparticles = node_info[rank].nparticles;
@@ -373,7 +372,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,2,rank);
 
 /*###########################################################################*/
 /*                                                                           */
@@ -411,18 +409,15 @@ int main(int argc, char *argv[])
 /*                 integrate particle energy interior                        */
 /*                                                                           */
 
-      printf(" here 103 l = %i U_2 = %20.10f dUdt_1 = %20.10f\n",480,U_2[480],dUdt_1[480]);
       if ((U_3=IntegrateParticleEnergy_INTERIOR(U_2,dUdt_1,dt/2.0,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      printf(" here 102 l = %i U_3 = %20.10f \n",480,U_3[480]);
 /*                                                                           */
 /*                 integrate particle energy boundary                        */
 /*                                                                           */
 
-      printf(" here 101 l = %i U_3 = %20.10f \n",480,U_3[480]);
       if ( (IntegrateParticleEnergy_BOUNDARY(U_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -431,13 +426,11 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 particle energy                                           */
 /*                                                                           */
-      printf(" here 100 l = %i U_3 = %20.10f \n",480,U_3[480]);
       if ( (SetParticleEnergy(particles_3,U_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,3,rank);
 
 /*###########################################################################*/
 /*                                                                           */
@@ -680,7 +673,7 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
-      PrintHere(particles_3,4,rank);
+      PrintHere(particles_3,1,rank);
       particles_1 = particles_3;
       particles_2 = particles_4;
       particles_3 = NULL;
@@ -688,7 +681,6 @@ int main(int argc, char *argv[])
       printf(" i_step = %i TIME_STEPS_TO_WRITE = %i \n",i_step,TIME_STEPS_TO_WRITE);
       if ( ((i_step%TIME_STEPS_TO_WRITE)==0)  )
       {
-        printf(" gere 0 \n");
         time_slice++;
         if (rank == 0)
         {
@@ -704,14 +696,12 @@ int main(int argc, char *argv[])
             exit_status = EXIT_FAILURE;
             goto RETURN;
           }
-          printf(" HERE 00 \n");
           if ((WritePbobNodeDescrip(pbob,node_descrip,out_dir,rank,time_slice)) == EXIT_FAILURE) 
           {
             printf("Rank: %i %s(): -error return from WritePbobNodeDescrip()\n",rank,fname);
             exit_status = EXIT_FAILURE;
             goto RETURN;
           }
-          printf(" HERE 01 \n");
           Free_sph(pbob);
           Free_sph(node_descrip);
         }
@@ -955,18 +945,12 @@ int PrintHere(PARTICLES *particles,int i_here,int rank)
   printf("\n\nRank:%i  \n",rank);
   
   n_marker = node_info[rank].n_marker;
-/*
   for (j=0;j<n_marker;j++)
   {
     l = node_info[rank].marker[j];
     raw = node_info[rank].raw_index[l];
     printf("Rank: %i l=%i raw=%i h=%12.5f rho=%18.15f p=%9.5f U=%20.15f v = %20.15f x = %12.8f z = %12.8f\n",rank,l,raw,particles[0].h[l],particles[0].rho[l],particles[0].p[l],particles[0].U[l],particles[0].v[0][l],particles[0].x[0][l],particles[0].x[2][l]);
   }  
-*/
-  for (l=0;l<1000;l++) 
-  {
-    printf("l=%i x = %12.8f z = %12.8f U=%13.10f \n",l,particles[0].x[0][l],particles[0].x[2][l],particles[0].U[l]);
-  }
 /*
   for (g=30;g<40;g++)
   {

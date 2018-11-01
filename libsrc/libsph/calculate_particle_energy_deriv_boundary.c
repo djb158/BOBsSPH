@@ -74,17 +74,6 @@ int CalculateParticleEnergyDeriv_BOUNDARY(double *energy_deriv,PARS *pars)
     i_mirror_raw = node_info[rank].ghost_mirror[index];
     l_mirror = node_info[rank].inv_raw_index[i_mirror_raw];
     energy_deriv[l] =  energy_deriv[l_mirror];
-
-/*  djb start */
-      if (rank ==2)
-      {
-        if ( (l==470)  || (l==69775) )
-        {
-          printf("here 17:   i = %i U_i = %12.5f  \n",l,energy_deriv[l]);
-        }
-      }
-/* djb end */
-
   }
 
 

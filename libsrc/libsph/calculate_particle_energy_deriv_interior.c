@@ -310,7 +310,6 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
         if (node == rank)
         {
           p_j    = particles[0].p[j];
-          if ( (i == 470) && (j == 474) ) printf(" HERE 101 \n");
           d_j    = particles[0].divV[j];
           rho_j  = particles[0].rho[j];
           x_j    = particles[0].x[0][j];
@@ -323,7 +322,6 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
         }
         else
         {
-          if ( (i == 470) && (j == 474) ) printf(" HERE 100 \n");
           num = particles[0].nn_index[j].num;
           if (num == 0)
           {
@@ -417,16 +415,6 @@ void *CalculateParticleEnergyDeriv_INTERIOR(void *v_td)
         fact_h0  = m_j*((p_i/rho2_i + p_j/rho2_j+PII_ij)*(vx_j-vx_i) + 2.0*H_ij*(x_j-x_i));
         fact_h2  = m_j*((p_i/rho2_i + p_j/rho2_j+PII_ij)*(vz_j-vz_i) + 2.0*H_ij*(z_j-z_i));
         fact_v   = m_j*MU_en*(U_j-U_i)/rhom_ij;
-/*  djb start */
-      if (rank ==2)
-      {
-        if ( (i==470)  && (j == 474) )
-        {
-          printf("here 21:   i = %i j = %i fact_h0 = %20.10f m_j = %20.10f p_i = %20.10f p_j = %20.10f rho2_i = %20.10f rho2_j = %20.10f PI_ij = %20.10f \n",i,j,fact_h0,m_j,p_i,p_j,rho2_i,rho2_j,PII_ij);
-        }
-      }
-/* djb end */
-
         f        = r_ij/h_ij;
         f        = r_ij;
         if (fabs(f) < EPSILON_DOUBLE)
