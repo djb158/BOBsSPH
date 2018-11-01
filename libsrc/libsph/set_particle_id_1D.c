@@ -73,7 +73,7 @@ IDS *SetParticleID_1D(PARS *pars, PARTICLES *particles, double x, double y, doub
       x0 = particles[0].x[0][j];
       y0 = particles[0].x[1][j];
       z0 = particles[0].x[2][j];
-      if ( (fabs(x0-X0-dist)<EPSILON_DOUBLE) && (fabs(y0-y)<EPSILON_DOUBLE) &&  (fabs(z0-z)<EPSILON_DOUBLE) )
+      if ( (fabs(x0-dist-X0)<EPSILON_DOUBLE) && (fabs(y0-y)<EPSILON_DOUBLE) &&  (fabs(z0-z)<EPSILON_DOUBLE) )
       {
         ids[0].l_mirror = node_info[rank].raw_index[j];
         found = 1;
@@ -100,7 +100,7 @@ IDS *SetParticleID_1D(PARS *pars, PARTICLES *particles, double x, double y, doub
       x0 = particles[0].x[0][j];
       y0 = particles[0].x[1][j];
       z0 = particles[0].x[2][j];
-      if ( (fabs(x0-X1-dist)<EPSILON_DOUBLE) && (fabs(y0-y)<EPSILON_DOUBLE) &&  (fabs(z0-z)<EPSILON_DOUBLE) )
+      if ( (fabs(x0+dist-X1)<EPSILON_DOUBLE) && (fabs(y0-y)<EPSILON_DOUBLE) &&  (fabs(z0-z)<EPSILON_DOUBLE) )
       {
         ids[0].l_mirror = node_info[rank].raw_index[j];
         found = 1;

@@ -439,7 +439,7 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
       x0 = particles[0].x[0][j];
       y0 = particles[0].x[1][j];
       z0 = particles[0].x[2][j];
-      if ( (fabs(x0-X1-dist)<EPSILON_DOUBLE) && (fabs(y0-y)<EPSILON_DOUBLE) &&  (fabs(z0-z)<EPSILON_DOUBLE) )
+      if ( (fabs(x0+dist-X1)<EPSILON_DOUBLE) && (fabs(y0-y)<EPSILON_DOUBLE) &&  (fabs(z0-z)<EPSILON_DOUBLE) )
       {
         ids[0].l_mirror = node_info[rank].raw_index[j];
         found = 1;
@@ -493,7 +493,7 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
       x0 = particles[0].x[0][j];
       y0 = particles[0].x[1][j];
       z0 = particles[0].x[2][j];
-      if ( (fabs(z0-Z1-dist)<EPSILON_DOUBLE) && (fabs(x0-x)<EPSILON_DOUBLE) &&  (fabs(y0-y)<EPSILON_DOUBLE) )
+      if ( (fabs(z0+dist-Z1)<EPSILON_DOUBLE) && (fabs(x0-x)<EPSILON_DOUBLE) &&  (fabs(y0-y)<EPSILON_DOUBLE) )
       {
         ids[0].l_mirror = node_info[rank].raw_index[j];
         found = 1;
@@ -547,7 +547,7 @@ IDS *SetParticleID_3D(PARS *pars, PARTICLES *particles, double x, double y, doub
       x0 = particles[0].x[0][j];
       y0 = particles[0].x[1][j];
       z0 = particles[0].x[2][j];
-      if ( (fabs(y0-Y1-dist)<EPSILON_DOUBLE) && (fabs(x0-x)<EPSILON_DOUBLE) &&  (fabs(z0-z)<EPSILON_DOUBLE) )
+      if ( (fabs(y0+dist-Y1)<EPSILON_DOUBLE) && (fabs(x0-x)<EPSILON_DOUBLE) &&  (fabs(z0-z)<EPSILON_DOUBLE) )
       {
         ids[0].l_mirror = node_info[rank].raw_index[j];
         found = 1;
