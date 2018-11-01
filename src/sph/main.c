@@ -416,10 +416,12 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      printf(" here 102 l = %i U = %20.10f \n",480,U_3[480]);
 /*                                                                           */
 /*                 integrate particle energy boundary                        */
 /*                                                                           */
 
+      printf(" here 101 l = %i U = %20.10f \n",480,U_3[480]);
       if ( (IntegrateParticleEnergy_BOUNDARY(U_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -428,6 +430,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 particle energy                                           */
 /*                                                                           */
+      printf(" here 100 l = %i U = %20.10f \n",480,U_3[480]);
       if ( (SetParticleEnergy(particles_3,U_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
