@@ -563,6 +563,7 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
+      PrintHere(particles_3,4,rank);
       if ((dUdt_3=CalculateParticleEnergyDeriv_INTERIOR_thread_wrapper(particles_3,x_particles,pars))==NULL )
       {
         exit_status = EXIT_FAILURE;
@@ -625,11 +626,13 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
+      PrintHere(particles_3,3,rank);
       if ( (SetParticleAcceleration(particles_3,a_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,2,rank);
       if ( (SetParticleEnergyDeriv(particles_3,dUdt_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
