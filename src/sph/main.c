@@ -548,6 +548,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*###########################################################################*/
 
+      PrintHere(particles_3,5,rank);
       if ((a_3=CalculateParticleAcceleration_INTERIOR_thread_wrapper(particles_3,x_particles,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
