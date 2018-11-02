@@ -943,7 +943,12 @@ int PrintHere(PARTICLES *particles,int i_here,int rank)
   printf("# \n");
   printf("# \n");
   printf("\n\nRank:%i  \n",rank);
+  for (l=9198 - 500;l<9198 + 500;l++)
+  {
+    printf("Rank: %i l=%i raw=%i h=%12.5f rho=%18.15f p=%9.5f U=%20.15f v = %20.15f x = %12.8f z = %12.8f\n",rank,l,raw,particles[0].h[l],particles[0].rho[l],particles[0].p[l],particles[0].U[l],particles[0].v[0][l],particles[0].x[0][l],particles[0].x[2][l]);
+  }
   
+/*
   n_marker = node_info[rank].n_marker;
   for (j=0;j<n_marker;j++)
   {
@@ -951,6 +956,8 @@ int PrintHere(PARTICLES *particles,int i_here,int rank)
     raw = node_info[rank].raw_index[l];
     printf("Rank: %i l=%i raw=%i h=%12.5f rho=%18.15f p=%9.5f U=%20.15f v = %20.15f x = %12.8f z = %12.8f\n",rank,l,raw,particles[0].h[l],particles[0].rho[l],particles[0].p[l],particles[0].U[l],particles[0].v[0][l],particles[0].x[0][l],particles[0].x[2][l]);
   }  
+*/
+
 /*
   for (g=30;g<40;g++)
   {
