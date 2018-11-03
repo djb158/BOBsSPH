@@ -316,6 +316,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 integrate particle velocity interior                      */
 /*                                                                           */
+      printf(" here 102a x_1 = %20.10f v_2 = %20.10f\n",x_1[9195],v_2[9195]);
       if ((x_3=IntegrateParticleVelocity_INTERIOR(x_1,v_2,dt,pars))==NULL)
       {
         printf(" %s() -error integrating particle velocity interior\n",fname);
