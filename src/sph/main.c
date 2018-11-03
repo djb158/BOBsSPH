@@ -426,6 +426,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 particle energy                                           */
 /*                                                                           */
+      PrintHere(particles_3,10,rank);
       if ( (SetParticleEnergy(particles_3,U_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -450,6 +451,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 update kernel lengths                                     */
 /*                                                                           */
+      PrintHere(particles_3,9,rank);
       if ( (UpdateKernel(particles_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -471,6 +473,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*###########################################################################*/
 
+      PrintHere(particles_3,8,rank);
       if ( (SetParticleDensity_INTERIOR_thread_wrapper(particles_3,x_particles,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -503,6 +506,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 pressure                                                  */
 /*                                                                           */
+      PrintHere(particles_3,7,rank);
       if ( (EquationOfState(particles_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -527,6 +531,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 divergence                                                */
 /*                                                                           */
+      PrintHere(particles_3,6,rank);
       if ( (CalculateDivergenceV_thread_wrapper(particles_3,x_particles,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
