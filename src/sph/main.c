@@ -417,6 +417,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 integrate particle energy boundary                        */
 /*                                                                           */
+      printf(" here 100 U_3 = %20.10f v_3 = %20.10f\n",U_3[9195],v_3[9195]);
 
       if ( (IntegrateParticleEnergy_BOUNDARY(U_3,pars))==EXIT_FAILURE )
       {
@@ -952,7 +953,7 @@ int PrintHere(PARTICLES *particles,int i_here,int rank)
   printf("# \n");
   printf("# \n");
   printf("\n\nRank:%i  \n",rank);
-  for (l=9198 - 500;l<9198 + 500;l++)
+  for (l=9195 - 10;l<9195 + 10;l++)
   {
     printf("Rank: %i l=%i raw=%i h=%12.5f rho=%18.15f p=%9.5f U=%20.15f v = %20.15f x = %12.8f z = %12.8f\n",rank,l,raw,particles[0].h[l],particles[0].rho[l],particles[0].p[l],particles[0].U[l],particles[0].v[0][l],particles[0].x[0][l],particles[0].x[2][l]);
   }
