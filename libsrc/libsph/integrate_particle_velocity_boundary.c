@@ -75,6 +75,7 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
   {
     l = node_info[rank].boundary[index];
     species = node_info[rank].species[l];
+    printf(" here 1000 species = %i \n",species);
 
     switch(species)
     {
@@ -223,6 +224,7 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
   {
     l            = node_info[rank].ghost[index];
     species      = node_info[rank].species[l];
+    printf(" here 1001 species = %i \n",species);
     i_mirror_raw = node_info[rank].ghost_mirror[index];
     l_mirror     = node_info[rank].inv_raw_index[i_mirror_raw];
 
