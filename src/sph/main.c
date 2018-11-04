@@ -418,7 +418,9 @@ int main(int argc, char *argv[])
 /*                 integrate particle energy interior                        */
 /*                                                                           */
 
+/*
       printf(" here 100a U_2 = %20.10f dUdt_1 = %20.10f\n",U_2[9195],dUdt_1[9195]);
+*
       if ((U_3=IntegrateParticleEnergy_INTERIOR(U_2,dUdt_1,dt/2.0,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
