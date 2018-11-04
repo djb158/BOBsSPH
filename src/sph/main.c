@@ -429,7 +429,9 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 integrate particle energy boundary                        */
 /*                                                                           */
+/*
       printf(" here 100 U_3 = %20.10f v_3 = %20.10f\n",U_3[9195],v_3[9195]);
+*/
 
       if ( (IntegrateParticleEnergy_BOUNDARY(U_3,pars))==EXIT_FAILURE )
       {
