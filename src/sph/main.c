@@ -331,7 +331,6 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*
       printf(" here 102 x_3 = %20.10f v_2 = %20.10f\n",x_3[9195],v_2[9195]);
-*/
       if ( 
            ((IntegrateParticleVelocity_BOUNDARY(x_3,pars))==EXIT_FAILURE )
                                           ||
@@ -342,12 +341,11 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+*/
 /*                                                                           */
 /*                 integrate particle acceleration interior                  */
 /*                                                                           */
-/*
       printf(" here 102 a_1 = %20.10f v_2 = %20.10f\n",a_1[9195],v_2[9195]);
-*/
       if ((v_3=IntegrateParticleAcceleration_INTERIOR(v_2,a_1,dt/2.0,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
