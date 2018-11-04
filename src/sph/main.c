@@ -316,7 +316,9 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 integrate particle velocity interior                      */
 /*                                                                           */
+/*
       printf(" here 102a x_1 = %20.10f v_2 = %20.10f\n",x_1[9195],v_2[9195]);
+*/
       if ((x_3=IntegrateParticleVelocity_INTERIOR(x_1,v_2,dt,pars))==NULL)
       {
         printf(" %s() -error integrating particle velocity interior\n",fname);
@@ -327,7 +329,9 @@ int main(int argc, char *argv[])
 /*                 integrate particle velocity boundary                      */
 /*                 -need to call twice                                       */
 /*                                                                           */
+/*
       printf(" here 102 x_3 = %20.10f v_2 = %20.10f\n",x_3[9195],v_2[9195]);
+*/
       if ( 
            ((IntegrateParticleVelocity_BOUNDARY(x_3,pars))==EXIT_FAILURE )
                                           ||
@@ -341,7 +345,9 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 integrate particle acceleration interior                  */
 /*                                                                           */
+/*
       printf(" here 102 a_1 = %20.10f v_2 = %20.10f\n",a_1[9195],v_2[9195]);
+*/
       if ((v_3=IntegrateParticleAcceleration_INTERIOR(v_2,a_1,dt/2.0,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
