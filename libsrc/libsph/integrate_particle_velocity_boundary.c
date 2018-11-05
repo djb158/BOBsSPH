@@ -71,11 +71,11 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
   nparticles = node_info[rank].nparticles;
   n_boundary = node_info[rank].n_boundary;
 
+  goto JACK;
   for (index=0;index<n_boundary;index++)
   {
     l = node_info[rank].boundary[index];
     species = node_info[rank].species[l];
-    printf(" here 1000 species = %i \n",species);
 
     switch(species)
     {
@@ -219,6 +219,7 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
     }
   }
 
+JACK:
   n_ghost = node_info[rank].n_ghost;
   for (index=0;index<n_ghost;index++)
   {
