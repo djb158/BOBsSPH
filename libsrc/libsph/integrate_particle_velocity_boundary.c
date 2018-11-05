@@ -218,67 +218,6 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
     }
   }
 
-  n_ghost = node_info[rank].n_ghost;
-  for (index=0;index<n_ghost;index++)
-  {
-    l            = node_info[rank].ghost[index];
-    species      = node_info[rank].species[l];
-    i_mirror_raw = node_info[rank].ghost_mirror[index];
-    l_mirror     = node_info[rank].inv_raw_index[i_mirror_raw];
-
-    switch(species)
-    {
-/*                                                                           */
-/*                 LHS boundary                                              */
-/*                                                                           */
-      case 1025:
-        x[0][l]  =  X0 - (x[0][l_mirror] - X0);
-        x[1][l]  =        x[1][l_mirror];
-        x[2][l]  =        x[2][l_mirror];
-        break;
-/*                                                                           */
-/*                 RHS boundary                                              */
-/*                                                                           */
-      case 1026:
-        x[0][l]  =  X1 - (x[0][l_mirror] - X1);
-        x[1][l]  =        x[1][l_mirror];
-        x[2][l]  =        x[2][l_mirror];
-        break;
-/*                                                                           */
-/*                 BOTTOM boundary                                           */
-/*                                                                           */
-      case 1027:
-        x[0][l]  =        x[0][l_mirror];
-        x[1][l]  =        x[1][l_mirror];
-        x[2][l]  =  Z0 - (x[2][l_mirror] - Z0);
-        break;
-/*                                                                           */
-/*                 TOP boundary                                              */
-/*                                                                           */
-      case 1028:
-        x[0][l]  =        x[0][l_mirror];
-        x[1][l]  =        x[1][l_mirror];
-        x[2][l]  =  Z1 - (x[2][l_mirror] - Z1);
-        break;
-/*                                                                           */
-/*                 FRONT boundary                                            */
-/*                                                                           */
-      case 1029:
-        x[0][l]  =        x[0][l_mirror];
-        x[1][l]  =  Y0 - (x[1][l_mirror] - Y0);
-        x[2][l]  =        x[2][l_mirror];
-        break;
-/*                                                                           */
-/*                 BACK boundary                                             */
-/*                                                                           */
-      case 1030:
-        x[0][l]  =        x[0][l_mirror];
-        x[1][l]  =  Y1 - (x[1][l_mirror] - Y1);
-        x[2][l]  =        x[2][l_mirror];
-        break;
-    }
-  }
-
   exit_status = EXIT_SUCCESS;
 
 RETURN:
