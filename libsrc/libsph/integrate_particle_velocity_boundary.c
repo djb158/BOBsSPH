@@ -71,7 +71,6 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
   nparticles = node_info[rank].nparticles;
   n_boundary = node_info[rank].n_boundary;
 
-  goto JACK;
   for (index=0;index<n_boundary;index++)
   {
     l = node_info[rank].boundary[index];
@@ -219,7 +218,7 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
     }
   }
 
-JACK:
+  goto JACK;
   n_ghost = node_info[rank].n_ghost;
   for (index=0;index<n_ghost;index++)
   {
@@ -280,6 +279,7 @@ JACK:
         break;
     }
   }
+JACK:
 
   exit_status = EXIT_SUCCESS;
 
