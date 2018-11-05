@@ -218,7 +218,6 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
     }
   }
 
-  goto JACK;
   n_ghost = node_info[rank].n_ghost;
   for (index=0;index<n_ghost;index++)
   {
@@ -279,7 +278,6 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
         break;
     }
   }
-JACK:
 
   exit_status = EXIT_SUCCESS;
 
