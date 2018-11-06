@@ -343,6 +343,7 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
                                + dfdz(z_i,z_j,r_ij*h_ij)*dfdz(z_i,z_j,r_ij*h_ij))
                                + dWdf(r_ij/h_ij,h_ij,dim,KERNEL_WIDTH)/f);
       }
+      if (i == 9195) printf(" sum_0 = %20.10f sum_vx = %20.10f \n",sum_0,sum_vx);
       td->matrix[0][i] = sum_0 + sum_vx;
       td->matrix[1][i] = 0.0;
       td->matrix[2][i] = sum_2 + sum_vz;
