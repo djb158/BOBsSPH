@@ -634,6 +634,7 @@ int main(int argc, char *argv[])
         }
       }
       PrintHere(particles_3,24,rank);
+      printf(" v_2 = %20.10f %20.10f  a_3 = %20.10f  %20.10f\n",v_2[0][9195],v_2[2][9195],a_3[0][9195],a_3[2][9195]);
       if ((v_4=IntegrateParticleAcceleration_INTERIOR(v_2,a_3,dt,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
