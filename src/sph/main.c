@@ -325,6 +325,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,1,rank);
 /*                                                                           */
 /*                 integrate particle velocity boundary                      */
 /*                 -need to call twice                                       */
@@ -332,6 +333,7 @@ int main(int argc, char *argv[])
 /*
       printf(" here 102 x_3 = %20.10f v_2 = %20.10f\n",x_3[0][9195],v_2[0][9195]);
 */
+      PrintHere(particles_3,2,rank);
       if ( 
            ((IntegrateParticleVelocity_BOUNDARY(x_3,pars))==EXIT_FAILURE )
                                           ||
@@ -347,6 +349,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
       printf(" here 102  a_1 = %20.10f v_2 = %20.10f\n",a_1[0][9195],v_2[0][9195]);
       printf(" here 102b x_3 = %20.10f v_3 = %20.10f\n",x_3[0][9195],v_2[0][9195]);
+      PrintHere(particles_3,3,rank);
       if ((v_3=IntegrateParticleAcceleration_INTERIOR(v_2,a_1,dt/2.0,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
@@ -356,6 +359,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 integrate particle acceleration boundary                  */
 /*                                                                           */
+      PrintHere(particles_3,4,rank);
       if (
            ((IntegrateParticleAcceleration_BOUNDARY(v_3,pars))==EXIT_FAILURE) 
                                            ||
@@ -369,6 +373,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 update particle_3 position                                */
 /*                                                                           */
+      PrintHere(particles_3,5,rank);
       if ((SetParticlePosition(particles_3,x_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -388,6 +393,7 @@ int main(int argc, char *argv[])
 /*            BLOCK 1: PUSH_AND_PULL_N_AND_X :  START                        */
 /*                                                                           */
 /*                                                                           */
+      PrintHere(particles_3,6,rank);
       if ((x_particles = Push_and_Pull_N_and_X(particles_3,pars)) == NULL)
       {
         printf(" %s() -error return from Push_and_Pull_N_and_X() -aborting\n",fname);
@@ -404,6 +410,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*            BLOCK 2: PUSH_AND_PULL_V :  START                              */
 /*                                                                           */
+      PrintHere(particles_3,7,rank);
       if (Push_and_Pull_V(particles_3,pars,x_particles) == EXIT_FAILURE)
       {
         printf(" %s() -error return from Push_and_pull_V() -aborting\n",fname);
@@ -427,6 +434,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,8,rank);
 /*                                                                           */
 /*                 integrate particle energy boundary                        */
 /*                                                                           */
@@ -442,12 +450,13 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 particle energy                                           */
 /*                                                                           */
-      PrintHere(particles_3,10,rank);
+      PrintHere(particles_3,9,rank);
       if ( (SetParticleEnergy(particles_3,U_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,10,rank);
 
 /*###########################################################################*/
 /*                                                                           */
@@ -467,7 +476,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 update kernel lengths                                     */
 /*                                                                           */
-      PrintHere(particles_3,9,rank);
+      PrintHere(particles_3,11,rank);
       if ( (UpdateKernel(particles_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -489,12 +498,13 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*###########################################################################*/
 
-      PrintHere(particles_3,8,rank);
+      PrintHere(particles_3,12,rank);
       if ( (SetParticleDensity_INTERIOR_thread_wrapper(particles_3,x_particles,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,13,rank);
       if (
           ((SetParticleDensity_BOUNDARY(particles_3,pars))==EXIT_FAILURE )
                                        ||
@@ -509,6 +519,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*            BLOCK 5: PUSH_AND_PULL_RHO :  START                            */
 /*                                                                           */
+      PrintHere(particles_3,14,rank);
       if (Push_and_Pull_RHO(particles_3,pars,x_particles) == EXIT_FAILURE)
       {
         printf(" %s() -error return from Push_N() -aborting\n",fname);
@@ -522,7 +533,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 pressure                                                  */
 /*                                                                           */
-      PrintHere(particles_3,7,rank);
+      PrintHere(particles_3,15,rank);
       if ( (EquationOfState(particles_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -533,6 +544,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*            BLOCK 6: PUSH_AND_PULL_P :  START                              */
 /*                                                                           */
+      PrintHere(particles_3,16,rank);
       if (Push_and_Pull_P(particles_3,pars,x_particles) == EXIT_FAILURE)
       {
         printf(" %s() -error return from Push_N() -aborting\n",fname);
@@ -547,7 +559,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 divergence                                                */
 /*                                                                           */
-      PrintHere(particles_3,6,rank);
+      PrintHere(particles_3,17,rank);
       if ( (CalculateDivergenceV_thread_wrapper(particles_3,x_particles,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -569,12 +581,13 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*###########################################################################*/
 
-      PrintHere(particles_3,5,rank);
+      PrintHere(particles_3,18,rank);
       if ((a_3=CalculateParticleAcceleration_INTERIOR_thread_wrapper(particles_3,x_particles,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,19,rank);
       if (
            ((CalculateParticleAcceleration_BOUNDARY(a_3,pars))==EXIT_FAILURE )
                                              ||
@@ -585,12 +598,13 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
-      PrintHere(particles_3,4,rank);
+      PrintHere(particles_3,20,rank);
       if ((dUdt_3=CalculateParticleEnergyDeriv_INTERIOR_thread_wrapper(particles_3,x_particles,pars))==NULL )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,21,rank);
 
       if(
           ((CalculateParticleEnergyDeriv_BOUNDARY(dUdt_3,pars))==EXIT_FAILURE )
@@ -601,6 +615,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,22,rank);
 
       if ( (vorticity=CalculateParticleVorticity(particles_3,x_particles,pars))==NULL )
       {
@@ -608,6 +623,7 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
       n_offnode_neighbours = particles_3[0].n_offnode_neighbours;
+      PrintHere(particles_3,23,rank);
       if (n_offnode_neighbours > 0)
       {
         if ( (FreeParticles(&x_particles,pars,n_offnode_neighbours))==EXIT_FAILURE )
@@ -617,11 +633,13 @@ int main(int argc, char *argv[])
           goto RETURN;
         }
       }
+      PrintHere(particles_3,24,rank);
       if ((v_4=IntegrateParticleAcceleration_INTERIOR(v_2,a_3,dt,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,25,rank);
       if (
           ((IntegrateParticleAcceleration_BOUNDARY(v_4,pars))==EXIT_FAILURE )
                                           ||
@@ -631,12 +649,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,26,rank);
 
       if ((U_4=IntegrateParticleEnergy_INTERIOR(U_2,dUdt_3,dt,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+
+      PrintHere(particles_3,27,rank);
 
       if (
           ((IntegrateParticleEnergy_BOUNDARY(U_4,pars))==EXIT_FAILURE)
@@ -648,18 +669,19 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
-      PrintHere(particles_3,3,rank);
+      PrintHere(particles_3,28,rank);
       if ( (SetParticleAcceleration(particles_3,a_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,2,rank);
+      PrintHere(particles_3,29,rank);
       if ( (SetParticleEnergyDeriv(particles_3,dUdt_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,30,rank);
       if ( (SetParticleVelocity(particles_4,v_4,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
@@ -670,6 +692,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_4,31,rank);
       if (VERBOSITY > 0)
       {
         if ( (CheckForNaN(particles_3,pars))==EXIT_FAILURE)
@@ -685,12 +708,14 @@ int main(int argc, char *argv[])
           goto RETURN;
         }
       }
+      PrintHere(particles_3,32,rank);
       if ( (FreeParticles(&particles_1,pars,NPARTICLES))==EXIT_FAILURE )
       {
         printf("Rank: %i %s():particles_1 -error return from FreeParticles()\n",rank,fname);
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,33,rank);
       if ( (FreeParticles(&particles_2,pars,NPARTICLES))==EXIT_FAILURE )
       {
         printf("Rank: %i %s():particles_2 -error return from FreeParticles()\n",rank,fname);
@@ -698,7 +723,7 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
-      PrintHere(particles_3,1,rank);
+      PrintHere(particles_3,34,rank);
       particles_1 = particles_3;
       particles_2 = particles_4;
       particles_3 = NULL;
