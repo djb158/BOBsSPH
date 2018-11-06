@@ -283,6 +283,7 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
     }
   }
 
+
   printf(" HERE 3000 x = %20.10f \n",x[0][9195]);
   exit_status = EXIT_SUCCESS;
 
