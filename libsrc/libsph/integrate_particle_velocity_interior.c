@@ -125,6 +125,7 @@ double **IntegrateParticleVelocity_INTERIOR(double **x_0,double **v_0,double dt,
 
 
   exit_status = EXIT_SUCCESS;
+  printf(" HERE 4000 x = %20.10f \n",x_1[0][9195]);
   
 RETURN:
   verbosity(2,fname,pars);
