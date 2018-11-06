@@ -587,6 +587,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      printf("here 2001 a_3 = %20.10f  %20.10f\n",a_3[0][9195],a_3[2][9195]);
       PrintHere(particles_3,19,rank);
       if (
            ((CalculateParticleAcceleration_BOUNDARY(a_3,pars))==EXIT_FAILURE )
