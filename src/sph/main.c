@@ -317,7 +317,7 @@ int main(int argc, char *argv[])
 /*                 integrate particle velocity interior                      */
 /*                                                                           */
 /*
-      printf(" here 102a x_1 = %20.10f v_2 = %20.10f\n",x_1[9195],v_2[9195]);
+      printf(" here 102a x_1 = %20.10f v_2 = %20.10f\n",x_1[0][9195],v_2[0][9195]);
 */
       if ((x_3=IntegrateParticleVelocity_INTERIOR(x_1,v_2,dt,pars))==NULL)
       {
@@ -330,7 +330,7 @@ int main(int argc, char *argv[])
 /*                 -need to call twice                                       */
 /*                                                                           */
 /*
-      printf(" here 102 x_3 = %20.10f v_2 = %20.10f\n",x_3[9195],v_2[9195]);
+      printf(" here 102 x_3 = %20.10f v_2 = %20.10f\n",x_3[0][9195],v_2[0][9195]);
       if ( 
            ((IntegrateParticleVelocity_BOUNDARY(x_3,pars))==EXIT_FAILURE )
                                           ||
@@ -345,14 +345,14 @@ int main(int argc, char *argv[])
 /*                                                                           */
 /*                 integrate particle acceleration interior                  */
 /*                                                                           */
-      printf(" here 102  a_1 = %20.10f v_2 = %20.10f\n",a_1[9195],v_2[9195]);
-      printf(" here 102b x_3 = %20.10f v_3 = %20.10f\n",x_3[9195],v_2[9195]);
+      printf(" here 102  a_1 = %20.10f v_2 = %20.10f\n",a_1[0][9195],v_2[0][9195]);
+      printf(" here 102b x_3 = %20.10f v_3 = %20.10f\n",x_3[0][9195],v_2[0][9195]);
       if ((v_3=IntegrateParticleAcceleration_INTERIOR(v_2,a_1,dt/2.0,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      printf(" here 101 x_3 = %20.10f v_3 = %20.10f\n",x_3[9195],v_3[9195]);
+      printf(" here 101 x_3 = %20.10f v_3 = %20.10f\n",x_3[0][9195],v_3[0][9195]);
 /*                                                                           */
 /*                 integrate particle acceleration boundary                  */
 /*                                                                           */
@@ -365,7 +365,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      printf(" here 101a x_3 = %20.10f v_3 = %20.10f\n",x_3[9195],v_3[9195]);
+      printf(" here 101a x_3 = %20.10f v_3 = %20.10f\n",x_3[0][9195],v_3[0][9195]);
 /*                                                                           */
 /*                 update particle_3 position                                */
 /*                                                                           */
@@ -431,7 +431,7 @@ int main(int argc, char *argv[])
 /*                 integrate particle energy boundary                        */
 /*                                                                           */
 /*
-      printf(" here 100 U_3 = %20.10f v_3 = %20.10f\n",U_3[9195],v_3[9195]);
+      printf(" here 100 U_3 = %20.10f v_3 = %20.10f\n",U_3[9195],v_3[0][9195]);
 */
 
       if ( (IntegrateParticleEnergy_BOUNDARY(U_3,pars))==EXIT_FAILURE )
