@@ -331,7 +331,10 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
           f = 1.0;
         }
         sum_0 = sum_0 - fact_p*dWdf(r_ij/h_ij,h_ij,dim,KERNEL_WIDTH)*dfdx(x_i,x_j,r_ij*h_ij);
+/*
       if (i == 9195) printf(" fact_p = %20.10f dWdf = %20.10f dfdx = %20.10f \n",fact_p,dWdf(r_ij/h_ij,h_ij,dim,KERNEL_WIDTH),dfdx(x_i,x_j,r_ij*h_ij));
+*/
+      if (i == 9195) printf(" m_j = %20.10f p_i = %20.10f rho2_i = %20.10f p_j = %20.10f rho2_j = %20.10f PII_ij = %20.10f \n",m_j,p_i,rho2_i,p_j,rho2_j,PII_ij);
         sum_2 = sum_2 - fact_p*dWdf(r_ij/h_ij,h_ij,dim,KERNEL_WIDTH)*dfdz(z_i,z_j,r_ij*h_ij);
 
         sum_vx = sum_vx + fact_vx*(d2Wdf2(r_ij/h_ij,h_ij,dim,KERNEL_WIDTH) 
