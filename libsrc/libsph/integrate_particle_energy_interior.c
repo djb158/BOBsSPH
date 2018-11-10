@@ -68,7 +68,7 @@ double *IntegrateParticleEnergy_INTERIOR(double *U_0,double *dUdt_0,double dt,PA
   U_1=(double *)calloc(NPARTICLES,sizeof(double));
   for (i=0;i<NPARTICLES;i++)
   {
-    U_1[i] = LARGE_NEGATIVE_DOUBLE;
+    U_1[i] = U_0[i];
   }
 /*                                                                           */
 /*                                                                           */
