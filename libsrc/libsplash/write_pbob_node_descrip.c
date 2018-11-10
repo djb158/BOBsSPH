@@ -77,10 +77,8 @@ int WritePbobNodeDescrip(PBOB *pbob,NODE_DESCRIP *node_descrip,char *out_dir,int
 /*                 access in rank order.                                     */
 /*                                                                           */
 
-  printf("  iere 0 \n");
   file_name = (char *)calloc(MAX_CHARS,sizeof(char));
 
-  printf("  iere 1 \n");
   if (time_slice >= 10000)
   {
     sprintf(file_name,"%s/output_%5i.pbob",out_dir,time_slice);
@@ -107,7 +105,6 @@ int WritePbobNodeDescrip(PBOB *pbob,NODE_DESCRIP *node_descrip,char *out_dir,int
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
-  printf("  iere 2 \n");
 /*                                                                           */
 /*                                                                           */
 /*                                                                           */
@@ -118,12 +115,10 @@ int WritePbobNodeDescrip(PBOB *pbob,NODE_DESCRIP *node_descrip,char *out_dir,int
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
-  printf("  iere 3 \n");
 
   fwrite(pbob,sizeof(PBOB),1,file_ptr);
   fwrite(node_descrip,sizeof(NODE_DESCRIP),cluster_size+1,file_ptr);
   fclose(file_ptr);
-  printf("  iere 4 \n");
   exit_status = EXIT_SUCCESS;
 
 RETURN:
