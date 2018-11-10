@@ -68,8 +68,6 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
 #include "pars_include.h"
   verbosity(1,fname,pars);
 
-  printf(" HERE 3002 x = %20.10f \n",x[0][9195]);
-
   nparticles = node_info[rank].nparticles;
   n_boundary = node_info[rank].n_boundary;
 
@@ -220,8 +218,6 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
     }
   }
 
-  printf(" HERE 3001 x = %20.10f \n",x[0][9195]);
-
   n_ghost = node_info[rank].n_ghost;
   for (index=0;index<n_ghost;index++)
   {
@@ -284,7 +280,6 @@ int IntegrateParticleVelocity_BOUNDARY(double **x,PARS *pars)
   }
 
 
-  printf(" HERE 3000 x = %20.10f \n",x[0][9195]);
   exit_status = EXIT_SUCCESS;
 
 RETURN:
