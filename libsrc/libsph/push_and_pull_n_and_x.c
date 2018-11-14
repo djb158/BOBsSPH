@@ -252,6 +252,7 @@ PARTICLES *Push_and_Pull_N_and_X(PARTICLES *particles_3,PARS *pars)
     for (i=0;i<n_offnode_neighbours;i++)
     {
       x_particles[0].x[0][i]  = X[i];
+      x_particles[0].m[i]     = PARTICLE_MASS;
       if (DIMENSIONS == 2)
       {
         x_particles[0].x[2][i] = Z[i];
