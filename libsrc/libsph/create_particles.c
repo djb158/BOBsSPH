@@ -124,24 +124,24 @@ PARTICLES *CreateParticles(int N,PARS *pars)
     particles[0].nn_index[i].num                   = LARGE_NEGATIVE_INT;
     particles[0].nn_index[i].node                  = NULL;
     particles[0].nn_index[i].n_offnode_neighbours  = NULL;
-    particles[0].raw_index[i]                      = LARGE_NEGATIVE_INT;
+    particles[0].raw_index[i]                      = 0;
     particles[0].species[i]                        = LARGE_NEGATIVE_INT;
     particles[0].m[i]                              = PARTICLE_MASS;
-    particles[0].h[i]                              = LARGE_NEGATIVE_DOUBLE;
-    particles[0].x[0][i]                           = LARGE_NEGATIVE_DOUBLE;
-    particles[0].x[1][i]                           = LARGE_NEGATIVE_DOUBLE;
-    particles[0].x[2][i]                           = LARGE_NEGATIVE_DOUBLE;
-    particles[0].v[0][i]                           = LARGE_NEGATIVE_DOUBLE;
-    particles[0].v[1][i]                           = LARGE_NEGATIVE_DOUBLE;
-    particles[0].v[2][i]                           = LARGE_NEGATIVE_DOUBLE;
-    particles[0].dvdt[0][i]                        = LARGE_NEGATIVE_DOUBLE;
-    particles[0].dvdt[1][i]                        = LARGE_NEGATIVE_DOUBLE;
-    particles[0].dvdt[2][i]                        = LARGE_NEGATIVE_DOUBLE;
-    particles[0].p[i]                              = LARGE_NEGATIVE_DOUBLE;
-    particles[0].rho[i]                            = LARGE_NEGATIVE_DOUBLE;
-    particles[0].U[i]                              = LARGE_NEGATIVE_DOUBLE;
-    particles[0].dUdt[i]                           = LARGE_NEGATIVE_DOUBLE;
-    particles[0].divV[i]                           = LARGE_NEGATIVE_DOUBLE;
+    particles[0].h[i]                              = 0.0;
+    particles[0].x[0][i]                           = 0.0;
+    particles[0].x[1][i]                           = 0.0;
+    particles[0].x[2][i]                           = 0.0;
+    particles[0].v[0][i]                           = 0.0;
+    particles[0].v[1][i]                           = 0.0;
+    particles[0].v[2][i]                           = 0.0;
+    particles[0].dvdt[0][i]                        = 0.0;
+    particles[0].dvdt[1][i]                        = 0.0;
+    particles[0].dvdt[2][i]                        = 0.0;
+    particles[0].p[i]                              = 0.0;
+    particles[0].rho[i]                            = 1.0;
+    particles[0].U[i]                              = 0.0;
+    particles[0].dUdt[i]                           = 0.0;
+    particles[0].divV[i]                           = 0.0;
   }
 /*                                                                            */
 /*                                                                            */
