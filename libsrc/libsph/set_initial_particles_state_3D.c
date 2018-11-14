@@ -266,6 +266,7 @@ PARTICLES *SetInitialParticlesState3D(PARS *pars,int particles_num,char *rank_na
     printf("Rank: %i %s(): -error return creating particle()\n",rank,fname);
     goto RETURN;
   }
+  particles[0].t = 0.0;
 /*                                                                            */
 /*                 initialize NODE_INFO struct                                */
 /*                                                                            */
@@ -285,6 +286,7 @@ PARTICLES *SetInitialParticlesState3D(PARS *pars,int particles_num,char *rank_na
     raw_index = raw_particle[0].raw_index[t];
     if ( (raw_index>=(rank+0)*NPARTICLES) && (raw_index<(rank+1)*NPARTICLES) )
     {
+      particles[0].m[nparticles]                = PARTICLE_MASS;
       particles[0].x[0][nparticles]             = raw_particle[0].x[0][t];
       particles[0].x[1][nparticles]             = raw_particle[0].x[1][t];
       particles[0].x[2][nparticles]             = raw_particle[0].x[2][t];

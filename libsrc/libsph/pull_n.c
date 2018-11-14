@@ -287,6 +287,7 @@ PARTICLES *Pull_N(PARS *pars,PARTICLES *particles_3)
       x_particles[0].h[i]     = H[i];
       x_particles[0].divV[i]  = divV[i];
       x_particles[0].U[i]     = U[i];
+      x_particles[0].m[i]     = PARTICLE_MASS;
       if (DIMENSIONS == 2)
       {
         x_particles[0].x[2][i] = Z[i];

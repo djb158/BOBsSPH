@@ -62,12 +62,24 @@ int CopyH(PARTICLES *particles_from,PARTICLES *particles_to,PARS *pars)
 
   for (l=0;l<NPARTICLES;l++)
   {
+    particles_to[0].h[l]         = particles_from[0].h[l];
+    particles_to[0].m[l]         = particles_from[0].m[l];
+    particles_to[0].x[0][i]      = particles_from[0].x[0][i];
+    particles_to[0].x[1][i]      = particles_from[0].x[1][i];
+    particles_to[0].x[2][i]      = particles_from[0].x[2][i];
+    particles_to[0].v[0][i]      = particles_from[0].v[0][i];
+    particles_to[0].v[1][i]      = particles_from[0].v[1][i];
+    particles_to[0].v[2][i]      = particles_from[0].v[2][i];
+    particles_to[0].dvdt[0][i]   = particles_from[0].dvdt[0][i];
+    particles_to[0].dvdt[1][i]   = particles_from[0].dvdt[1][i];
+    particles_to[0].dvdt[2][i]   = particles_from[0].dvdt[2][i];
     particles_to[0].p[l]         = particles_from[0].p[l];
     particles_to[0].U[l]         = particles_from[0].U[l];
+    particles_to[0].dUdt[l]      = particles_from[0].dUdt[l];
+    particles_to[0].divV[l]      = particles_from[0].divV[l];
     particles_to[0].rho[l]       = particles_from[0].rho[l];
     particles_to[0].species[l]   = particles_from[0].species[l];
     particles_to[0].raw_index[l] = particles_from[0].raw_index[l];
-    particles_to[0].h[l]         = particles_from[0].h[l];
   }
 
   exit_status = EXIT_SUCCESS;
