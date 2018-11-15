@@ -64,15 +64,15 @@ int CopyH(PARTICLES *particles_from,PARTICLES *particles_to,PARS *pars)
   {
     particles_to[0].h[l]         = particles_from[0].h[l];
     particles_to[0].m[l]         = particles_from[0].m[l];
-    particles_to[0].x[0][i]      = particles_from[0].x[0][i];
-    particles_to[0].x[1][i]      = particles_from[0].x[1][i];
-    particles_to[0].x[2][i]      = particles_from[0].x[2][i];
-    particles_to[0].v[0][i]      = particles_from[0].v[0][i];
-    particles_to[0].v[1][i]      = particles_from[0].v[1][i];
-    particles_to[0].v[2][i]      = particles_from[0].v[2][i];
-    particles_to[0].dvdt[0][i]   = particles_from[0].dvdt[0][i];
-    particles_to[0].dvdt[1][i]   = particles_from[0].dvdt[1][i];
-    particles_to[0].dvdt[2][i]   = particles_from[0].dvdt[2][i];
+    particles_to[0].x[0][l]      = particles_from[0].x[0][l];
+    particles_to[0].x[1][l]      = particles_from[0].x[1][l];
+    particles_to[0].x[2][l]      = particles_from[0].x[2][l];
+    particles_to[0].v[0][l]      = particles_from[0].v[0][l];
+    particles_to[0].v[1][l]      = particles_from[0].v[1][l];
+    particles_to[0].v[2][l]      = particles_from[0].v[2][l];
+    particles_to[0].dvdt[0][l]   = particles_from[0].dvdt[0][l];
+    particles_to[0].dvdt[1][l]   = particles_from[0].dvdt[1][l];
+    particles_to[0].dvdt[2][l]   = particles_from[0].dvdt[2][l];
     particles_to[0].p[l]         = particles_from[0].p[l];
     particles_to[0].U[l]         = particles_from[0].U[l];
     particles_to[0].dUdt[l]      = particles_from[0].dUdt[l];
