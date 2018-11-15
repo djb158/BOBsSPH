@@ -256,7 +256,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,1,rank);
 
       i_step++;
       nparticles = node_info[rank].nparticles;
@@ -365,7 +364,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       } 
-      PrintHere(particles_3,2,rank);
 /*                                                                           */
 /*                 set particle velocity                                     */
 /*                                                                           */
@@ -374,7 +372,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,3,rank);
 
 /*###########################################################################*/
 /*                                                                           */
@@ -387,7 +384,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,4,rank);
 /*                                                                           */
 /*                               BLOCK 1: END                                */
 /*                                                                           */
@@ -469,7 +465,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,5,rank);
 /*                                                                           */
 /*                               BLOCK 4: END                                */
 /*                                                                           */
@@ -489,7 +484,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,6,rank);
 
 /*###########################################################################*/
 /*                                                                           */
@@ -513,7 +507,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,7,rank);
 
 /*###########################################################################*/
 /*                                                                           */
@@ -525,7 +518,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,8,rank);
 /*                                                                           */
 /*                               BLOCK 6: END                                */
 /*                                                                           */
@@ -539,7 +531,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,9,rank);
 
 /*###########################################################################*/
 /*                                                                           */
@@ -561,7 +552,6 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
-      PrintHere(particles_3,10,rank);
       if (
            ((CalculateParticleAcceleration_BOUNDARY(a_3,pars))==EXIT_FAILURE )
                                              ||
@@ -683,7 +673,7 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
-      PrintHere(particles_3,11,rank);
+      PrintHere(particles_3,1,rank);
       particles_1 = particles_3;
       particles_2 = particles_4;
       particles_3 = NULL;
