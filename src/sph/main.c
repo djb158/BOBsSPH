@@ -256,6 +256,7 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+      PrintHere(particles_3,2,rank);
 
       i_step++;
       nparticles = node_info[rank].nparticles;
