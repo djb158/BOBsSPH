@@ -683,7 +683,7 @@ int main(int argc, char *argv[])
         goto RETURN;
       }
 
-      PrintHere(particles_3,1,rank);
+      PrintHere(particles_3,11,rank);
       particles_1 = particles_3;
       particles_2 = particles_4;
       particles_3 = NULL;
