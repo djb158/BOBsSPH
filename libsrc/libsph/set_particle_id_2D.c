@@ -26,10 +26,10 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
 */
 
   ids = (IDS *)calloc(1,sizeof(IDS));
-  ids[0].species   = LARGE_NEGATIVE_INT;
-  ids[0].l_mirror  = LARGE_NEGATIVE_INT;
+  ids[0].species  = MASK_VOID;
+  ids[0].l_mirror = LARGE_NEGATIVE_INT;
 /*                                                                           */
-/*                 interior particles: species = 512                              */
+/*                 interior particles: species = 512                         */
 /*                                                                           */
   if (
        (x > X0 + EPSILON_DOUBLE)
@@ -136,7 +136,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                                                                           */
 /*                 X0 face:  1025                                            */
 /*                                                                           */
-  else if ( (x < X0 - EPSILON_DOUBLE)
+  else if ( ( (x < X0 - EPSILON_DOUBLE) && (x > LARGE_NEGATIVE_DOUBLE + 1.0) )
                     &&
             (z <= Z1 + EPSILON_DOUBLE)
                     &&
@@ -201,7 +201,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
 /*                                                                           */
 /*                 Z0 face:  1027                                            */
 /*                                                                           */
-  else if (z < Z0 - EPSILON_DOUBLE)
+  else if ( (z < Z0 - EPSILON_DOUBLE) && (z > LARGE_NEGATIVE_DOUBLE + 1.0) ) 
   {
     ids[0].species = 1027;
     dist = fabs(Z0-z);
@@ -251,13 +251,6 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
-  }
-  else
-  {
-    printf(" Rank: %i  %s():  x = %20.10f y = %20.10f z = %20.10f -not defined \n",rank,fname,x,y,z);
-    exit_status = EXIT_FAILURE;
-    species = EXIT_FAILURE;
-    goto RETURN;
   }
 
   exit_status = EXIT_SUCCESS;

@@ -79,6 +79,7 @@ PARTICLES *Push_and_Pull_N_and_X(PARTICLES *particles_3,PARS *pars)
   int tag10                            = LARGE_NEGATIVE_INT;
   int tag11                            = LARGE_NEGATIVE_INT;
   int tag12                            = LARGE_NEGATIVE_INT;
+  int tag36                            = LARGE_NEGATIVE_INT;
   int nparticles                       = LARGE_NEGATIVE_INT;
   int j                                = LARGE_NEGATIVE_INT;
   int k                                = LARGE_NEGATIVE_INT;
@@ -110,6 +111,13 @@ PARTICLES *Push_and_Pull_N_and_X(PARTICLES *particles_3,PARS *pars)
   if ( (MPI_Send(particles_3[0].x[0],nparticles,MPI_DOUBLE,cluster_size,tag2,MPI_COMM_WORLD)) != MPI_SUCCESS)
   {
     printf(" %s(): unable to send tag2 packet \n",fname);
+    exit_status = EXIT_FAILURE;
+    goto RETURN;
+  }
+  tag36  = 36*(MAX_TAGS)+rank;
+  if ( (MPI_Send(particles_3[0].species,nparticles,MPI_DOUBLE,cluster_size,tag36,MPI_COMM_WORLD)) != MPI_SUCCESS)
+  {
+    printf(" %s(): unable to send tag36 packet \n",fname);
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }

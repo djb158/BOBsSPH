@@ -359,7 +359,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     }
     species = ids[0].species;
     node_info[rank].species[l] = species;
-    species_basic = (species&MASK_GHOST) + (species&MASK_BOUND) + (species&MASK_INTER);
+    species_basic = (species&MASK_GHOST) + (species&MASK_BOUND) + (species&MASK_INTER)+ (species&MASK_VOID);
     switch (species_basic)
     {
       case 512:
@@ -379,8 +379,10 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
         l1++;
         l3++;
         break;
+      case 4096:
+        break;
       default:
-        printf("Rank: %i %s(): -error in species type, should be one of 512, 1024 or 2048\n",rank,fname);
+        printf("Rank: %i %s(): -error in species type, should be one of 512, 1024, 2048 or 4096\n",rank,fname);
         exit_status = EXIT_FAILURE;
         if (FreeParticles(&particles,pars,NPARTICLES) == EXIT_FAILURE)
         {
