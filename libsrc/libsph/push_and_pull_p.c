@@ -82,7 +82,7 @@ int Push_and_Pull_P(PARTICLES *particles,PARS *pars,PARTICLES *x_particles)
     goto RETURN;
   }
   tag41  = 41*(MAX_TAGS)+rank;
-  if ( (MPI_Send(particles_3[0].species,nparticles,MPI_DOUBLE,cluster_size,tag41,MPI_COMM_WORLD)) != MPI_SUCCESS)
+  if ( (MPI_Send(particles[0].species,nparticles,MPI_DOUBLE,cluster_size,tag41,MPI_COMM_WORLD)) != MPI_SUCCESS)
   {
     printf(" %s(): unable to send tag41 packet \n",fname);
     exit_status = EXIT_FAILURE;
