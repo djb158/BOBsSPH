@@ -461,7 +461,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
       if (Push_and_Pull_H(particles_3,pars,x_particles) == EXIT_FAILURE)
       {
-        printf(" %s() -error return from Push_N() -aborting\n",fname);
+        printf(" %s() -error return from Push_and_Pull_H() -aborting\n",fname);
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
@@ -491,7 +491,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
       if (Push_and_Pull_RHO(particles_3,pars,x_particles) == EXIT_FAILURE)
       {
-        printf(" %s() -error return from Push_N() -aborting\n",fname);
+        printf(" %s() -error return from Push_and_Pull_RHO() -aborting\n",fname);
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
@@ -514,7 +514,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
       if (Push_and_Pull_P(particles_3,pars,x_particles) == EXIT_FAILURE)
       {
-        printf(" %s() -error return from Push_N() -aborting\n",fname);
+        printf(" %s() -error return from Push_and_Pull_P() -aborting\n",fname);
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
@@ -538,7 +538,7 @@ int main(int argc, char *argv[])
 /*                                                                           */
       if (Push_and_Pull_divV(particles_3,pars,x_particles) == EXIT_FAILURE)
       {
-        printf(" %s() -error return from Push_N() -aborting\n",fname);
+        printf(" %s() -error return from Push_and_Pull_divV() -aborting\n",fname);
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }

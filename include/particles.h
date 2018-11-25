@@ -29,6 +29,7 @@
 #define MASK_INTER      (512)
 #define MASK_GHOST     (1024)
 #define MASK_BOUND     (2048)
+#define MASK_VOID      (4096)
 
 typedef struct
 {
