@@ -61,6 +61,7 @@ int Push_and_Pull_divV(PARTICLES *particles,PARS *pars,PARTICLES *x_particles)
   int exit_status                      = EXIT_FAILURE;
   int tag33                            = LARGE_NEGATIVE_INT;
   int tag35                            = LARGE_NEGATIVE_INT;
+  int tag42                            = LARGE_NEGATIVE_INT;
   int nparticles                       = LARGE_NEGATIVE_INT;
   int n_offnode_neighbours             = LARGE_NEGATIVE_INT;
   int i                                = LARGE_NEGATIVE_INT;
@@ -75,6 +76,13 @@ int Push_and_Pull_divV(PARTICLES *particles,PARS *pars,PARTICLES *x_particles)
   if ( (MPI_Send(particles[0].divV,nparticles,MPI_DOUBLE,cluster_size,tag33,MPI_COMM_WORLD)) != MPI_SUCCESS)
   {
     printf(" %s(): unable to send tag33 packet \n",fname);
+    exit_status = EXIT_FAILURE;
+    goto RETURN;
+  }
+  tag42  = 42*(MAX_TAGS)+rank;
+  if ( (MPI_Send(particles_3[0].species,nparticles,MPI_DOUBLE,cluster_size,tag42,MPI_COMM_WORLD)) != MPI_SUCCESS)
+  {
+    printf(" %s(): unable to send tag42 packet \n",fname);
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }

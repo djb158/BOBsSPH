@@ -69,6 +69,7 @@ int Set_N(PARS *pars)
   double *X                            = NULL;
   double *Y                            = NULL;
   double *Z                            = NULL;
+  double *species                      = NULL;
   double *P                            = NULL;
   double *RHO                          = NULL;
   double *divV                         = NULL;
@@ -115,6 +116,13 @@ int Set_N(PARS *pars)
   int tag33                            = LARGE_NEGATIVE_INT;
   int tag34                            = LARGE_NEGATIVE_INT;
   int tag35                            = LARGE_NEGATIVE_INT;
+  int tag36                            = LARGE_NEGATIVE_INT;
+  int tag37                            = LARGE_NEGATIVE_INT;
+  int tag38                            = LARGE_NEGATIVE_INT;
+  int tag39                            = LARGE_NEGATIVE_INT;
+  int tag40                            = LARGE_NEGATIVE_INT;
+  int tag41                            = LARGE_NEGATIVE_INT;
+  int tag42                            = LARGE_NEGATIVE_INT;
   int i_rank                           = LARGE_NEGATIVE_INT;
   int i                                = LARGE_NEGATIVE_INT;
   int j                                = LARGE_NEGATIVE_INT;
@@ -198,10 +206,21 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
+    species = (double *)calloc(nparticles,sizeof(double));
+    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag36,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    {
+      printf(" %s(): unable to receive tag36 packet \n",fname);
+      exit_status = EXIT_FAILURE;
+      goto RETURN;
+    }
+
     for (i=0;i<nparticles;i++)
     {
       j = i_rank*nparticles + i;
-      all_points[j][0]= X[i];
+      if (species[i] != MASK_VOID)
+      {
+        all_points[j][0]= X[i];
+      }
     }
     Free_sph(X);
     if (DIMENSIONS == 2)
@@ -217,7 +236,10 @@ int Set_N(PARS *pars)
       for (i=0;i<nparticles;i++)
       {
         j = i_rank*nparticles + i;
-        all_points[j][1]= Z[i];
+        if (species[i] != MASK_VOID)
+        {
+          all_points[j][1]= Z[i];
+        }
       }
       Free_sph(Z);
     }
@@ -242,12 +264,16 @@ int Set_N(PARS *pars)
       for (i=0;i<nparticles;i++)
       {
         j = i_rank*nparticles + i;
-        all_points[j][1]   = Y[i];
-        all_points[j][2]   = Z[i];
+        if (species[i] != MASK_VOID)
+        {
+          all_points[j][1] = Y[i];
+          all_points[j][2] = Z[i];
+        }
       }
       Free_sph(Y);
       Free_sph(Z);
     }
+    Free_sph(species);
   }
 /*                                                                           */
 /*                 calculate all neighbours                                  */
@@ -289,6 +315,8 @@ int Set_N(PARS *pars)
     l       = 0;
     for (i=i_start;i<i_end;i++)
     {
+      if (i < TOTAL_PARTICLES)
+      {
       for (k=0;k<NN_K;k++)
       {
         nn_ik = NN[i][k];
@@ -354,6 +382,7 @@ int Set_N(PARS *pars)
             }
           }
         }
+      }
       }
     }
     n_off[i_rank] = n_offnode_neighbours;
@@ -501,10 +530,20 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
+    species = (double *)calloc(nparticles,sizeof(double));
+    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag37,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    {
+      printf(" %s(): unable to receive tag37 packet \n",fname);
+      exit_status = EXIT_FAILURE;
+      goto RETURN;
+    }
     for (i=0;i<nparticles;i++)
     {
-      j = i_rank*nparticles + i;
-      v_all_points[j][0] = VX[i];
+      if (species[i] != MASK_VOID)
+      {
+        j = i_rank*nparticles + i;
+        v_all_points[j][0] = VX[i];
+      }
     }
     Free_sph(VX);
 /*                                                                           */
@@ -530,9 +569,12 @@ int Set_N(PARS *pars)
       }
       for (i=0;i<nparticles;i++)
       {
-        j = i_rank*nparticles + i;
-        v_all_points[j][1] = VY[i];
-        v_all_points[j][2] = VZ[i];
+        if (species[i] != MASK_VOID)
+        {
+          j = i_rank*nparticles + i;
+          v_all_points[j][1] = VY[i];
+          v_all_points[j][2] = VZ[i];
+        }
       }
       Free_sph(VY);
       Free_sph(VZ);
@@ -552,11 +594,15 @@ int Set_N(PARS *pars)
       }
       for (i=0;i<nparticles;i++)
       {
-        j = i_rank*nparticles + i;
-        v_all_points[j][1] = VZ[i];
+        if (species[i] != MASK_VOID)
+        {
+          j = i_rank*nparticles + i;
+          v_all_points[j][1] = VZ[i];
+        }
       }
       Free_sph(VZ);
     }
+    Free_sph(species);
   }
 /*                                                                           */
 /*                 now disperse among the ranks                              */
@@ -589,6 +635,8 @@ int Set_N(PARS *pars)
     i_end   = (i_rank+1)*NPARTICLES;
     for (i=i_start;i<i_end;i++)
     {
+      if (i < TOTAL_PARTICLES)
+      {
       for (k=0;k<NN_K;k++)
       {
         nn_ik = NN[i][k];
@@ -636,6 +684,7 @@ int Set_N(PARS *pars)
             }
           }
         }
+      }
       }
     }
 
@@ -724,12 +773,23 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
+    species = (double *)calloc(nparticles,sizeof(double));
+    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag38,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    {
+      printf(" %s(): unable to receive tag38 packet \n",fname);
+      exit_status = EXIT_FAILURE;
+      goto RETURN;
+    }
     for (i=0;i<nparticles;i++)
     {
-      j = i_rank*nparticles + i;
-      u_all_points[j] = U[i];
+      if (species[i] != MASK_VOID)
+      {
+        j = i_rank*nparticles + i;
+        u_all_points[j] = U[i];
+      }
     }
     Free_sph(U);
+    Free_sph(species);
   }
 /*                                                                           */
 /*                 now disperse among the ranks                              */
@@ -752,6 +812,8 @@ int Set_N(PARS *pars)
     i_end   = (i_rank+1)*NPARTICLES;
     for (i=i_start;i<i_end;i++)
     {
+      if (i < TOTAL_PARTICLES)
+      {
       for (k=0;k<NN_K;k++)
       {
         nn_ik = NN[i][k];
@@ -790,6 +852,7 @@ int Set_N(PARS *pars)
             U[l-1] = u_all_points[nn_ik]; 
           }
         }
+      }
       }
     }
 
@@ -845,12 +908,23 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
+    species = (double *)calloc(nparticles,sizeof(double));
+    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag39,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    {
+      printf(" %s(): unable to receive tag39 packet \n",fname);
+      exit_status = EXIT_FAILURE;
+      goto RETURN;
+    }
     for (i=0;i<nparticles;i++)
     {
-      j = i_rank*nparticles + i;
-      h_all_points[j] = H[i];
+      if (species[i] != MASK_VOID)
+      {
+        j = i_rank*nparticles + i;
+        h_all_points[j] = H[i];
+      }
     }
     Free_sph(H);
+    Free_sph(species);
   }
 /*                                                                           */
 /*                 now disperse among the ranks                              */
@@ -874,6 +948,8 @@ int Set_N(PARS *pars)
     l       = 0;
     for (i=i_start;i<i_end;i++)
     {
+      if (i < TOTAL_PARTICLES)
+      {
       for (k=0;k<NN_K;k++)
       {
         nn_ik = NN[i][k];
@@ -912,6 +988,7 @@ int Set_N(PARS *pars)
             H[l-1] = h_all_points[nn_ik]; 
           }
         }
+      }
       }
     }
 
@@ -968,12 +1045,23 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
+    species = (double *)calloc(nparticles,sizeof(double));
+    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag40,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    {
+      printf(" %s(): unable to receive tag40 packet \n",fname);
+      exit_status = EXIT_FAILURE;
+      goto RETURN;
+    }
     for (i=0;i<nparticles;i++)
     {
-      j = i_rank*nparticles + i;
-      rho_all_points[j] = RHO[i];
+      if (species[i] != MASK_VOID)
+      {
+        j = i_rank*nparticles + i;
+        rho_all_points[j] = RHO[i];
+      }
     }
     Free_sph(RHO);
+    Free_sph(species);
   }
 /*                                                                           */
 /*                 now disperse among the ranks                              */
@@ -997,6 +1085,8 @@ int Set_N(PARS *pars)
     l       = 0;
     for (i=i_start;i<i_end;i++)
     {
+      if (i < TOTAL_PARTICLES)
+      {
       for (k=0;k<NN_K;k++)
       {
         nn_ik = NN[i][k];
@@ -1035,6 +1125,7 @@ int Set_N(PARS *pars)
             RHO[l-1] = rho_all_points[nn_ik]; 
           }
         }
+      }
       }
     }
 
@@ -1090,12 +1181,23 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
+    species = (double *)calloc(nparticles,sizeof(double));
+    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag41,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    {
+      printf(" %s(): unable to receive tag41 packet \n",fname);
+      exit_status = EXIT_FAILURE;
+      goto RETURN;
+    }
     for (i=0;i<nparticles;i++)
     {
-      j = i_rank*nparticles + i;
-      p_all_points[j] = P[i];
+      if (species[i] != MASK_VOID)
+      {
+        j = i_rank*nparticles + i;
+        p_all_points[j] = P[i];
+      }
     }
     Free_sph(P);
+    Free_sph(species);
   }
 /*                                                                           */
 /*                 now disperse among the ranks                              */
@@ -1119,6 +1221,8 @@ int Set_N(PARS *pars)
     l       = 0;
     for (i=i_start;i<i_end;i++)
     {
+      if (i < TOTAL_PARTICLES)
+      {
       for (k=0;k<NN_K;k++)
       {
         nn_ik = NN[i][k];
@@ -1157,6 +1261,7 @@ int Set_N(PARS *pars)
             P[l-1] = p_all_points[nn_ik]; 
           }
         }
+      }
       }
     }
 
@@ -1213,12 +1318,23 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
+    species = (double *)calloc(nparticles,sizeof(double));
+    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag42,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    {
+      printf(" %s(): unable to receive tag42 packet \n",fname);
+      exit_status = EXIT_FAILURE;
+      goto RETURN;
+    }
     for (i=0;i<nparticles;i++)
     {
-      j = i_rank*nparticles + i;
-      divv_all_points[j] = divV[i];
+      if (species[i] != MASK_VOID)
+      {
+        j = i_rank*nparticles + i;
+        divv_all_points[j] = divV[i];
+      }
     }
     Free_sph(divV);
+    Free_sph(species);
   }
 /*                                                                           */
 /*                 now disperse among the ranks                              */
@@ -1242,6 +1358,8 @@ int Set_N(PARS *pars)
     l       = 0;
     for (i=i_start;i<i_end;i++)
     {
+      if (i < TOTAL_PARTICLES)
+      {
       for (k=0;k<NN_K;k++)
       {
         nn_ik = NN[i][k];
@@ -1280,6 +1398,7 @@ int Set_N(PARS *pars)
             divV[l-1] = divv_all_points[nn_ik]; 
           }
         }
+      }
       }
     }
 

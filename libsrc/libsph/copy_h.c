@@ -55,7 +55,6 @@ int CopyH(PARTICLES *particles_from,PARTICLES *particles_to,PARS *pars)
 
   int exit_status                      = EXIT_FAILURE;
   int l                                = 0;
-  int i                                = 0;
 
 #include "pars_include.h"
   verbosity(1,fname,pars);
