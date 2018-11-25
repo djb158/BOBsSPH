@@ -108,7 +108,7 @@ PARTICLES *Push_and_Pull_N_and_X(PARTICLES *particles_3,PARS *pars)
     }
   }
   tag2  = 2*(MAX_TAGS)+rank;
-  if ( (MPI_Send(particles_3[0].x[0],nparticles,MPI_DOUBLE,cluster_size,tag2,MPI_COMM_WORLD)) != MPI_SUCCESS)
+  if ( (MPI_Send(particles[0].x[0],nparticles,MPI_DOUBLE,cluster_size,tag2,MPI_COMM_WORLD)) != MPI_SUCCESS)
   {
     printf(" %s(): unable to send tag2 packet \n",fname);
     exit_status = EXIT_FAILURE;
