@@ -207,6 +207,7 @@ int Set_N(PARS *pars)
       goto RETURN;
     }
     species = (double *)calloc(nparticles,sizeof(double));
+    printf(" here 100 \n");
     if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag36,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag36 packet \n",fname);
@@ -531,6 +532,7 @@ int Set_N(PARS *pars)
       goto RETURN;
     }
     species = (double *)calloc(nparticles,sizeof(double));
+    printf(" here 101 \n");
     if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag37,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag37 packet \n",fname);
@@ -774,6 +776,7 @@ int Set_N(PARS *pars)
       goto RETURN;
     }
     species = (double *)calloc(nparticles,sizeof(double));
+    printf(" here 102 \n");
     if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag38,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag38 packet \n",fname);
@@ -909,6 +912,7 @@ int Set_N(PARS *pars)
       goto RETURN;
     }
     species = (double *)calloc(nparticles,sizeof(double));
+    printf(" here 103 \n");
     if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag39,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag39 packet \n",fname);
@@ -1046,6 +1050,7 @@ int Set_N(PARS *pars)
       goto RETURN;
     }
     species = (double *)calloc(nparticles,sizeof(double));
+    printf(" here 104 \n");
     if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag40,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag40 packet \n",fname);
@@ -1182,6 +1187,7 @@ int Set_N(PARS *pars)
       goto RETURN;
     }
     species = (double *)calloc(nparticles,sizeof(double));
+    printf(" here 105 \n");
     if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag41,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag41 packet \n",fname);
@@ -1319,6 +1325,7 @@ int Set_N(PARS *pars)
       goto RETURN;
     }
     species = (double *)calloc(nparticles,sizeof(double));
+    printf(" here 106 \n");
     if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag42,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag42 packet \n",fname);
