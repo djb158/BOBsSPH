@@ -1,5 +1,8 @@
 INCLUDES= -I$(top_srcdir)/include
 
+SUBDIRS = \
+        test
+
 lib_LTLIBRARIES = libutil.la
 
 libutil_la_SOURCES = \
