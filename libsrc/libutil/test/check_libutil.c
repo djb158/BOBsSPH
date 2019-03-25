@@ -3,13 +3,15 @@
 #include <check.h>
 #include <math.h>
 
+extern int is_nan_or_inf(double x,char *s,int l);
+
 START_TEST (check_is_nan)
 {
    double x                            = NAN;
    int exit_status                     = EXIT_FAILURE;
 
     exit_status = is_nan_or_inf(x,(char *)"x",0);
-    ck_assert_int_eq(exit_status,EXIT_FIALURE);
+    ck_assert_int_eq(exit_status,EXIT_FAILURE);
 
 }
 END_TEST
@@ -20,7 +22,7 @@ START_TEST (check_is_inf)
    int exit_status                     = EXIT_FAILURE;
 
     exit_status = is_nan_or_inf(x,(char *)"x",0);
-    ck_assert_int_eq(exit_status,EXIT_FIALURE);
+    ck_assert_int_eq(exit_status,EXIT_FAILURE);
 
 }
 END_TEST
@@ -34,8 +36,8 @@ Suite * util_suite(void)
 
     tc_core = tcase_create("Core");
 
-    tcase_add_test(tc_core, check_nan);
-    tcase_add_test(tc_core, check_inf);
+    tcase_add_test(tc_core, check_is_nan);
+    tcase_add_test(tc_core, check_is_inf);
     suite_add_tcase(s, tc_core);
 
     return s;
