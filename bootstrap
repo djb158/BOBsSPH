@@ -5,7 +5,10 @@ set -x
 # We don't use autoreconf here because that script does not handle the
 # '--add-missing' option, which we want
 
-aclocal -I/home/bobs/BOBsSPH/m4 --force\
+module use /usr/local/apps/modulefiles
+module use autotools/1
+
+aclocal -I/home/bobs/local/BOBsSPH/m4 --force\
 && libtoolize --force \
 && autoheader --force \
 && automake --add-missing --force-missing \
