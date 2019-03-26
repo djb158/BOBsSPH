@@ -1,5 +1,9 @@
 #!/bin/bash
 #
+module use  /usr/local/apps/modulefiles
+module load ann/1.1.2
+module load autotools/1
+#
 make uninstall; make clean; make distclean;
 #
 #
@@ -14,9 +18,9 @@ make uninstall; make clean; make distclean;
 #
 ./configure --prefix=$HOME/local/install/SPH \
      CFLAGS="-ggdb -D_FILE_OFFSET_BITS=64 -Wall -fprofile-arcs -ftest-coverage" \
-     CPPFLAGS="-I/usr/local/ann_1.1.2/include -I/usr/local/ann_1.1.2/include/ANN -Wall" \
+     CPPFLAGS="-I${ANN_HOME}include -I${ANN_HOME}/include/ANN -Wall" \
      CXXFLAGS="-ggdb" \
-     LDFLAGS="-L/usr/local/ann_1.1.2/lib -lANN -lm -lpthread -lgcov -lsubunit" \
+     LDFLAGS="-L${ANN_HOME}/lib -lANN -lm -lpthread -lgcov -lsubunit" \
      --enable-shared=no \
      --with-pic \
      --with-mpi=yes |& tee /tmp/sph_config_make.log
