@@ -1,9 +1,5 @@
 #!/bin/bash
 #
-module use  /usr/local/apps/modulefiles
-module load ann/1.1.2
-module load autotools/1
-#
 make uninstall; make clean; make distclean;
 #
 #
