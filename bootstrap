@@ -5,9 +5,6 @@ set -x
 # We don't use autoreconf here because that script does not handle the
 # '--add-missing' option, which we want
 
-module use  /usr/local/apps/modulefiles
-module load autotools/1
-
 aclocal -I/home/bobs/local/BOBsSPH/m4 --force\
 && libtoolize --force \
 && autoheader --force \
