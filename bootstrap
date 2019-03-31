@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "libtoolize: "
+which libtoolize
 set -x
 
 # We don't use autoreconf here because that script does not handle the
