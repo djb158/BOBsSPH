@@ -16,6 +16,10 @@ echo " "
 #
 ./bootstrap         |& tee /tmp/sph_config_make.log
 #
+sleep 1
+#
+./bootstrap         |& tee /tmp/sph_config_make.log
+#
 #
 #
 ./configure --prefix=$HOME/local/install/SPH \
