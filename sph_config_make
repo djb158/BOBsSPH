@@ -2,6 +2,9 @@
 #
 make uninstall; make clean; make distclean;
 echo ${ANN_HOME}
+echo ${PATH} | tr : '\n'
+echo ${LD_LIBRARY_PATH} | tr : '\n'
+exit
 #
 #
 \rm -f $HOME/local/install/SPH/include/* 
