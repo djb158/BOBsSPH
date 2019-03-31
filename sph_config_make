@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 make uninstall; make clean; make distclean;
-echo ${ANN_HOME}
+echo "ANN_HOME: " ${ANN_HOME}
 echo " "
 echo ${PATH} | tr : '\n'
 echo " "
