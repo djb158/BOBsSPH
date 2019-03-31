@@ -38,7 +38,7 @@ AX_PROG_CXX_MPI([test x"$with_mpi" != xno],[use_mpi=yes],[
     AC_MSG_WARN([No MPI compiler found, won't use MPI.])
   fi
 ])
-
+LT_INIT
 AC_PROG_LIBTOOL
 for lib in `find $PWD/libsrc/ -type d -name 'lib*'`
 do
