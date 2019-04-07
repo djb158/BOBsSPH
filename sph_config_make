@@ -35,6 +35,7 @@ make -j4            |& tee /tmp/sph_config_make.log
 #
 make install        |& tee /tmp/sph_config_make.log
 #
-cp $PWD/par/sph.par       $HOME/local/install/SPH/par
-cp $PWD/src/scripts/bobs  $HOME/local/install/SPH/bin
-cp $PWD/src/machines      $HOME/local/install/SPH
+cp $PWD/par/sph.par               $HOME/local/install/SPH/par
+cp $PWD/src/scripts/bobs          $HOME/local/install/SPH/bin
+cp $PWD/src/machines              $HOME/local/install/SPH
+cp $PWD/src/sph/sph_commands.txt  $HOME/local/install/SPH
