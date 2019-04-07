@@ -1,1 +1,1 @@
-run par=/home/djb/SPH/git/par/sph.par
+run par=/home/bobs/local/install/SPH/par/sph.par
