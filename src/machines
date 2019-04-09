@@ -4,14 +4,14 @@ sbob3   slots=1 max_slots=1
 sbob4   slots=1 max_slots=1
 sbob5   slots=1 max_slots=1
 sbob6   slots=1 max_slots=1
-sbob7   slots=1 max_slots=1
-sbob8   slots=1 max_slots=1
-sbob9   slots=1 max_slots=1
-sbob10  slots=1 max_slots=1
-sbob11  slots=1 max_slots=1
-sbob13  slots=1 max_slots=1
-sbob14  slots=1 max_slots=1
-sbob15  slots=1 max_slots=1
+sbob7   slots=2 max_slots=2
+sbob8   slots=2 max_slots=2
+sbob9   slots=2 max_slots=2
+sbob10  slots=2 max_slots=2
+sbob11  slots=2 max_slots=2
+sbob13  slots=2 max_slots=2
+sbob14  slots=2 max_slots=2
+sbob15  slots=2 max_slots=2
 sbob16  slots=1 max_slots=1
 sbob17  slots=1 max_slots=1
 sbob18  slots=1 max_slots=1
@@ -20,3 +20,4 @@ sbob20  slots=1 max_slots=1
 sbob21  slots=1 max_slots=1
 sbob22  slots=1 max_slots=1
 sbob23  slots=1 max_slots=1
+sbob24  slots=1 max_slots=1
