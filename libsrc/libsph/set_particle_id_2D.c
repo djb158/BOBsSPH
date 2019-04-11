@@ -252,6 +252,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
     {
       printf("Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
       printf(" here 3 \n");
+      printf(" x = %20.10f y = %20.10f z = %20.10f Z1 = %20.10f \n",x,y,z,Z1);
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
