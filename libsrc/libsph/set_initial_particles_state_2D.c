@@ -93,8 +93,8 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int species_basic                    = LARGE_NEGATIVE_INT;
 
 
-  double minz                          = 0.0;
-  double maxz                          = 0.0;
+  double minz                          = LARGE_POSITIVE_DOUBLE;
+  double maxz                          = LARGE_NEGATIVE_DOUBLE;
 
   double d_l                           = 0.0;
   double d_r                           = 0.0;
