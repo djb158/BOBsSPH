@@ -161,6 +161,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
     if (found == 0)
     {
       printf("Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
+      printf(" here 0 \n");
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
@@ -193,6 +194,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
     if (found == 0)
     {
       printf("Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
+      printf(" here 1 \n");
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
