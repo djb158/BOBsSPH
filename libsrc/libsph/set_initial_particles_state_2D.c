@@ -299,7 +299,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       particles[0].raw_index[nparticles]        = raw_index;
       node_info[rank].raw_index[nparticles]     = raw_index;
       node_info[rank].inv_raw_index[raw_index]  = nparticles;
-      nparticles++;
       if (minz > particles[0].x[2][nparticles])
       {
         minz = particles[0].x[2][nparticles];
@@ -308,6 +307,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       {
         maxz = particles[0].x[2][nparticles];
       }
+      nparticles++;
     }
   }
   printf(" rank: %i minz = %20.10f maxz = %20.10f \n",rank,minz,maxz);
