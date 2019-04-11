@@ -93,6 +93,9 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int species_basic                    = LARGE_NEGATIVE_INT;
 
 
+  double minz                          = 0.0;
+  double maxz                          = 0.0;
+
   double d_l                           = 0.0;
   double d_r                           = 0.0;
   double min_r                         = 0.0;
@@ -297,8 +300,17 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       node_info[rank].raw_index[nparticles]     = raw_index;
       node_info[rank].inv_raw_index[raw_index]  = nparticles;
       nparticles++;
+      if (minz > particles[0].x[2][nparticles])
+      {
+        minz = particles[0].x[2][nparticles];
+      }
+      if (maxz < particles[0].x[2][nparticles])
+      {
+        maxz = particles[0].x[2][nparticles];
+      }
     }
   }
+  printf(" rank: %i minz = %20.10f maxz = %20.10f \n",rank,minz,maxz);
 
   if ( (EquationOfState(particles,pars))==EXIT_FAILURE )
   {
