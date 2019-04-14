@@ -249,8 +249,8 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       }
     }
     printf(" raw_index = %i \n",raw_index);
+    sleep(100);
   }
-  sleep(100);
   TOTAL_PARTICLES = raw_index; 
   NPARTICLES = TOTAL_PARTICLES/cluster_size;
   pars[0].TOTAL_PARTICLES = TOTAL_PARTICLES;
