@@ -241,6 +241,8 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
       x0 = particles[0].x[0][j];
       y0 = particles[0].x[1][j];
       z0 = particles[0].x[2][j];
+      if (fabs(Z1-(0.6299943286-Z1) - z0) < EPSILON_DOUBLE) printf (" ### YES #### \n");
+
       if ( (fabs(Z1-dist-z0)<EPSILON_DOUBLE) && (fabs(x0-x)<EPSILON_DOUBLE) &&  (fabs(y0-y)<EPSILON_DOUBLE) )
       {
         ids[0].l_mirror = node_info[rank].raw_index[j];
