@@ -239,6 +239,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
     for (j=0;j<NPARTICLES;j++)
     {
       x0 = particles[0].x[0][j];
+      if (fabs(x0+0.0174683544)< EPSILON_DOUBLE) printf(" #### YES #### \n");
       y0 = particles[0].x[1][j];
       z0 = particles[0].x[2][j];
       if ( (fabs(Z1-dist-z0)<EPSILON_DOUBLE) && (fabs(x0-x)<EPSILON_DOUBLE) &&  (fabs(y0-y)<EPSILON_DOUBLE) )
