@@ -47,7 +47,7 @@
 |                                                                             |
 \*---------------------------------------------------------------------------*/
 
-#include <time.h>
+#include <unistd.h>
 #include "set_initial_particles_state_2D.h"
 
 PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_name)
