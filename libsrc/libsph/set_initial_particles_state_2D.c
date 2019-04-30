@@ -93,10 +93,8 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int species                          = LARGE_NEGATIVE_INT;
   int species_basic                    = LARGE_NEGATIVE_INT;
 
-
-  double minz                          = LARGE_POSITIVE_DOUBLE;
-  double maxz                          = LARGE_NEGATIVE_DOUBLE;
-
+  double val0                          = LARGE_NEGATIVE_DOUBLE;
+  double val1                          = LARGE_NEGATIVE_DOUBLE;
   double d_l                           = 0.0;
   double d_r                           = 0.0;
   double min_r                         = 0.0;
@@ -135,6 +133,8 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   double KK                            = 2.0;
   double dz                            = 0.0;
   double dz2                           = 0.0;
+
+  logical seek                         = TRUE;
 
 #include "pars_include.h"
   verbosity(1,fname,pars);
@@ -182,6 +182,8 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   dz2 = 2.0*dz;
   d   = dx2/2.0;
   raw_index = 0;
+
+
   for (i=0;i<PARTICLES_IN_X;i++)
   {
     if (i <= CENTRE_POINT)
@@ -256,11 +258,18 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   pars[0].TOTAL_PARTICLES = TOTAL_PARTICLES;
   pars[0].NPARTICLES = NPARTICLES;
   printf(" NPARTICLES = %i cluster_size = %i \n",NPARTICLES,cluster_size);
+ 
+  if ( ( (TOTAL_PARTICLES%cluster_size) + cluster_size*PARTICLES_IN_Z) > NPARTICLES)
+  {
+    exit_status = EXIT_FAILURE;
+    printf("Rank: %i %s(): -error please increase cluter size by 1 \n",rank,fname);
+    goto RETURN;
+  }
 
   if ((particles=CreateParticles(NPARTICLES,pars))==NULL)
   {
     exit_status = EXIT_FAILURE;
-    printf("Rank: %i %s(): -error return creating particle()\n",rank,fname);
+    printf("Rank: %i %s(): -error return creating particle(\n",rank,fname);)
     goto RETURN;
   }
   particles[0].t = 0.0;
@@ -302,18 +311,51 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       particles[0].raw_index[nparticles]        = raw_index;
       node_info[rank].raw_index[nparticles]     = raw_index;
       node_info[rank].inv_raw_index[raw_index]  = nparticles;
-      if (minz > particles[0].x[2][nparticles])
-      {
-        minz = particles[0].x[2][nparticles];
-      }
-      if (maxz < particles[0].x[2][nparticles])
-      {
-        maxz = particles[0].x[2][nparticles];
-      }
       nparticles++;
     }
   }
-  printf(" rank: %i minz = %20.10f maxz = %20.10f \n",rank,minz,maxz);
+  
+  seek = TRUE;
+  val1 = Z0 - (double)ZERO*dz;
+  val0 = particles[0].x[2][nparticles-1];
+  if (fabs(val1-val0) > EPSILON_DOUBLE)
+  {
+    seek = FALSE;
+  }
+  while (seek)
+  {
+    i = nparticles;
+    particles[0].nn_index[i].num                   = LARGE_NEGATIVE_INT;
+    particles[0].nn_index[i].node                  = NULL;
+    particles[0].nn_index[i].n_offnode_neighbours  = NULL;
+    particles[0].raw_index[i]                      = LARGE_NEGATIVE_INT;
+    particles[0].species[i]                        = LARGE_NEGATIVE_INT;
+    particles[0].m[i]                              = PARTICLE_MASS;
+    particles[0].h[i]                              = LARGE_NEGATIVE_DOUBLE;
+    particles[0].x[0][i]                           = LARGE_NEGATIVE_DOUBLE;
+    particles[0].x[1][i]                           = LARGE_NEGATIVE_DOUBLE;
+    particles[0].x[2][i]                           = LARGE_NEGATIVE_DOUBLE;
+    particles[0].v[0][i]                           = LARGE_NEGATIVE_DOUBLE;
+    particles[0].v[1][i]                           = LARGE_NEGATIVE_DOUBLE;
+    particles[0].v[2][i]                           = LARGE_NEGATIVE_DOUBLE;
+    particles[0].dvdt[0][i]                        = LARGE_NEGATIVE_DOUBLE;
+    particles[0].dvdt[1][i]                        = LARGE_NEGATIVE_DOUBLE;
+    particles[0].dvdt[2][i]                        = LARGE_NEGATIVE_DOUBLE;
+    particles[0].p[i]                              = LARGE_NEGATIVE_DOUBLE;
+    particles[0].rho[i]                            = LARGE_NEGATIVE_DOUBLE;
+    particles[0].U[i]                              = LARGE_NEGATIVE_DOUBLE;
+    particles[0].dUdt[i]                           = LARGE_NEGATIVE_DOUBLE;
+    particles[0].divV[i]                           = LARGE_NEGATIVE_DOUBLE;
+    node_info[rank].raw_index[nparticles]          = LARGE_NEGATIVE_INT; 
+    node_info[rank].inv_raw_index[raw_index]       = LARGE_NEGATIVE_INT;
+    nparticles--;
+    raw_index--;
+    val0 = particles[0].x[2][nparticles-1];
+    if (fabs(val1-val0) > EPSILON_DOUBLE)
+    {
+      seek = FALSE;
+    }
+  }
 
   if ( (EquationOfState(particles,pars))==EXIT_FAILURE )
   {
