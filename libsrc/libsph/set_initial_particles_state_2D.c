@@ -270,7 +270,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   if ((particles=CreateParticles(NPARTICLES,pars))==NULL)
   {
     exit_status = EXIT_FAILURE;
-    printf("Rank: %i %s(): -error return creating particle(\n",rank,fname);)
+    printf("Rank: %i %s(): -error return creating particle(\n",rank,fname);
     goto RETURN;
   }
   particles[0].t = 0.0;
