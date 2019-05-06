@@ -88,6 +88,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int nparticles                       = 0;
   int total_particles                  = 0;
   int t                                = 0;
+  int token_r                          = 0;
   int found                            = 0;
   int l_mirror                         = 0;
   int species                          = LARGE_NEGATIVE_INT;
