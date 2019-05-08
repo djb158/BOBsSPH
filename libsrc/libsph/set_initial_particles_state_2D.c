@@ -161,6 +161,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     raw_particle[0].U[i]          = 0.0;
     raw_particle[0].raw_index[i]  = LARGE_NEGATIVE_INT;
   }
+  printf(" HERE 5 \n");
 /*                                                                            */
 /*                 left state                                                 */
 /*                                                                            */
@@ -253,7 +254,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       }
     }
   }
-  sleep(100);
+  printf(" HERE 4 \n");
   TOTAL_PARTICLES = raw_index; 
   NPARTICLES = TOTAL_PARTICLES/cluster_size;
   pars[0].TOTAL_PARTICLES = TOTAL_PARTICLES;
@@ -277,6 +278,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
 /*                                                                            */
 /*                 initialize NODE_INFO struct                                */
 /*                                                                            */
+  printf(" HERE 3 \n");
   if (particles_num == 1)
   {
     if ( (exit_status=GetNodeInfoStruct(cluster_size,rank_name,0.0,pars))==EXIT_FAILURE)
@@ -296,6 +298,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     MPI_Recv(&token_r,1,MPI_INT,rank-1,tag85,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
   }
 
+  printf(" HERE 2 \n");
   for(t=0;t<TOTAL_PARTICLES;t++)
   {
     t = t - token_r;
