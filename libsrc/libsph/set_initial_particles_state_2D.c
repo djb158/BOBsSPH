@@ -377,8 +377,12 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       }
     }
   }
+  for (i=0;i<nparticles;i++)
+  {
+    printf(" x = %20.10f z = %20.10f \n",particles[0].x[0][i],particles[0].x[2][i]);
+  }
 
-  sleep (1);
+  sleep (1000);
   if (rank < cluster_size)
   {
     printf(" rank: %i token_r = %i \n",rank,token_r);
