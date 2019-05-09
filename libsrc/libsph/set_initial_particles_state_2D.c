@@ -296,6 +296,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   {
     tag85  = 85*(MAX_TAGS)+rank-1;
     MPI_Recv(&token_r,1,MPI_INT,rank-1,tag85,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+    printf(" receiving: %i \n",token_r);
   }
 
   printf(" HERE 2 \n");
