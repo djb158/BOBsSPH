@@ -291,10 +291,10 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   node_info[rank].total_particles = TOTAL_PARTICLES;
   nparticles = 0;
 
-  tag85  = 85*(MAX_TAGS)+rank;
   token_r = 0;
   if (rank != 0)
   {
+    tag85  = 85*(MAX_TAGS)+rank-1;
     MPI_Recv(&token_r,1,MPI_INT,rank-1,tag85,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
   }
 
@@ -386,6 +386,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   if (rank < cluster_size)
   {
     printf(" rank: %i token_r = %i \n",rank,token_r);
+    tag85  = 85*(MAX_TAGS)+rank;
     MPI_Send(&token_r,1,MPI_INT,rank+1,tag85,MPI_COMM_WORLD);
   }
 
