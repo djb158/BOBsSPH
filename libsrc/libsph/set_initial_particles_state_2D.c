@@ -387,6 +387,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   {
     printf(" rank: %i token_r = %i \n",rank,token_r);
     tag85  = 85*(MAX_TAGS)+rank;
+    printf(" sending: %i \n",token_r);
     MPI_Send(&token_r,1,MPI_INT,rank+1,tag85,MPI_COMM_WORLD);
   }
 
