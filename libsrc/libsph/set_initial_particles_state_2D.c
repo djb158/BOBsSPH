@@ -335,7 +335,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   {
   printf(" HERE 1 \n");
     seek = TRUE;
-    val1 = Z0 - (double)ZERO*dz;
+    val1 = Z1 + (double)ZERO*dz;
     val0 = particles[0].x[2][nparticles-1];
     if (fabs(val1-val0) < EPSILON_DOUBLE)
     {
