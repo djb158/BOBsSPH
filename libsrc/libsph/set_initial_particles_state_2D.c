@@ -302,8 +302,9 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   printf(" HERE 2 \n");
   for(t=token_r;t<TOTAL_PARTICLES;t++)
   {
-    t = t - token_r;
     printf(" t = %i %i\n",t,token_r);
+    t = t - token_r;
+    printf(" t = %i %i\n\n",t,token_r);
     raw_index = raw_particle[0].raw_index[t];
     if ( (raw_index>=(rank+0)*NPARTICLES) && (raw_index<(rank+1)*NPARTICLES) )
     {
