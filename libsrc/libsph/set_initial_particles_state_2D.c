@@ -302,18 +302,15 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   printf(" HERE 2 \n");
   for(t=token_r;t<TOTAL_PARTICLES;t++)
   {
-    printf(" t = %i %i\n",t,token_r);
-    t = t - token_r;
-    printf(" t = %i %i\n\n",t,token_r);
-    raw_index = raw_particle[0].raw_index[t];
+    raw_index = raw_particle[0].raw_index[t-token_r];
     if ( (raw_index>=(rank+0)*NPARTICLES) && (raw_index<(rank+1)*NPARTICLES) )
     {
       i_rank = rank;
       particles[0].m[nparticles]                = PARTICLE_MASS;
       particles[0].h[nparticles]                = 0.0;
-      particles[0].x[0][nparticles]             = raw_particle[0].x[0][t];
-      particles[0].x[1][nparticles]             = raw_particle[0].x[1][t];
-      particles[0].x[2][nparticles]             = raw_particle[0].x[2][t]; 
+      particles[0].x[0][nparticles]             = raw_particle[0].x[0][t-token_r];
+      particles[0].x[1][nparticles]             = raw_particle[0].x[1][t-token_r];
+      particles[0].x[2][nparticles]             = raw_particle[0].x[2][t-token_r]; 
       particles[0].v[0][nparticles]             = 0.0;
       particles[0].v[1][nparticles]             = 0.0;
       particles[0].v[2][nparticles]             = 0.0;
@@ -321,8 +318,8 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       particles[0].dvdt[1][nparticles]          = 0.0;
       particles[0].dvdt[2][nparticles]          = 0.0;
       particles[0].p[nparticles]                = 0.0;
-      particles[0].rho[nparticles]              = raw_particle[0].rho[t];
-      particles[0].U[nparticles]                = raw_particle[0].U[t]; 
+      particles[0].rho[nparticles]              = raw_particle[0].rho[t-token_r];
+      particles[0].U[nparticles]                = raw_particle[0].U[t-token_r]; 
       particles[0].dUdt[nparticles]             = 0.0;
       particles[0].divV[nparticles]             = 0.0;
       particles[0].raw_index[nparticles]        = raw_index;
