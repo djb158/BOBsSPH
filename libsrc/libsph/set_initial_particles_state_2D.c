@@ -314,7 +314,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       particles[0].x[2][nparticles]             = raw_particle[0].x[2][t-token_r]; 
       if ( fabs(-0.0174683544-particles[0].x[0][nparticles]) < EPSILON_DOUBLE)
       {
-        printf(" value x = %20.10f z = %20.10f \n",particles[0].x[0][nparticles],particles[0].x[2][nparticles])
+        printf(" value x = %20.10f z = %20.10f \n",particles[0].x[0][nparticles],particles[0].x[2][nparticles]);
       }
       particles[0].v[0][nparticles]             = 0.0;
       particles[0].v[1][nparticles]             = 0.0;
