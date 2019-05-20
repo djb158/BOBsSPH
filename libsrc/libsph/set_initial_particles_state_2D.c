@@ -308,7 +308,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       i_rank = rank;
       particles[0].m[nparticles]                = PARTICLE_MASS;
       particles[0].h[nparticles]                = 0.0;
-     particles[0].x[0][nparticles]             = raw_particle[0].x[0][t-token_r]; 
+      particles[0].x[0][nparticles]             = raw_particle[0].x[0][t-token_r]; 
       printf(" x = %20.10f \n",particles[0].x[0][nparticles]);
       particles[0].x[1][nparticles]             = raw_particle[0].x[1][t-token_r];
       particles[0].x[2][nparticles]             = raw_particle[0].x[2][t-token_r]; 
@@ -337,8 +337,12 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   printf(" HERE 1 \n");
     seek = TRUE;
     val1 = Z1 + (double)ZERO*dz;
+    val2 = Z1 + (double)ZERO_H*dz2;
     val0 = particles[0].x[2][nparticles-1];
-    if (fabs(val1-val0) < EPSILON_DOUBLE)
+    if  ( (fabs(val1-val0) < EPSILON_DOUBLE) 
+                           || 
+          (fabs(val2-val0) < EPSILON_DOUBLE) )
+
     {
       seek = FALSE;
     }
