@@ -377,7 +377,9 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       raw_index--;
       token_r++;
       val0 = particles[0].x[2][nparticles-1];
-      if (fabs(val1-val0) < EPSILON_DOUBLE)
+      if  ( (fabs(val1-val0) < EPSILON_DOUBLE) 
+                             || 
+           (fabs(val2-val0) < EPSILON_DOUBLE) )
       {
         seek = FALSE;
       }
