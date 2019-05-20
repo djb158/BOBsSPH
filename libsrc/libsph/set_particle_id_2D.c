@@ -160,7 +160,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
     }
     if (found == 0)
     {
-      printf("Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
+      printf("0 Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
       printf(" here 0 \n");
       exit_status = EXIT_FAILURE;
       goto RETURN;
@@ -193,7 +193,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
     }
     if (found == 0)
     {
-      printf("Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
+      printf("1 Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
       printf(" here 1 \n");
       exit_status = EXIT_FAILURE;
       goto RETURN;
@@ -222,7 +222,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
     }
     if (found == 0)
     {
-      printf("Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
+      printf("2 Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
       printf(" here 2 \n");
       exit_status = EXIT_FAILURE;
       goto RETURN;
@@ -254,7 +254,7 @@ IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, doub
     }
     if (found == 0)
     {
-      printf("Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
+      printf("3 Rank: %i %s(): l = %i mirror not found\n",rank,fname,l);
       printf(" here 3 \n");
       printf(" x = %20.10f y = %20.10f z = %20.10f Z1 = %20.10f \n",x,y,z,Z1);
       exit_status = EXIT_FAILURE;
