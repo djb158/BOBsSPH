@@ -304,7 +304,10 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   for(t=token_r;t<TOTAL_PARTICLES;t++)
   {
     raw_index = raw_particle[0].raw_index[t-token_r];
+/*
     if ( (raw_index>=(rank+0)*NPARTICLES) && (raw_index<(rank+1)*NPARTICLES) )
+*/
+    if ( (t>=(rank+0)*NPARTICLES) && (t<(rank+1)*NPARTICLES) )
     {
       i_rank = rank;
       particles[0].m[nparticles]                = PARTICLE_MASS;
