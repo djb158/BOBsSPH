@@ -396,7 +396,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
 
   file_name = (char *)calloc(MAX_CHARS,sizeof(char));
   sprintf(file_name,"/tmp/xz_%i.txt",rank);
-  file_ptr = fopen(file_name,"w")
+  file_ptr = fopen(file_name,"w");
   for (i=0;i<nparticles;i++)
   {
     printf("rank: %i  x = %20.10f z = %20.10f \n",rank,particles[0].x[0][i],particles[0].x[2][i]);
