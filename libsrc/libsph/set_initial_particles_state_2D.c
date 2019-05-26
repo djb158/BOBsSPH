@@ -62,6 +62,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   IDS *ids                             = NULL;
 
   char   fname[]                       = "...SetInitialParticlesState2D";
+  char *file_name                      = NULL;
 
   int indx                             = 0;
   int i                                = 0;
@@ -391,12 +392,16 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       }
     }
   }
-/*
+
+  file_name = (char *)calloc(MAX_CHARS,sizeof(char));
+  sprintf(file_name,"/tmp/xz_%i.txt",rank);
+  file_ptr = fopen(file_name,"w")
   for (i=0;i<nparticles;i++)
   {
-    printf(" x = %20.10f z = %20.10f \n",particles[0].x[0][i],particles[0].x[2][i]);
+    printf("rank: %i  x = %20.10f z = %20.10f \n",rank,particles[0].x[0][i],particles[0].x[2][i]);
   }
-*/
+  fclose(file_ptr);
+  free(file_name);
 
   sleep (1);
   if (rank < cluster_size)
@@ -598,6 +603,7 @@ RETURN:
   }
 
   verbosity(2,fname,pars);
+  exit(0);
  
   return particles;
 }
