@@ -56,6 +56,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   extern NODE_INFO *node_info;
 
   FILE *out_ptr                        = NULL;
+  FILE *file_ptr                       = NULL;
 
   PARTICLES *particles                 = NULL;
   RAW_PARTICLE *raw_particle           = NULL;
