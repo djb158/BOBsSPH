@@ -399,12 +399,11 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   file_ptr = fopen(file_name,"w");
   for (i=0;i<nparticles;i++)
   {
-    printf("rank: %i  x = %20.10f z = %20.10f \n",rank,particles[0].x[0][i],particles[0].x[2][i]);
+    fprintf(file_ptr,"rank: %i  x = %20.10f z = %20.10f \n",rank,particles[0].x[0][i],particles[0].x[2][i]);
   }
   fclose(file_ptr);
   free(file_name);
 
-  sleep (1);
   if (rank < cluster_size)
   {
     printf(" rank: %i token_r = %i \n",rank,token_r);
@@ -604,6 +603,7 @@ RETURN:
   }
 
   verbosity(2,fname,pars);
+  sleep (100);
   exit(0);
  
   return particles;
