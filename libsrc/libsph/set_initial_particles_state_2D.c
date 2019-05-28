@@ -338,7 +338,9 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       nparticles++;
     }
   }
+/*
   token_r = 0;
+*/
   
   printf(" HERE 0 \n");
   if (rank == i_rank)
