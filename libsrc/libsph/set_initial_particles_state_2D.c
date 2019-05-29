@@ -69,6 +69,9 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int i                                = 0;
   int j                                = 0;
   int k                                = 0;
+  int l                                = 0;
+  int m                                = 0;
+  int n                                = 0;
   int offset                           = 0;
   int exit_status                      = EXIT_FAILURE;
   int l0                               = 0;
@@ -76,8 +79,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int l2                               = 0;
   int l3                               = 0;
   int l4                               = 0;
-  int l                                = 0;
-  int m                                = 0;
   int m0                               = 0;
   int m1                               = 0;
   int raw_index                        = 0;
@@ -321,7 +322,13 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
 /*
     if ( (raw_index>=(rank+0)*NPARTICLES) && (raw_index<(rank+1)*NPARTICLES) )
 */
-    if ( (t>=(rank+0)*NPARTICLES) && (t<(rank+1)*NPARTICLES) )
+    
+    n = 1;
+    if (rank == (cluster_size - 1))
+    {
+      n = 2;
+    }
+    if ( (t>=(rank+0)*NPARTICLES) && (t<(rank+1)*n*NPARTICLES) )
     {
       i_rank = rank;
       particles[0].m[nparticles]                = PARTICLE_MASS;
