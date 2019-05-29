@@ -261,7 +261,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   printf(" HERE 4 \n");
   TOTAL_PARTICLES = raw_index; 
   NPARTICLES = TOTAL_PARTICLES/cluster_size;
-  valid_values = (double)(TOTAL_PARTICLES + cluster_size*PARTICLES_IN_Z)/(double)(cluster_size+1)
+  valid_values = (double)(TOTAL_PARTICLES + cluster_size*PARTICLES_IN_Z)/(double)(cluster_size+1);
   if (valid_values >= (double)NPARTICLES)
   {
     exit_status = EXIT_FAILURE;
