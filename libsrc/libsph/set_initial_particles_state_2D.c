@@ -368,7 +368,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
 */
   
   printf(" HERE 0 \n");
-  if ( (rank == i_rank) && (rank < cluster_Size-1) )
+  if ( (rank == i_rank) && (rank < cluster_size-1) )
   {
   printf(" HERE 1 \n");
     seek = TRUE;
