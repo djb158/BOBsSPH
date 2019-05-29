@@ -368,7 +368,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
 */
   
   printf(" HERE 0 \n");
-  if (rank == i_rank)
+  if ( (rank == i_rank) && (rank < cluster_Size-1) )
   {
   printf(" HERE 1 \n");
     seek = TRUE;
@@ -431,7 +431,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   fclose(file_ptr);
   free(file_name);
 
-  if (rank < cluster_size)
+  if (rank < cluster_size-1)
   {
     printf(" rank: %i token_r = %i \n",rank,token_r);
     tag85  = 85*(MAX_TAGS)+rank;
