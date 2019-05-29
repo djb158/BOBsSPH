@@ -433,7 +433,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     goto RETURN;
   }
 
-  if (nparticles != NPARTICLES)printf(" ######## WARNING nparticles not = NPARTICLES");
+  printf(" ######## rank: %i NPARTICLES = %i nparticles = %i \n",rank,NPARTICLES,nparticles);
   node_info[rank].inv_raw_index_set         = 1;
   node_info[rank].raw_index_set             = 1;
   node_info[rank].species_set               = 1;
