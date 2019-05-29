@@ -262,7 +262,8 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   TOTAL_PARTICLES = raw_index; 
   NPARTICLES = TOTAL_PARTICLES/cluster_size;
   valid_values = (double)(TOTAL_PARTICLES + cluster_size*PARTICLES_IN_Z)/(double)(cluster_size+1);
-  if (valid_values >= (double)NPARTICLES)
+  printf(" valid_values = %20.10f other = %20.10f \n",valid_values,(double)NPARTICLES);
+  if (valid_values >=(double)NPARTICLES) 
   {
     exit_status = EXIT_FAILURE;
     printf("Rank: %i %s(): -error please increase cluster size by 1 \n",rank,fname);
