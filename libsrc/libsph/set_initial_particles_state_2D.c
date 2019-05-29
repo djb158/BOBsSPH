@@ -110,7 +110,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   double dist                          = 0.0;
   double x                             = LARGE_NEGATIVE_DOUBLE;
   double y                             = LARGE_NEGATIVE_DOUBLE;
-  double z                             = LARGE_NEGATIVE_DOUBLE;
+  double z                             = LARGE_NEGATIVE_DOUBLE; 
   double x0                            = 0.0;
   double x1                            = 0.0;
   double x2                            = 0.0;
@@ -138,6 +138,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   double KK                            = 2.0;
   double dz                            = 0.0;
   double dz2                           = 0.0;
+  double valid_values                  = LARGE_NEGATIVE_DOUBLE;
 
   logical seek                         = TRUE;
 
@@ -260,16 +261,26 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   printf(" HERE 4 \n");
   TOTAL_PARTICLES = raw_index; 
   NPARTICLES = TOTAL_PARTICLES/cluster_size;
+  valid_values = (double)(TOTAL_PARTICLES + cluster_size*PARTICLES_IN_Z)/(double)(cluster_size+1)
+  if (valid_values >= (double)NPARTICLES)
+  {
+    exit_status = EXIT_FAILURE;
+    printf("Rank: %i %s(): -error please increase cluster size by 1 \n",rank,fname);
+    goto RETURN;
+  }
+  
   pars[0].TOTAL_PARTICLES = TOTAL_PARTICLES;
   pars[0].NPARTICLES = NPARTICLES;
   printf(" NPARTICLES = %i cluster_size = %i \n",NPARTICLES,cluster_size);
  
+/*
   if ( ( (TOTAL_PARTICLES%cluster_size) + cluster_size*PARTICLES_IN_Z) > NPARTICLES)
   {
     exit_status = EXIT_FAILURE;
     printf("Rank: %i %s(): -error please increase cluter size by 1 \n",rank,fname);
     goto RETURN;
   }
+*/
 
   if ((particles=CreateParticles(NPARTICLES,pars))==NULL)
   {
