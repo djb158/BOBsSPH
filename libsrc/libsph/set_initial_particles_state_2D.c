@@ -98,6 +98,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int species_basic                    = LARGE_NEGATIVE_INT;
   int tag85                            = LARGE_NEGATIVE_INT;
 
+  double maxx                          = LARGE_NEGATIVE_DOUBLE;
   double val0                          = LARGE_NEGATIVE_DOUBLE;
   double val1                          = LARGE_NEGATIVE_DOUBLE;
   double val2                          = LARGE_NEGATIVE_DOUBLE;
@@ -203,6 +204,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
         {
           z =  Z0 + (double)j*dz;
           raw_particle[0].x[0][raw_index]       = x;
+          if (x > maxx)maxx = x;
           raw_particle[0].x[1][raw_index]       = 0.0;
           raw_particle[0].x[2][raw_index]       = z;
           raw_particle[0].rho[raw_index]        = RHO_l;
@@ -217,6 +219,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
         {
           z =  Z0 + (double)j*dz;
           raw_particle[0].x[0][raw_index]       = x;
+          if (x > maxx)maxx = x;
           raw_particle[0].x[1][raw_index]       = 0.0;
           raw_particle[0].x[2][raw_index]       = z;
           raw_particle[0].rho[raw_index]        = (RHO_l  + RHO_r*exp(x/d))/(1.0+exp(x/d));
@@ -235,6 +238,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
         {
           z =  Z0 + (double)j*dz2;
           raw_particle[0].x[0][raw_index]       = x;
+          if (x > maxx)maxx = x;
           raw_particle[0].x[1][raw_index]       = 0.0;
           raw_particle[0].x[2][raw_index]       = z;
           raw_particle[0].rho[raw_index]        = RHO_r;
@@ -249,6 +253,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
         {
           z =  Z0 + (double)j*dz2;
           raw_particle[0].x[0][raw_index]       = x;
+          if (x > maxx)maxx = x;
           raw_particle[0].x[1][raw_index]       = 0.0;
           raw_particle[0].x[2][raw_index]       = z;
           raw_particle[0].rho[raw_index]        = (RHO_l + RHO_r*exp(x/d))/(1.0+exp(x/d));
@@ -259,6 +264,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       }
     }
   }
+  printf(" maxx = %20.10f \n",maxx);
   printf(" HERE 4 \n");
   TOTAL_PARTICLES = raw_index; 
   NPARTICLES = TOTAL_PARTICLES/cluster_size;
@@ -316,6 +322,11 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   }
 
   printf(" HERE 2 \n");
+  n = 1;
+  if (rank == (cluster_size - 1))
+  {
+    n = 2;
+  }
   for(t=token_r;t<TOTAL_PARTICLES;t++)
   {
     raw_index = raw_particle[0].raw_index[t-token_r];
@@ -323,11 +334,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     if ( (raw_index>=(rank+0)*NPARTICLES) && (raw_index<(rank+1)*NPARTICLES) )
 */
     
-    n = 1;
-    if (rank == (cluster_size - 1))
-    {
-      n = 2;
-    }
     if ( (t>=(rank+0)*NPARTICLES) && (t<(rank+1)*n*NPARTICLES) )
     {
       i_rank = rank;
