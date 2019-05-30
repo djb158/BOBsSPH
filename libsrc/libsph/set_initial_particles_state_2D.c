@@ -327,7 +327,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   {
     n = 2;
   }
-  for(t=token_r;t<TOTAL_PARTICLES+token_r;t++)
+  for(t=token_r;t<TOTAL_PARTICLES;t++)
   {
     raw_index = raw_particle[0].raw_index[t-token_r];
 /*
