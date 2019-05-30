@@ -72,6 +72,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int l                                = 0;
   int m                                = 0;
   int n                                = 0;
+  int p                                = 0;
   int offset                           = 0;
   int exit_status                      = EXIT_FAILURE;
   int l0                               = 0;
@@ -323,11 +324,13 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
 
   printf(" HERE 2 \n");
   n = 1;
+  p = 0;
   if (rank == (cluster_size - 1))
   {
     n = 2;
+    p = token_r
   }
-  for(t=token_r;t<TOTAL_PARTICLES;t++)
+  for(t=token_r;t<TOTAL_PARTICLES+p;t++)
   {
     raw_index = raw_particle[0].raw_index[t-token_r];
 /*
