@@ -331,7 +331,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     if ( (raw_index>=(rank+0)*NPARTICLES) && (raw_index<(rank+1)*NPARTICLES) )
 */
     if ( t == (TOTAL_PARTICLES+token_r-2)) printf(" GERE 100 \n");
-    if ( (t>=(rank+0)*NPARTICLES) && (t<(rank+1)*NPARTICLES) )
+    if ( (t>=(rank+0)*NPARTICLES) && (t<(rank+1)*NPARTICLES+p) )
     {
     if ( t == (TOTAL_PARTICLES+token_r-2)) printf(" GERE 101 \n");
       i_rank = rank;
