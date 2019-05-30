@@ -328,7 +328,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   if (rank == (cluster_size - 1))
   {
     n = 2;
-    p = token_r
+    p = token_r;
   }
   for(t=token_r;t<TOTAL_PARTICLES+p;t++)
   {
