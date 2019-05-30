@@ -322,17 +322,17 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     printf(" receiving: %i \n",token_r);
   }
 
-  for(t=token_r;t<TOTAL_PARTICLES;t++)
+  p = 0;
+  if (rank == (cluster_size-1)) p = token_r;
+  for(t=token_r;t<TOTAL_PARTICLES+p;t++)
   {
     raw_index = raw_particle[0].raw_index[t-token_r];
 /*
     if ( (raw_index>=(rank+0)*NPARTICLES) && (raw_index<(rank+1)*NPARTICLES) )
 */
     
-    if (t == TOTAL_PARTICLES - 1) printf(" GERE 100 \n");
     if ( (t>=(rank+0)*NPARTICLES) && (t<(rank+1)*NPARTICLES) )
     {
-    if (t == TOTAL_PARTICLES - 1) printf(" GERE 101 \n");
       i_rank = rank;
       particles[0].m[nparticles]                = PARTICLE_MASS;
       particles[0].h[nparticles]                = 0.0;
