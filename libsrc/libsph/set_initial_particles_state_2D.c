@@ -322,12 +322,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     printf(" receiving: %i \n",token_r);
   }
 
-  printf(" HERE 2 \n");
-  n = 1;
-  if (rank == (cluster_size - 1))
-  {
-    n = 2;
-  }
   for(t=token_r;t<TOTAL_PARTICLES;t++)
   {
     raw_index = raw_particle[0].raw_index[t-token_r];
@@ -335,18 +329,16 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     if ( (raw_index>=(rank+0)*NPARTICLES) && (raw_index<(rank+1)*NPARTICLES) )
 */
     
-    if ( (t>=(rank+0)*NPARTICLES) && (t<(rank+1)*n*NPARTICLES) )
+    if (t == TOTAL_PARTICLES - 1) printf(" GERE 100 \n");
+    if ( (t>=(rank+0)*NPARTICLES) && (t<(rank+1)*NPARTICLES) )
     {
+    if (t == TOTAL_PARTICLES - 1) printf(" GERE 101 \n");
       i_rank = rank;
       particles[0].m[nparticles]                = PARTICLE_MASS;
       particles[0].h[nparticles]                = 0.0;
       particles[0].x[0][nparticles]             = raw_particle[0].x[0][t-token_r];  
       particles[0].x[1][nparticles]             = raw_particle[0].x[1][t-token_r];
       particles[0].x[2][nparticles]             = raw_particle[0].x[2][t-token_r]; 
-      if ( fabs(-0.0174683544-particles[0].x[0][nparticles]) < EPSILON_DOUBLE)
-      {
-        printf(" value x = %20.10f z = %20.10f \n",particles[0].x[0][nparticles],particles[0].x[2][nparticles]);
-      }
       particles[0].v[0][nparticles]             = 0.0;
       particles[0].v[1][nparticles]             = 0.0;
       particles[0].v[2][nparticles]             = 0.0;
