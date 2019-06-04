@@ -101,6 +101,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int *start_t                         = NULL;
   int *end_t                           = NULL;
   int NPARTICLES_0                     = 0;
+  int max_t                            = 0;
 
   double val0                          = LARGE_NEGATIVE_DOUBLE;
   double val1                          = LARGE_NEGATIVE_DOUBLE;
@@ -278,7 +279,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     z0 = raw_particle[0].x[2][t-2];
     z1 = raw_particle[0].x[2][t-1];
     z2 = raw_particle[0].x[2][t-0];
-    if ( (z1 >= z0) && (z1 >= z20) )
+    if ( (z1 >= z0) && (z1 >= z2) )
     {
       max_t = t-1;
     }
