@@ -547,8 +547,6 @@ RETURN:
   }
 
   verbosity(2,fname,pars);
-  sleep (100);
-  exit(0);
  
   return particles;
 }
