@@ -92,7 +92,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int nparticles                       = 0;
   int total_particles                  = 0;
   int t                                = 0;
-  int token_r                          = 0;
   int found                            = 0;
   int l_mirror                         = 0;
   int species                          = LARGE_NEGATIVE_INT;
@@ -296,10 +295,8 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   {
     printf(" i_rank: %i start: %i end: %i   %i\n",i,start_t[i],end_t[i],end_t[i]-start_t[i]);
   }
-  sleep (100);
   free(start_t); start_t = NULL;
   free(end_t);   end_t   = NULL;
-  exit(0);
  
 
   if ((particles=CreateParticles(NPARTICLES,pars))==NULL)
@@ -324,98 +321,30 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   node_info[rank].total_particles = TOTAL_PARTICLES;
   nparticles = 0;
 
-  token_r = 0;
-  if (rank != 0)
+  for(t=start_t[rank],t<=end_t[rank];t++)
   {
-    tag85  = 85*(MAX_TAGS)+rank-1;
-    MPI_Recv(&token_r,1,MPI_INT,rank-1,tag85,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
-    printf(" receiving: %i \n",token_r);
+    particles[0].m[nparticles]                = PARTICLE_MASS;
+    particles[0].h[nparticles]                = 0.0;
+    particles[0].x[0][nparticles]             = raw_particle[0].x[0][t];  
+    particles[0].x[1][nparticles]             = raw_particle[0].x[1][t];
+    particles[0].x[2][nparticles]             = raw_particle[0].x[2][t]; 
+    particles[0].v[0][nparticles]             = 0.0;
+    particles[0].v[1][nparticles]             = 0.0;
+    particles[0].v[2][nparticles]             = 0.0;
+    particles[0].dvdt[0][nparticles]          = 0.0;
+    particles[0].dvdt[1][nparticles]          = 0.0;
+    particles[0].dvdt[2][nparticles]          = 0.0;
+    particles[0].p[nparticles]                = 0.0;
+    particles[0].rho[nparticles]              = raw_particle[0].rho[t];
+    particles[0].U[nparticles]                = raw_particle[0].U[t]; 
+    particles[0].dUdt[nparticles]             = 0.0;
+    particles[0].divV[nparticles]             = 0.0;
+    particles[0].raw_index[nparticles]        = raw_index;
+    node_info[rank].raw_index[nparticles]     = raw_index;
+    node_info[rank].inv_raw_index[raw_index]  = nparticles;
+    nparticles++;
   }
-
-  for(t=0;t<TOTAL_PARTICLES;t++)
-  {
-    raw_index = raw_particle[0].raw_index[t];
-    if ( (t>=(rank+0)*NPARTICLES) && (t<(rank+1)*NPARTICLES) )
-    {
-      i_rank = rank;
-      particles[0].m[nparticles]                = PARTICLE_MASS;
-      particles[0].h[nparticles]                = 0.0;
-      particles[0].x[0][nparticles]             = raw_particle[0].x[0][t-token_r];  
-      particles[0].x[1][nparticles]             = raw_particle[0].x[1][t-token_r];
-      particles[0].x[2][nparticles]             = raw_particle[0].x[2][t-token_r]; 
-      particles[0].v[0][nparticles]             = 0.0;
-      particles[0].v[1][nparticles]             = 0.0;
-      particles[0].v[2][nparticles]             = 0.0;
-      particles[0].dvdt[0][nparticles]          = 0.0;
-      particles[0].dvdt[1][nparticles]          = 0.0;
-      particles[0].dvdt[2][nparticles]          = 0.0;
-      particles[0].p[nparticles]                = 0.0;
-      particles[0].rho[nparticles]              = raw_particle[0].rho[t-token_r];
-      particles[0].U[nparticles]                = raw_particle[0].U[t-token_r]; 
-      particles[0].dUdt[nparticles]             = 0.0;
-      particles[0].divV[nparticles]             = 0.0;
-      particles[0].raw_index[nparticles]        = raw_index;
-      node_info[rank].raw_index[nparticles]     = raw_index;
-      node_info[rank].inv_raw_index[raw_index]  = nparticles;
-      nparticles++;
-    }
-  }
-/*
-  token_r = 0;
-*/
   
-  if ( (rank == i_rank) && (rank < cluster_size-1) )
-  {
-    seek = TRUE;
-    val1 = Z1 + (double)ZERO*dz;
-    val2 = Z0 + (double)(PARTICLES_IN_Z_H-ZERO_H-1)*dz2;
-    val0 = particles[0].x[2][nparticles-1];
-    if  ( (fabs(val1-val0) < EPSILON_DOUBLE) 
-                           || 
-          (fabs(val2-val0) < EPSILON_DOUBLE) )
-
-    {
-      seek = FALSE;
-    }
-    while (seek)
-    {
-      i = nparticles-1;
-      particles[0].nn_index[i].num                   = LARGE_NEGATIVE_INT;
-      particles[0].nn_index[i].node                  = NULL;
-      particles[0].nn_index[i].n_offnode_neighbours  = NULL;
-      particles[0].raw_index[i]                      = LARGE_NEGATIVE_INT;
-      particles[0].species[i]                        = LARGE_NEGATIVE_INT;
-      particles[0].m[i]                              = PARTICLE_MASS;
-      particles[0].h[i]                              = LARGE_NEGATIVE_DOUBLE;
-      particles[0].x[0][i]                           = LARGE_NEGATIVE_DOUBLE;
-      particles[0].x[1][i]                           = LARGE_NEGATIVE_DOUBLE;
-      particles[0].x[2][i]                           = LARGE_NEGATIVE_DOUBLE;
-      particles[0].v[0][i]                           = LARGE_NEGATIVE_DOUBLE;
-      particles[0].v[1][i]                           = LARGE_NEGATIVE_DOUBLE;
-      particles[0].v[2][i]                           = LARGE_NEGATIVE_DOUBLE;
-      particles[0].dvdt[0][i]                        = LARGE_NEGATIVE_DOUBLE;
-      particles[0].dvdt[1][i]                        = LARGE_NEGATIVE_DOUBLE;
-      particles[0].dvdt[2][i]                        = LARGE_NEGATIVE_DOUBLE;
-      particles[0].p[i]                              = LARGE_NEGATIVE_DOUBLE;
-      particles[0].rho[i]                            = LARGE_NEGATIVE_DOUBLE;
-      particles[0].U[i]                              = LARGE_NEGATIVE_DOUBLE;
-      particles[0].dUdt[i]                           = LARGE_NEGATIVE_DOUBLE;
-      particles[0].divV[i]                           = LARGE_NEGATIVE_DOUBLE;
-      node_info[rank].raw_index[nparticles]          = LARGE_NEGATIVE_INT; 
-      node_info[rank].inv_raw_index[raw_index]       = LARGE_NEGATIVE_INT;
-      nparticles--;
-      raw_index--;
-      token_r++;
-      val0 = particles[0].x[2][nparticles-1];
-      if  ( (fabs(val1-val0) < EPSILON_DOUBLE) 
-                             || 
-           (fabs(val2-val0) < EPSILON_DOUBLE) )
-      {
-        seek = FALSE;
-      }
-    }
-  }
-
   file_name = (char *)calloc(MAX_CHARS,sizeof(char));
   sprintf(file_name,"/tmp/xz_%i.txt",rank);
   file_ptr = fopen(file_name,"w");
@@ -425,14 +354,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   }
   fclose(file_ptr);
   free(file_name);
-
-  if (rank < cluster_size-1)
-  {
-    printf(" rank: %i token_r = %i \n",rank,token_r);
-    tag85  = 85*(MAX_TAGS)+rank;
-    printf(" sending: %i \n",token_r);
-    MPI_Send(&token_r,1,MPI_INT,rank+1,tag85,MPI_COMM_WORLD);
-  }
 
 
   if ( (EquationOfState(particles,pars))==EXIT_FAILURE )
