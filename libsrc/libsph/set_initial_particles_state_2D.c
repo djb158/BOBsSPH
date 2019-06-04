@@ -291,6 +291,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     }
   }
   end_t[cluster_size-1] = TOTAL_PARTICLES-1;
+  printf(" NPARTICLES_0 = %i  NPARTICLES = %i \n",NPARTICLES_0,NPARTICLES);
   for (i=0;i<i_rank+1;i++)
   {
     printf(" i_rank: %i start: %i end: %i   %i\n",i,start_t[i],end_t[i],end_t[i]-start_t[i]);
