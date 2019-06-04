@@ -295,8 +295,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   {
     printf(" i_rank: %i start: %i end: %i   %i\n",i,start_t[i],end_t[i],end_t[i]-start_t[i]);
   }
-  free(start_t); start_t = NULL;
-  free(end_t);   end_t   = NULL;
  
 
   if ((particles=CreateParticles(NPARTICLES,pars))==NULL)
@@ -344,6 +342,9 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     node_info[rank].inv_raw_index[raw_index]  = nparticles;
     nparticles++;
   }
+
+  free(start_t); start_t = NULL;
+  free(end_t);   end_t   = NULL;
   
   file_name = (char *)calloc(MAX_CHARS,sizeof(char));
   sprintf(file_name,"/tmp/xz_%i.txt",rank);
