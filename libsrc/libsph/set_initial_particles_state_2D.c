@@ -321,7 +321,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   node_info[rank].total_particles = TOTAL_PARTICLES;
   nparticles = 0;
 
-  for(t=start_t[rank],t<=end_t[rank];t++)
+  for(t=start_t[rank];t<=end_t[rank];t++)
   {
     particles[0].m[nparticles]                = PARTICLE_MASS;
     particles[0].h[nparticles]                = 0.0;
