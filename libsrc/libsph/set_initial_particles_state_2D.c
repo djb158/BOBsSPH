@@ -100,6 +100,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int tag85                            = LARGE_NEGATIVE_INT;
   int *start_t                         = NULL;
   int *end_t                           = NULL;
+  int NPARTICLES_0                     = 0;
 
   double val0                          = LARGE_NEGATIVE_DOUBLE;
   double val1                          = LARGE_NEGATIVE_DOUBLE;
@@ -262,8 +263,8 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     }
   }
   TOTAL_PARTICLES = raw_index; 
-  NPARTICLES0 = TOTAL_PARTICLES/cluster_size;
-  NPARTICLES  = NPARTICLES0 + TOTAL_PARTICLES - NPARTICLES0*cluster_size + PARTICLES_IN_Z;
+  NPARTICLES_0 = TOTAL_PARTICLES/cluster_size;
+  NPARTICLES  = NPARTICLES_0 + TOTAL_PARTICLES - NPARTICLES_0*cluster_size + PARTICLES_IN_Z;
   
   pars[0].TOTAL_PARTICLES = TOTAL_PARTICLES;
   pars[0].NPARTICLES = NPARTICLES;
@@ -281,7 +282,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     {
       max_t = t-1;
     }
-    if ( (t % NPARTICLES0) == 0)
+    if ( (t % NPARTICLES_0) == 0)
     {
        end_t[i_rank] = max_t;
        i_rank++;
