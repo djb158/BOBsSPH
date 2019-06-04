@@ -295,7 +295,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   {
     printf(" i_rank: %i start: %i end: %i \n",i,start_t[i],end_t[i]);
   }
-  sleep 100;
+  sleep (100);
   free(start_t); start_t = NULL;
   free(end_t);   end_t   = NULL;
   exit(0);
