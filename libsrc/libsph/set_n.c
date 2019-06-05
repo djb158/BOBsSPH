@@ -220,7 +220,7 @@ int Set_N(PARS *pars)
       j = i_rank*nparticles + i;
       if (species[i] != MASK_VOID)
       {
-        printf(" j = %i i = %i  %i\n",j,i,nparticles);
+        printf(" j = %i i = %i  i_rank = %i nparticles = %i\n",j,i,i_rank,nparticles);
         all_points[j][0]= X[i];
       }
     }
