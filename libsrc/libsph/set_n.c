@@ -218,11 +218,7 @@ int Set_N(PARS *pars)
     for (i=0;i<nparticles;i++)
     {
       j = i_rank*nparticles + i;
-      if (species[i] != MASK_VOID)
-      {
-        printf(" j = %i i = %i  i_rank = %i nparticles = %i\n",j,i,i_rank,nparticles);
-        all_points[j][0]= X[i];
-      }
+      all_points[j][0]= X[i];
     }
     Free_sph(X);
     if (DIMENSIONS == 2)
@@ -238,10 +234,7 @@ int Set_N(PARS *pars)
       for (i=0;i<nparticles;i++)
       {
         j = i_rank*nparticles + i;
-        if (species[i] != MASK_VOID)
-        {
-          all_points[j][1]= Z[i];
-        }
+        all_points[j][1]= Z[i];
       }
       Free_sph(Z);
     }
@@ -266,11 +259,8 @@ int Set_N(PARS *pars)
       for (i=0;i<nparticles;i++)
       {
         j = i_rank*nparticles + i;
-        if (species[i] != MASK_VOID)
-        {
-          all_points[j][1] = Y[i];
-          all_points[j][2] = Z[i];
-        }
+        all_points[j][1] = Y[i];
+        all_points[j][2] = Z[i];
       }
       Free_sph(Y);
       Free_sph(Z);
@@ -542,11 +532,8 @@ int Set_N(PARS *pars)
     }
     for (i=0;i<nparticles;i++)
     {
-      if (species[i] != MASK_VOID)
-      {
-        j = i_rank*nparticles + i;
-        v_all_points[j][0] = VX[i];
-      }
+      j = i_rank*nparticles + i;
+      v_all_points[j][0] = VX[i];
     }
     Free_sph(VX);
 /*                                                                           */
@@ -572,12 +559,9 @@ int Set_N(PARS *pars)
       }
       for (i=0;i<nparticles;i++)
       {
-        if (species[i] != MASK_VOID)
-        {
-          j = i_rank*nparticles + i;
-          v_all_points[j][1] = VY[i];
-          v_all_points[j][2] = VZ[i];
-        }
+        j = i_rank*nparticles + i;
+        v_all_points[j][1] = VY[i];
+        v_all_points[j][2] = VZ[i];
       }
       Free_sph(VY);
       Free_sph(VZ);
@@ -597,11 +581,8 @@ int Set_N(PARS *pars)
       }
       for (i=0;i<nparticles;i++)
       {
-        if (species[i] != MASK_VOID)
-        {
-          j = i_rank*nparticles + i;
-          v_all_points[j][1] = VZ[i];
-        }
+        j = i_rank*nparticles + i;
+        v_all_points[j][1] = VZ[i];
       }
       Free_sph(VZ);
     }
@@ -786,11 +767,8 @@ int Set_N(PARS *pars)
     }
     for (i=0;i<nparticles;i++)
     {
-      if (species[i] != MASK_VOID)
-      {
-        j = i_rank*nparticles + i;
-        u_all_points[j] = U[i];
-      }
+      j = i_rank*nparticles + i;
+      u_all_points[j] = U[i];
     }
     Free_sph(U);
     Free_sph(species);
@@ -922,11 +900,8 @@ int Set_N(PARS *pars)
     }
     for (i=0;i<nparticles;i++)
     {
-      if (species[i] != MASK_VOID)
-      {
-        j = i_rank*nparticles + i;
-        h_all_points[j] = H[i];
-      }
+      j = i_rank*nparticles + i;
+      h_all_points[j] = H[i];
     }
     Free_sph(H);
     Free_sph(species);
@@ -1060,11 +1035,8 @@ int Set_N(PARS *pars)
     }
     for (i=0;i<nparticles;i++)
     {
-      if (species[i] != MASK_VOID)
-      {
-        j = i_rank*nparticles + i;
-        rho_all_points[j] = RHO[i];
-      }
+      j = i_rank*nparticles + i;
+      rho_all_points[j] = RHO[i];
     }
     Free_sph(RHO);
     Free_sph(species);
@@ -1197,11 +1169,8 @@ int Set_N(PARS *pars)
     }
     for (i=0;i<nparticles;i++)
     {
-      if (species[i] != MASK_VOID)
-      {
-        j = i_rank*nparticles + i;
-        p_all_points[j] = P[i];
-      }
+      j = i_rank*nparticles + i;
+      p_all_points[j] = P[i];
     }
     Free_sph(P);
     Free_sph(species);
@@ -1335,11 +1304,8 @@ int Set_N(PARS *pars)
     }
     for (i=0;i<nparticles;i++)
     {
-      if (species[i] != MASK_VOID)
-      {
-        j = i_rank*nparticles + i;
-        divv_all_points[j] = divV[i];
-      }
+      j = i_rank*nparticles + i;
+      divv_all_points[j] = divV[i];
     }
     Free_sph(divV);
     Free_sph(species);
