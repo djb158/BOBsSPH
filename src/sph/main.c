@@ -516,6 +516,18 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     if (rank == 0)
+     {
+     printf(" rank: %i 12a x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+     }
+/*   end   */
+
 
 /*###########################################################################*/
 /*                                                                           */
