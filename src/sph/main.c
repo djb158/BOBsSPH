@@ -246,6 +246,14 @@ int main(int argc, char *argv[])
   {
     i_step = 0;
   }
+ 
+/*   start */
+     printf(" rank: %i 1 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
 
   while (i_step < N_STEPS)
   {
@@ -256,6 +264,16 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 2 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
+
 
       i_step++;
       nparticles = node_info[rank].nparticles;
@@ -274,6 +292,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 3 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 /*                                                                           */
 /*                 retrieve particle2 velocity                               */
@@ -284,6 +311,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 4 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 /*                                                                           */
 /*                 retrieve particle2 energy                                 */
@@ -294,6 +330,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 5 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 /*                                                                           */
 /*                 retrieve particle1 acceleration                           */
@@ -304,6 +349,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 6 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                 retrieve particle1 energy deriv                           */
 /*                                                                           */
@@ -313,6 +367,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 7 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                 integrate particle velocity interior                      */
 /*                                                                           */
@@ -322,6 +385,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 8 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                 integrate particle velocity boundary                      */
 /*                 -need to call twice                                       */
@@ -336,6 +408,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 9 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                 integrate particle acceleration interior                  */
 /*                                                                           */
@@ -344,6 +425,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 10 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                 integrate particle acceleration boundary                  */
 /*                                                                           */
@@ -356,6 +446,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 11 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                 update particle_3 position                                */
 /*                                                                           */
@@ -364,6 +463,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       } 
+ 
+/*   start */
+     printf(" rank: %i 12 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                 set particle velocity                                     */
 /*                                                                           */
@@ -388,6 +496,15 @@ int main(int argc, char *argv[])
 /*                               BLOCK 1: END                                */
 /*                                                                           */
 /*###########################################################################*/
+ 
+/*   start */
+     printf(" rank: %i 13 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 
 /*###########################################################################*/
@@ -404,6 +521,15 @@ int main(int argc, char *argv[])
 /*                               BLOCK 2: END                                */
 /*                                                                           */
 /*###########################################################################*/
+ 
+/*   start */
+     printf(" rank: %i 14 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 /*                                                                           */
 /*                 integrate particle energy interior                        */
@@ -413,6 +539,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 15 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                 integrate particle energy boundary                        */
 /*                                                                           */
@@ -422,6 +557,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 16 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                 particle energy                                           */
 /*                                                                           */
@@ -430,6 +574,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 17 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 /*###########################################################################*/
 /*                                                                           */
@@ -445,6 +598,15 @@ int main(int argc, char *argv[])
 /*                               BLOCK 3: END                                */
 /*                                                                           */
 /*###########################################################################*/
+ 
+/*   start */
+     printf(" rank: %i 18 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 /*                                                                           */
 /*                 update kernel lengths                                     */
@@ -454,6 +616,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 19 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 /*###########################################################################*/
 /*                                                                           */
@@ -469,6 +640,15 @@ int main(int argc, char *argv[])
 /*                               BLOCK 4: END                                */
 /*                                                                           */
 /*###########################################################################*/
+ 
+/*   start */
+     printf(" rank: %i 20 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
       if ( (SetParticleDensity_INTERIOR_thread_wrapper(particles_3,x_particles,pars))==EXIT_FAILURE )
       {
@@ -484,6 +664,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 21 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 /*###########################################################################*/
 /*                                                                           */
@@ -507,6 +696,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 22 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 /*###########################################################################*/
 /*                                                                           */
@@ -518,6 +716,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 23 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                               BLOCK 6: END                                */
 /*                                                                           */
@@ -531,6 +738,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 24 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
 /*###########################################################################*/
 /*                                                                           */
@@ -542,6 +758,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 25 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 /*                                                                           */
 /*                               BLOCK 7: END                                */
 /*                                                                           */
@@ -552,6 +777,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 26 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
       if (
            ((CalculateParticleAcceleration_BOUNDARY(a_3,pars))==EXIT_FAILURE )
                                              ||
@@ -561,12 +795,30 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 27 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
       if ((dUdt_3=CalculateParticleEnergyDeriv_INTERIOR_thread_wrapper(particles_3,x_particles,pars))==NULL )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 28 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
       if(
           ((CalculateParticleEnergyDeriv_BOUNDARY(dUdt_3,pars))==EXIT_FAILURE )
@@ -577,6 +829,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 29 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
       if ( (vorticity=CalculateParticleVorticity(particles_3,x_particles,pars))==NULL )
       {
@@ -593,11 +854,29 @@ int main(int argc, char *argv[])
           goto RETURN;
         }
       }
+ 
+/*   start */
+     printf(" rank: %i 30 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
       if ((v_4=IntegrateParticleAcceleration_INTERIOR(v_2,a_3,dt,pars))==NULL)
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 31 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
       if (
           ((IntegrateParticleAcceleration_BOUNDARY(v_4,pars))==EXIT_FAILURE )
                                           ||
@@ -607,6 +886,15 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 32 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
       if ((U_4=IntegrateParticleEnergy_INTERIOR(U_2,dUdt_3,dt,pars))==NULL)
       {
@@ -624,27 +912,72 @@ int main(int argc, char *argv[])
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 33 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
 
       if ( (SetParticleAcceleration(particles_3,a_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 34 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
       if ( (SetParticleEnergyDeriv(particles_3,dUdt_3,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 35 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
       if ( (SetParticleVelocity(particles_4,v_4,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 36 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
       if ( (SetParticleEnergy(particles_4,U_4,pars))==EXIT_FAILURE )
       {
         exit_status = EXIT_FAILURE;
         goto RETURN;
       }
+ 
+/*   start */
+     printf(" rank: %i 37 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
       if (VERBOSITY > 0)
       {
         if ( (CheckForNaN(particles_3,pars))==EXIT_FAILURE)
@@ -660,6 +993,15 @@ int main(int argc, char *argv[])
           goto RETURN;
         }
       }
+ 
+/*   start */
+     printf(" rank: %i 38 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
+     printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
+     printf(" ");
+/*   end   */
+
       if ( (FreeParticles(&particles_1,pars,NPARTICLES))==EXIT_FAILURE )
       {
         printf("Rank: %i %s():particles_1 -error return from FreeParticles()\n",rank,fname);
