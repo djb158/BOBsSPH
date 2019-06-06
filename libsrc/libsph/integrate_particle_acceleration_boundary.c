@@ -126,6 +126,7 @@ int IntegrateParticleAcceleration_BOUNDARY(double **v,PARS *pars)
     species      = node_info[rank].species[l];
     i_mirror_raw = node_info[rank].ghost_mirror[index];
     l_mirror     = node_info[rank].inv_raw_index[i_mirror_raw];
+    if (l == 416) printf(" MIRROR IS: %i \n",l_mirror);
 /*                                                                           */
 /*                 LHS + RHS boundary                                        */
 /*                                                                           */
