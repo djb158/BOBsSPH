@@ -268,7 +268,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   NPARTICLES        = NPARTICLES_0 + TOTAL_PARTICLES_0 - NPARTICLES_0*cluster_size + PARTICLES_IN_Z;
   TOTAL_PARTICLES   = cluster_size*NPARTICLES;
   printf(" TOTAL_0 = %i  TOTAL = %i \n",TOTAL_PARTICLES_0,TOTAL_PARTICLES);
-  exit 0;
   
   pars[0].TOTAL_PARTICLES = TOTAL_PARTICLES;
   pars[0].NPARTICLES = NPARTICLES;
