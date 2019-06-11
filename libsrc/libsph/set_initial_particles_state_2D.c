@@ -83,7 +83,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int m0                               = 0;
   int m1                               = 0;
   int raw_index                        = 0;
-  int i_rank                           = 0;
   int i_off                            = 0;
   int i0                               = 0;
   int i1                               = 0;
@@ -96,12 +95,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int l_mirror                         = 0;
   int species                          = LARGE_NEGATIVE_INT;
   int species_basic                    = LARGE_NEGATIVE_INT;
-  int tag85                            = LARGE_NEGATIVE_INT;
-  int *start_t                         = NULL;
-  int *end_t                           = NULL;
-  int NPARTICLES_0                     = 0;
-  int max_t                            = 0;
-  int TOTAL_PARTICLES_0                = LARGE_NEGATIVE_INT;
 
   double val0                          = LARGE_NEGATIVE_DOUBLE;
   double val1                          = LARGE_NEGATIVE_DOUBLE;
@@ -195,7 +188,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   d   = dx2/2.0;
   raw_index = 0;
 
-
   for (i=0;i<PARTICLES_IN_X;i++)
   {
     if (i <= CENTRE_POINT)
@@ -263,43 +255,16 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       }
     }
   }
-  TOTAL_PARTICLES_0 = raw_index; 
-  NPARTICLES_0      = TOTAL_PARTICLES_0/cluster_size;
-  NPARTICLES        = NPARTICLES_0 + TOTAL_PARTICLES_0 - NPARTICLES_0*cluster_size + PARTICLES_IN_Z;
-  TOTAL_PARTICLES   = cluster_size*NPARTICLES;
-  printf(" TOTAL_0 = %i  TOTAL = %i \n",TOTAL_PARTICLES_0,TOTAL_PARTICLES);
+  TOTAL_PARTICLES = raw_index; 
+  printf(" Total particles = %i \n",TOTAL_PARTICLES);
+/*
+  NPARTICLES      = TOTAL_PARTICLES/cluster_size;
+*/
+  NPARTICLES = 348195
   
   pars[0].TOTAL_PARTICLES = TOTAL_PARTICLES;
   pars[0].NPARTICLES = NPARTICLES;
  
-  i_rank = 0;
-  start_t = (int *)calloc(cluster_size,sizeof(int));
-  end_t   = (int *)calloc(cluster_size,sizeof(int));
-  start_t[i_rank] = 0;
-  for(t=2;t<TOTAL_PARTICLES_0;t++)
-  {
-    z0 = raw_particle[0].x[2][t-2];
-    z1 = raw_particle[0].x[2][t-1];
-    z2 = raw_particle[0].x[2][t-0];
-    if ( (z1 >= z0) && (z1 >= z2) )
-    {
-      max_t = t-1;
-    }
-    if ( (t % NPARTICLES_0) == 0)
-    {
-       end_t[i_rank] = max_t;
-       i_rank++;
-       start_t[i_rank] = max_t+1;;
-    }
-  }
-  end_t[cluster_size-1] = TOTAL_PARTICLES_0-1;
-  printf(" NPARTICLES_0 = %i  NPARTICLES = %i \n",NPARTICLES_0,NPARTICLES);
-  for (i=0;i<i_rank+1;i++)
-  {
-    printf(" i_rank: %i start: %i end: %i   %i\n",i,start_t[i],end_t[i],end_t[i]-start_t[i]);
-  }
- 
-
   if ((particles=CreateParticles(NPARTICLES,pars))==NULL)
   {
     exit_status = EXIT_FAILURE;
@@ -322,33 +287,34 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   node_info[rank].total_particles = TOTAL_PARTICLES;
   nparticles = 0;
 
-  for(t=start_t[rank];t<=end_t[rank];t++)
+  for(t=0;t<TOTAL_PARTICLES;t++)
   {
-    particles[0].m[nparticles]                = PARTICLE_MASS;
-    particles[0].h[nparticles]                = 0.0;
-    particles[0].x[0][nparticles]             = raw_particle[0].x[0][t];  
-    particles[0].x[1][nparticles]             = raw_particle[0].x[1][t];
-    particles[0].x[2][nparticles]             = raw_particle[0].x[2][t]; 
-    particles[0].v[0][nparticles]             = 0.0;
-    particles[0].v[1][nparticles]             = 0.0;
-    particles[0].v[2][nparticles]             = 0.0;
-    particles[0].dvdt[0][nparticles]          = 0.0;
-    particles[0].dvdt[1][nparticles]          = 0.0;
-    particles[0].dvdt[2][nparticles]          = 0.0;
-    particles[0].p[nparticles]                = 0.0;
-    particles[0].rho[nparticles]              = raw_particle[0].rho[t];
-    particles[0].U[nparticles]                = raw_particle[0].U[t]; 
-    particles[0].dUdt[nparticles]             = 0.0;
-    particles[0].divV[nparticles]             = 0.0;
-    particles[0].raw_index[nparticles]        = raw_index;
-    node_info[rank].raw_index[nparticles]     = raw_index;
-    node_info[rank].inv_raw_index[raw_index]  = nparticles;
-    nparticles++;
+    raw_index = raw_particle[0].raw_index[t];
+    if ( (raw_index>=(rank+0)*NPARTICLES) && (raw_index<(rank+1)*NPARTICLES) )
+    {
+      particles[0].m[nparticles]                = PARTICLE_MASS;
+      particles[0].h[nparticles]                = 0.0;
+      particles[0].x[0][nparticles]             = raw_particle[0].x[0][t];  
+      particles[0].x[1][nparticles]             = raw_particle[0].x[1][t];
+      particles[0].x[2][nparticles]             = raw_particle[0].x[2][t]; 
+      particles[0].v[0][nparticles]             = 0.0;
+      particles[0].v[1][nparticles]             = 0.0;
+      particles[0].v[2][nparticles]             = 0.0;
+      particles[0].dvdt[0][nparticles]          = 0.0;
+      particles[0].dvdt[1][nparticles]          = 0.0;
+      particles[0].dvdt[2][nparticles]          = 0.0;
+      particles[0].p[nparticles]                = 0.0;
+      particles[0].rho[nparticles]              = raw_particle[0].rho[t];
+      particles[0].U[nparticles]                = raw_particle[0].U[t]; 
+      particles[0].dUdt[nparticles]             = 0.0;
+      particles[0].divV[nparticles]             = 0.0;
+      particles[0].raw_index[nparticles]        = raw_index;
+      node_info[rank].raw_index[nparticles]     = raw_index;
+      node_info[rank].inv_raw_index[raw_index]  = nparticles;
+      nparticles++;
+    }
   }
 
-  free(start_t); start_t = NULL;
-  free(end_t);   end_t   = NULL;
-  
   file_name = (char *)calloc(MAX_CHARS,sizeof(char));
   sprintf(file_name,"/tmp/xz_%i.txt",rank);
   file_ptr = fopen(file_name,"w");
