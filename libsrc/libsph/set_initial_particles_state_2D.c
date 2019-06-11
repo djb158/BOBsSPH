@@ -260,7 +260,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
 /*
   NPARTICLES      = TOTAL_PARTICLES/cluster_size;
 */
-  NPARTICLES = 348195
+  NPARTICLES = 348195;
   
   pars[0].TOTAL_PARTICLES = TOTAL_PARTICLES;
   pars[0].NPARTICLES = NPARTICLES;
