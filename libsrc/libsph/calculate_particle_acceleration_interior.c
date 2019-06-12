@@ -274,7 +274,7 @@ void *CalculateParticleAcceleration_INTERIOR(void *v_td)
           z_j    = x_particles[0].x[2][l];
           vx_j   = x_particles[0].v[0][l];
           vz_j   = x_particles[0].v[2][l];
-          U_j    = x_particles[0].U[j];
+          U_j    = x_particles[0].U[l];
           h_j    = x_particles[0].h[l];
           m_j    = x_particles[0].m[l];
         }
