@@ -184,7 +184,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   dz  = (Z1-Z0)/(double)(PARTICLES_IN_Z-2*ZERO-1);
   dx  = 1.0/(double)(CENTRE_POINT-ZERO);
   dx2 = 1.0/(double)(PARTICLES_IN_X-ZERO/2-CENTRE_POINT);
-  printf(" dx2 = %20.10f \n",dx2);
   dz2 = 2.0*dz;
   d   = dx2/2.0;
   raw_index = 0;
@@ -296,6 +295,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       particles[0].m[nparticles]                = PARTICLE_MASS;
       particles[0].h[nparticles]                = 0.0;
       particles[0].x[0][nparticles]             = raw_particle[0].x[0][t];  
+      if (rank == 2)printf(" X = %20.10f \n",raw_particle[0].x[0][t]);
       particles[0].x[1][nparticles]             = raw_particle[0].x[1][t];
       particles[0].x[2][nparticles]             = raw_particle[0].x[2][t]; 
       particles[0].v[0][nparticles]             = 0.0;
