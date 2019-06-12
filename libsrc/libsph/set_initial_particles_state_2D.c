@@ -184,6 +184,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   dz  = (Z1-Z0)/(double)(PARTICLES_IN_Z-2*ZERO-1);
   dx  = 1.0/(double)(CENTRE_POINT-ZERO);
   dx2 = 1.0/(double)(PARTICLES_IN_X-ZERO/2-CENTRE_POINT);
+  printf(" dx2 = %20.10f \n",dx2);
   dz2 = 2.0*dz;
   d   = dx2/2.0;
   raw_index = 0;
