@@ -250,7 +250,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 1 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 1 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -271,7 +271,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 2 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 2 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -302,7 +302,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 3 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 3 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -324,7 +324,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 4 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 4 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -346,7 +346,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 5 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 5 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -368,7 +368,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 6 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 6 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -389,7 +389,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 7 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 7 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -410,7 +410,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 8 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 8 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -436,7 +436,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 9 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 9 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -456,7 +456,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 10 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 10 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -480,7 +480,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 11 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 11 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -500,7 +500,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 12 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 12 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -520,7 +520,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 12a x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 12a x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -548,7 +548,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 13 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 13 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -576,7 +576,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 14 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 14 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -597,7 +597,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 15 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 15 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -618,7 +618,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 16 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 16 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -638,7 +638,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 17 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 17 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -665,7 +665,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 18 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 18 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -686,7 +686,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 19 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 19 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -713,7 +713,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 20 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 20 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -740,7 +740,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 21 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 21 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -775,7 +775,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 22 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 22 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -798,7 +798,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 23 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank: %i 23 x = %20.10f v = %20.10f z = %20.10f \n",rank,particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -823,7 +823,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 24 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf("         24 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -846,7 +846,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 25 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:    25 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -868,7 +868,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 26 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:    26 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -889,7 +889,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 27 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  27 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -907,7 +907,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 28 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  28 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -929,7 +929,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 29 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  29 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -957,7 +957,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 30 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  30 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -974,7 +974,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 31 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  31 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -995,7 +995,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 32 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  32 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -1024,7 +1024,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 33 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  33 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -1042,7 +1042,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 34 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  34 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -1059,7 +1059,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 35 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  35 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -1076,7 +1076,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 36 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  36 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -1093,7 +1093,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 37 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  37 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
@@ -1120,7 +1120,7 @@ int main(int argc, char *argv[])
 /*   start */
      if (rank == 0)
      {
-     printf(" rank: %i 38 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
+     printf(" rank:  38 x = %20.10f v = %20.10f z = %20.10f \n",particles_1[0].x[0][416],particles_1[0].v[0][416],particles_1[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_2[0].x[0][416],particles_2[0].v[0][416],particles_2[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_3[0].x[0][416],particles_3[0].v[0][416],particles_3[0].x[2][416]);
      printf("            x = %20.10f v = %20.10f z = %20.10f \n",particles_4[0].x[0][416],particles_4[0].v[0][416],particles_4[0].x[2][416]);
