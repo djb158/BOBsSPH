@@ -157,7 +157,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   raw_particle[0].raw_index  = (int *)calloc(TOTAL_PARTICLES_GUESS,sizeof(int));
   for (i=0;i<TOTAL_PARTICLES_GUESS;i++)
   {
-    raw_particle[0].x[0][i]       = 0.0;
+    raw_particle[0].x[0][i]       = -99999999.0;
     raw_particle[0].x[1][i]       = 0.0;
     raw_particle[0].x[2][i]       = 0.0;
     raw_particle[0].rho[i]        = 0.0;
@@ -225,6 +225,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     else
     {
       x = X1*((double)(i-CENTRE_POINT)*dx2);
+      printf(" X = %20.10f \n",x);
       if (i>CENTRE_POINT+20)
       {
         for (j=-ZERO_H;j<PARTICLES_IN_Z_H-ZERO_H;j++)
@@ -295,7 +296,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       particles[0].m[nparticles]                = PARTICLE_MASS;
       particles[0].h[nparticles]                = 0.0;
       particles[0].x[0][nparticles]             = raw_particle[0].x[0][t];  
-      if (rank == 2)printf(" X = %20.10f \n",raw_particle[0].x[0][t]);
       particles[0].x[1][nparticles]             = raw_particle[0].x[1][t];
       particles[0].x[2][nparticles]             = raw_particle[0].x[2][t]; 
       particles[0].v[0][nparticles]             = 0.0;
