@@ -225,7 +225,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     else
     {
       x = X1*((double)(i-CENTRE_POINT)*dx2);
-      printf(" X = %20.10f %20.10f %20.10f %20.10f \n",x,X1,((double)(i-CENTRE_POINT),dx2);
+      printf(" X = %20.10f %20.10f %20.10f %20.10f \n",x,X1,((double)(i-CENTRE_POINT),dx2));
       if (i>CENTRE_POINT+20)
       {
         for (j=-ZERO_H;j<PARTICLES_IN_Z_H-ZERO_H;j++)
