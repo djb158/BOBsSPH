@@ -136,6 +136,7 @@ int main(int argc, char *argv[])
   rank_name = (char *)calloc(MAX_CHARS,sizeof(char));
 
   MPI_Get_processor_name(rank_name,&len);
+  printf(" rank: %i  name: >%s< \n",rank,rank_name);
   MPI_Type_size( MPI_DOUBLE,&size );
 
   feenableexcept(FE_INVALID   |
