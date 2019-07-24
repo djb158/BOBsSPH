@@ -58,6 +58,7 @@ int SynchroniseNodeInfo(PARS *pars)
 #include "pars_include.h"
   verbosity(1,fname,pars);
 
+  printf(" here 0 \n");
   if ( (MPI_Barrier(MPI_COMM_WORLD) == MPI_ERR_COMM) )
   {
     printf("%s(): -error return from MPI_Barrier\n",fname);
@@ -68,6 +69,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 nparticles                                                */
 /*                                                                           */
+  printf(" here 1 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag42  = 42*(MAX_TAGS)+rank;
@@ -101,6 +103,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 2 \n");
 /*                                                                           */
 /*                 offset                                                    */
 /*                                                                           */
@@ -137,6 +140,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 3 \n");
 /*                                                                           */
 /*                 number_of_doubles                                         */
 /*                                                                           */
@@ -173,6 +177,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 4 \n");
 /*                                                                           */
 /*                 number_of_ints                                         */
 /*                                                                           */
@@ -209,6 +214,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 5 \n");
 /*                                                                           */
 /*                 n_interior                                                */
 /*                                                                           */
@@ -245,6 +251,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 6 \n");
 /*                                                                           */
 /*                 n_interior_and_boundary                                                */
 /*                                                                           */
@@ -284,6 +291,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 n_boundary                                                */
 /*                                                                           */
+  printf(" here 7 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag7  = 7*(MAX_TAGS)+rank;
@@ -317,6 +325,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 8 \n");
 /*                                                                           */
 /*                 n_ghost                                                */
 /*                                                                           */
@@ -353,6 +362,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 9 \n");
 /*                                                                           */
 /*                 burn_status                                                */
 /*                                                                           */
@@ -389,6 +399,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 10 \n");
 /*                                                                           */
 /*                 n_A                                                       */
 /*                                                                           */
@@ -425,6 +436,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 11 \n");
 /*                                                                           */
 /*                 n_B                                                       */
 /*                                                                           */
@@ -461,6 +473,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 12 \n");
 /*                                                                           */
 /*                 n_E                                                       */
 /*                                                                           */
@@ -497,6 +510,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 13 \n");
 /*                                                                           */
 /*                 n_F                                                       */
 /*                                                                           */
@@ -533,6 +547,7 @@ int SynchroniseNodeInfo(PARS *pars)
       goto RETURN;
     }
   }
+  printf(" here 14 \n");
 /*                                                                           */
 /*                 burn_l                                                       */
 /*                                                                           */
@@ -572,6 +587,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_r                                                    */
 /*                                                                           */
+  printf(" here 15 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag16  = 16*(MAX_TAGS)+rank;
@@ -608,6 +624,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_delta_l                                                       */
 /*                                                                           */
+  printf(" here 16 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag17  = 17*(MAX_TAGS)+rank;
@@ -644,6 +661,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_delta_r                                                       */
 /*                                                                           */
+  printf(" here 17 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag18  = 18*(MAX_TAGS)+rank;
@@ -680,6 +698,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 start_burn_l                                                       */
 /*                                                                           */
+  printf(" here 18 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag19  = 19*(MAX_TAGS)+rank;
@@ -716,6 +735,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 start_burn_r                                              */
 /*                                                                           */
+  printf(" here 19 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag20  = 20*(MAX_TAGS)+rank;
@@ -752,6 +772,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_r0                                                       */
 /*                                                                           */
+  printf(" here 20 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag20  = 20*(MAX_TAGS)+rank;
@@ -788,6 +809,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_r1                                                       */
 /*                                                                           */
+  printf(" here 21 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag21  = 21*(MAX_TAGS)+rank;
@@ -824,6 +846,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_r2                                                       */
 /*                                                                           */
+  printf(" here 22 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag22  = 22*(MAX_TAGS)+rank;
@@ -860,6 +883,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_r3                                                       */
 /*                                                                           */
+  printf(" here 23 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag23  = 23*(MAX_TAGS)+rank;
@@ -896,6 +920,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_l0                                                       */
 /*                                                                           */
+  printf(" here 24 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag24  = 24*(MAX_TAGS)+rank;
@@ -932,6 +957,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_l1                                                       */
 /*                                                                           */
+  printf(" here 25 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag25  = 25*(MAX_TAGS)+rank;
@@ -968,6 +994,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_l2                                                       */
 /*                                                                           */
+  printf(" here 26 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag26  = 26*(MAX_TAGS)+rank;
@@ -1004,6 +1031,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_l3                                                       */
 /*                                                                           */
+  printf(" here 27 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag27  = 27*(MAX_TAGS)+rank;
@@ -1040,6 +1068,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 species                                                       */
 /*                                                                           */
+  printf(" here 28 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag28  = 28*(MAX_TAGS)+rank;
@@ -1077,6 +1106,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 interior                                                       */
 /*                                                                           */
+  printf(" here 29 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag29  = 29*(MAX_TAGS)+rank;
@@ -1113,6 +1143,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 boundary                                                       */
 /*                                                                           */
+  printf(" here 30 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag30  = 30*(MAX_TAGS)+rank;
@@ -1149,6 +1180,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 interior_and_boundary                                                       */
 /*                                                                           */
+  printf(" here 31 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag31  = 31*(MAX_TAGS)+rank;
@@ -1185,6 +1217,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 ghost                                                       */
 /*                                                                           */
+  printf(" here 32 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag32  = 32*(MAX_TAGS)+rank;
@@ -1221,6 +1254,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 ghost_x                                                       */
 /*                                                                           */
+  printf(" here 33 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag33  = 33*(MAX_TAGS)+rank;
@@ -1257,6 +1291,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 ghost_y                                                       */
 /*                                                                           */
+  printf(" here 34 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag34  = 34*(MAX_TAGS)+rank;
@@ -1293,6 +1328,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 ghost_z                                                       */
 /*                                                                           */
+  printf(" here 35 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag35  = 35*(MAX_TAGS)+rank;
@@ -1329,6 +1365,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 raw_index                                                       */
 /*                                                                           */
+  printf(" here 36 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag36  = 36*(MAX_TAGS)+rank;
@@ -1365,6 +1402,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_A                                                       */
 /*                                                                           */
+  printf(" here 37 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag37  = 37*(MAX_TAGS)+rank;
@@ -1401,6 +1439,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_B                                                       */
 /*                                                                           */
+  printf(" here 38 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag38  = 38*(MAX_TAGS)+rank;
@@ -1437,6 +1476,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_E                                                       */
 /*                                                                           */
+  printf(" here 39 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag39  = 39*(MAX_TAGS)+rank;
@@ -1473,6 +1513,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 burn_F                                                       */
 /*                                                                           */
+  printf(" here 40 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag40  = 40*(MAX_TAGS)+rank;
@@ -1509,6 +1550,7 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
 /*                 inv_raw_index                                                       */
 /*                                                                           */
+  printf(" here 41 \n");
   for (i_rank=0;i_rank<rank;i_rank++)
   {
     tag41  = 41*(MAX_TAGS)+rank;
