@@ -81,6 +81,7 @@ include_HEADERS = \
 	sph_main.h \
 	sph_types.h \
 	starts_with_string.h \
+        synchronize_node_info.h \
 	thread_data.h \
 	update_kernel.h \
 	w.h \

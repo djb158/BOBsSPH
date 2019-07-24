@@ -71,6 +71,7 @@ libsph_la_SOURCES = \
 	set_initial_particles_state_1D.c \
 	set_initial_particles_state_2D.c \
 	set_initial_particles_state_3D.c \
+        synchronize_node_info.c \
 	update_kernel.c \
 	update_neighbour_nodes.c \
 	update_rij.cpp \

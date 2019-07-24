@@ -235,6 +235,12 @@ int main(int argc, char *argv[])
       goto RETURN;
     }
   }
+  if ( (SynchroniseNodeInfo(pars))==EXIT_FAILURE  )
+  {
+    printf(" rank: %i Main(): bad return from SynchroniseNodeInfo() \n",rank);
+    exit_status = EXIT_FAILURE;
+    goto RETURN;
+  }
 /*                                                                           */ 
 /*                                                                           */
 /*                                                                           */
@@ -1227,6 +1233,12 @@ int main(int argc, char *argv[])
       {
         goto RETURN;
       }
+    }
+    if ( (SynchroniseNodeInfo(pars))==EXIT_FAILURE  )
+    {
+      printf(" rank: %i Main(): bad return from SynchroniseNodeInfo() \n",rank);
+      exit_status = EXIT_FAILURE;
+      goto RETURN;
     }
   }
 

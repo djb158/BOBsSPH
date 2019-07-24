@@ -93,6 +93,7 @@ extern PARTICLES *CreateParticles(int N, PARS *pars);
 extern int UpdateNeighbourNodes(PARS *pars);
 extern int FreeParticlesNN(PARTICLES *particles,PARS *pars,int N);
 extern double **CalculateParticleVorticity(PARTICLES *particles,PARTICLES *x_particles,PARS *pars);
+extern int SynchroniseNodeInfo(PARS *pars);
 
 NODE_INFO *node_info;
 int cluster_size;
