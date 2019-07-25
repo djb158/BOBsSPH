@@ -94,6 +94,7 @@ extern int UpdateNeighbourNodes(PARS *pars);
 extern int FreeParticlesNN(PARTICLES *particles,PARS *pars,int N);
 extern double **CalculateParticleVorticity(PARTICLES *particles,PARTICLES *x_particles,PARS *pars);
 extern int SynchroniseNodeInfo(PARS *pars);
+extern int GetNodeInfoStruct(int cluster_size,char *rank_name,double delta,PARS *pars);
 
 NODE_INFO *node_info;
 int cluster_size;

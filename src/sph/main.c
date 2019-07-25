@@ -235,6 +235,15 @@ int main(int argc, char *argv[])
       goto RETURN;
     }
   }
+  if ( rank == cluster_size )
+  {
+    if ( (exit_status=GetNodeInfoStruct(cluster_size,rank_name,0.0,pars))==EXIT_FAILURE)
+    {
+      printf("Rank: %i %s(): -error return getting node_info structure()\n",rank,fname);
+      exit_status = EXIT_FAILURE;
+      goto RETURN;
+    }
+  }
   if ( (SynchroniseNodeInfo(pars))==EXIT_FAILURE  )
   {
     printf(" rank: %i Main(): bad return from SynchroniseNodeInfo() \n",rank);
