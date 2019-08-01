@@ -125,7 +125,7 @@ int WriteParticle(PARTICLE *particle,int nparticles,int rank,char *out_dir,int t
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
-    if (fseeko(file_ptr,8428,SEEK_SET) != 0)
+    if (fseeko(file_ptr,10057,SEEK_SET) != 0)
     {
       printf("%s -Error seeking number_of_time_slices index \n",fname);
       exit_status = EXIT_FAILURE;
