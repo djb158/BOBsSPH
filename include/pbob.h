@@ -49,7 +49,7 @@ typedef struct
 /*                 Need to pad to word boundary: if other variables are added*/
 /*                 4 may need to change to 1,2,or, 3                         */
 /*                                                                           */
-  char           pad[4];
+  char           pad[3];
 
   u_int64_t      total_particles;
   u_int32_t      dimensions;
@@ -103,7 +103,7 @@ typedef struct
 /*                 be divisible by 8 (by inclusion of u_int64_t type) so a   */
 /*                 a char pad[x] may need to be introduced here              */
 /*                                                                           */
-  char           pad1[8];
+  char           pad1[4];
 }PBOB;
 
 #endif /* BOBSSPH_PBOB_H */

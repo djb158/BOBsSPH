@@ -239,18 +239,22 @@ PBOB *Assemble_PBOB(PARS *pars,double time,int cluster_size)
                                      + 17      // time_units
                                      + 17      // mass_units
                                      + 17      // internal energy units
-                                     + 41      // sph_git_commit_hash
+                                     + 81      // sph_git_commit_hash
                                      + (10*17) // 10 x unused 17-byte-char
-                                     + 4       // pad to word boundary may need to set to 1,2,3 or 4
+                                     + 3       // pad to word boundary may need to set to 1,2,3 or 4
+
+
+                                     + 8       // total_particles
+                                     + 4       // dimensions
                                      + 4       // endian_int
                                      + 4       // cluster_size 
                                      + 4       // number_of_time_slices
                                      + 4       // first_particle_byte_offset
                                      + 4       // particle_length_bytes
-                                     + 8       // total_particles
-                                     + 4       // dimensions
                                      + 4       // nn_k
+
                                      + (10*4)  // 10 x unused ints
+
                                      + 4       // time
                                      + 4       // kernel_width
                                      + 4       //  acceleration  -g at sea level
@@ -262,14 +266,14 @@ PBOB *Assemble_PBOB(PARS *pars,double time,int cluster_size)
                                      + 4       //  Z1
                                      + 4       //  alpha
                                      + 4       //  beta
-                                     + 4       //  kappa
                                      + 4       //  gamma 
+                                     + 4       //  kappa
                                      + 4       //  epsilon
                                      + 4       //  eta
                                      + 4       //  g1 
-                                     + 4       //  g1 
+                                     + 4       //  g2 
                                      + (10*4)  // 10 x unused floats
-                                     + 7;      // pad to 8-byte word boundary
+                                     + 4;      // pad to 8-byte word boundary
   pbob[0].first_particle_byte_offset += (cluster_size+1)*(33 + 17 + 6);
 /*                                                                           */
 /*                 particle_length_bytes                                     */
