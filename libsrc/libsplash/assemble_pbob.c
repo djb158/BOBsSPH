@@ -273,7 +273,7 @@ PBOB *Assemble_PBOB(PARS *pars,double time,int cluster_size)
                                      + 4       //  g1 
                                      + 4       //  g2 
                                      + (10*4)  // 10 x unused floats
-                                     + 4;      // pad to 8-byte word boundary
+                                     + 8;      // pad to 8-byte word boundary
   pbob[0].first_particle_byte_offset += (cluster_size+1)*(33 + 17 + 6);
 /*                                                                           */
 /*                 particle_length_bytes                                     */
