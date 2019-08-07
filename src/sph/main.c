@@ -144,6 +144,9 @@ int main(int argc, char *argv[])
                  FE_OVERFLOW  |
                  FE_UNDERFLOW); 
 
+  printf(" size of pbob = %i size of node_info = %i \n",(int)sizeof(PBOB),(int)sizeof(NODE_INFO));
+  exit 0;
+
   pars = GetPars(argc,argv,rank_0);
 
 #include "pars_include.h"
