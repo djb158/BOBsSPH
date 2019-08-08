@@ -119,6 +119,7 @@ int WriteParticle(PARTICLE *particle,int nparticles,int rank,char *out_dir,int t
   {
     token_s = -1;
     sleep(1);
+    /*
     if ( (file_ptr = fopen(file_name,"r+b")) == NULL)
     {
       printf("Rank: %i %s(): -unable to open file: %s()\n",rank,fname,file_name);
@@ -141,6 +142,7 @@ int WriteParticle(PARTICLE *particle,int nparticles,int rank,char *out_dir,int t
       goto RETURN;
     }
     fclose(file_ptr);
+*/
   }
 /*                                                                           */
 /*                 write particle info per node                              */
