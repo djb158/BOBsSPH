@@ -229,6 +229,8 @@ PBOB *Assemble_PBOB(PARS *pars,double time,int cluster_size)
 /*                                                                           */
 /*                 first_particle_byte_offset                                */
 /*                                                                           */
+
+/*
   pbob[0].first_particle_byte_offset = 3201    // ascii_header
                                      + 6401    // kernel_function
                                      + 81      // short_title
@@ -275,6 +277,9 @@ PBOB *Assemble_PBOB(PARS *pars,double time,int cluster_size)
                                      + (10*4)  // 10 x unused floats
                                      + 8;      // pad to 8-byte word boundary
   pbob[0].first_particle_byte_offset += (cluster_size+1)*(33 + 17 + 6);
+*/
+  pbob[0].first_particle_byte_offset = (int)sizeof(PBOB) + 
+                                       (int)sizeof(NODE_DESCRIP)*(cluster_size+1);
 /*                                                                           */
 /*                 particle_length_bytes                                     */
 /*                                                                           */
