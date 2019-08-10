@@ -31,7 +31,6 @@ typedef struct
 /*                 May also be a result of D_FILE_OFFSET_BITS=64 requirement */
 /*                 for large file support                                    */
 /*                                                                           */
-  char          pad[4];
   u_int64_t     index;
   u_int32_t     species;
   u_int32_t     start_node;
@@ -56,6 +55,7 @@ typedef struct
   float32_t     rho;
   float32_t     p;
   float32_t     m;
+  char          pad[4];
 }PARTICLE;
 
 #endif /* BOBSSPH_PARTICLE_H */
