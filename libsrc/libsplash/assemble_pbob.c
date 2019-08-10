@@ -283,6 +283,8 @@ PBOB *Assemble_PBOB(PARS *pars,double time,int cluster_size)
 /*                                                                           */
 /*                 particle_length_bytes                                     */
 /*                                                                           */
+  pbob[0].particle_length_bytes     = (int)sizeof(PARTICLE);
+/*
   pbob[0].particle_length_bytes     = 4       // 4-char pad
                                     + 8       // index
                                     + 4       // species
@@ -308,6 +310,7 @@ PBOB *Assemble_PBOB(PARS *pars,double time,int cluster_size)
                                     + 4       // rho
                                     + 4       // p
                                     + 4;      // m
+*/
 /*                                                                           */
 /*                 total particles                                           */
 /*                                                                           */

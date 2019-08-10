@@ -131,7 +131,7 @@ int WriteParticle(PARTICLE *particle,int nparticles,int rank,char *out_dir,int t
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
-    number_of_time_slices = 123;
+    number_of_time_slices = 1;
     n_slices = (u_int32_t)number_of_time_slices;
     fwrite(&n_slices,sizeof(u_int32_t),1,file_ptr);
     if (fseeko(file_ptr,0,SEEK_END) != 0)
@@ -151,7 +151,6 @@ int WriteParticle(PARTICLE *particle,int nparticles,int rank,char *out_dir,int t
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
-  printf(" size of PARTICLE = %i \n",(int)sizeof(PARTICLE));
   fwrite(particle,sizeof(PARTICLE),nparticles,file_ptr);
   fclose(file_ptr);
   if (rank < cluster_size)
