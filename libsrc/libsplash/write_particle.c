@@ -151,6 +151,7 @@ int WriteParticle(PARTICLE *particle,int nparticles,int rank,char *out_dir,int t
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
+  printf(" size of PARTICLE = %i \n",(int)sizeof(PARTICLE));
   fwrite(particle,sizeof(PARTICLE),nparticles,file_ptr);
   fclose(file_ptr);
   if (rank < cluster_size)
