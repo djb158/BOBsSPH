@@ -1,4 +1,5 @@
 SUBDIRS = \
 	libsph \
-        libutil \
-        libsplash
+	libutil \
+	libsplash \
+	libps

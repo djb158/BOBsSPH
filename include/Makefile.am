@@ -43,6 +43,7 @@ include_HEADERS = \
 	integrate_particle_energy_interior.h \
 	integrate_particle_velocity_boundary.h \
 	integrate_particle_velocity_interior.h \
+	libps.h \
 	nearest_integer.h \
 	node_descrip.h \
 	node_info.h \

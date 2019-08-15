@@ -115,6 +115,7 @@ AC_CONFIG_FILES(Makefile
 	libsrc/libutil/test/Makefile
 	libsrc/libsph/Makefile
 	libsrc/libsplash/Makefile
+	libsrc/libps/Makefile
 	src/sph/Makefile
 	src/pbobs/Makefile
 	src/Makefile
