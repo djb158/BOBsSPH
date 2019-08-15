@@ -238,7 +238,7 @@ void PlotVector(FILE *plot_file,double *x, double *y,int n,
 
    int i      = 0;
 
-   if (plot_grey == TRUE_sn)
+   if (plot_grey == TRUE)
    {
      fprintf(plot_file,"%5.3f setgray \n",grey);
    }
@@ -312,7 +312,7 @@ void PlotBox(FILE *plot_file, double *pt0, double *pt1, double x_min,
   ypt = yor + ph*(pt1[1]-y_min)/(y_max-y_min);
   Plot(plot_file,xpt,ypt,2);
   fprintf(plot_file," closepath \n");
-  if (fill == TRUE_sn)
+  if (fill == TRUE)
   {
     fprintf(plot_file," fill \n");
   }

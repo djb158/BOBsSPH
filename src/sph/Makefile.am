@@ -3,7 +3,8 @@ INCLUDES= -I$(top_srcdir)/include
 LDADD = \
         -lsph \
         -lsplash \
-        -lutil
+        -lutil \
+	-lps
 
 bin_PROGRAMS = sph \
                read_pbob_file \

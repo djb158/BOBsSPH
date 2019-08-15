@@ -62,6 +62,7 @@
 #include "pbob.h"
 #include "node_descrip.h"
 #include "particle.h"
+#include "numeric_constants.h"
 
 typedef enum {FALSE,TRUE} logical;
 #define MAX_CHARS (1024)
@@ -71,9 +72,13 @@ extern PBOB *ReadPBOB(char *file_name);
 extern NODE_DESCRIP *ReadNodeDescrip(char *file_name,int cluster_size);
 extern char *CopyAfterEqual(char *target,  char *source);
 extern logical ContainsString(char *string1,char *string2);
+extern void Hplots(FILE *plot_file,int condition);
+extern void Plot(FILE *plot_file,float x, float y,int num);
 
 int main(int argc, char *argv[])
 {
+  FILE *plot_ptr                       = NULL;
+
   PARTICLE *particle                   = NULL;
   NODE_DESCRIP *node_descrip           = NULL;
   PBOB *pbob                           = NULL;
@@ -81,6 +86,17 @@ int main(int argc, char *argv[])
   
   char *file_name                      = NULL;
   char *string1                        = NULL;
+
+  float XOR                            = 0.0;
+  float YOR                            = 0.0;
+  float xpt                            = 0.0;
+  float ypt                            = 0.0;
+  float PL                             = 0.0;
+  float PH                             = 0.0;
+
+  double v_min                         = 0.0;
+  double v_max                         = 0.0;
+  double v                             = 0.0;
 
   int i                                = -9999999;
   int j                                = -9999999;
@@ -98,7 +114,6 @@ int main(int argc, char *argv[])
   while(i<argc)
   {
     string1 = (char *)calloc(MAX_CHARS,sizeof(char));
-    }
     if(   (ContainsString(argv[i],(char *)"file_name=")==TRUE) )
     {
       CopyAfterEqual(string1,argv[i]);
@@ -135,7 +150,6 @@ int main(int argc, char *argv[])
   
   total_particles = (int)pbob->total_particles;
 
-  start_index = 0;
   N = total_particles;
   if ((particle=ReadParticle(file_name,time_slice,start_indx,N))==NULL)
   {
@@ -154,20 +168,21 @@ int main(int argc, char *argv[])
   xpt = XOR;
   ypt = YOR;
  
-  v_min = LARGE_POSITIVE_FLOAT;
-  v_max = LARGE_NEGATIVE_FLOAT;
+  v_min = LARGE_POSITIVE_DOUBLE;
+  v_max = LARGE_NEGATIVE_DOUBLE;
+
   for (i=0;i<N;i++)
   {
-    v = particle[0].vx[i][0];
+    v = (double)particle[j].vx;
     if (v > v_max)v_max = v;
     if (v < v_min)v_min = v;
   }
 
-  Plot(xpt,ypt,3);
-  Plot(xpt+PL,ypt,2);
-  Plot(xpt+PL,ypt+PH,2);
-  Plot(xpt,ypt+PH,2);
-  Plot(xpt,ypt,2);
+  Plot(plot_ptr,xpt,ypt,3);
+  Plot(plot_ptr,xpt+PL,ypt,2);
+  Plot(plot_ptr,xpt+PL,ypt+PH,2);
+  Plot(plot_ptr,xpt,ypt+PH,2);
+  Plot(plot_ptr,xpt,ypt,2);
 
   Hplots(plot_ptr,0);
   fclose(plot_ptr);
