@@ -63,6 +63,7 @@
 #include "pbob.h"
 #include "node_descrip.h"
 #include "particle.h"
+#include "sorting_functions.h"
 #include "numeric_constants.h"
 
 typedef enum {FALSE,TRUE} logical;
@@ -105,7 +106,6 @@ int main(int argc, char *argv[])
 
   int i                                = -9999999;
   int iv                               = -9999999;
-  int j                                = -9999999;
   int cluster_size                     = -9999999;
   int total_particles                  = -9999999;
   int start_index                      = -9999999;
