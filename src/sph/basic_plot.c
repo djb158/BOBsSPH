@@ -67,7 +67,7 @@
 typedef enum {FALSE,TRUE} logical;
 #define MAX_CHARS (1024)
 
-extern PARTICLE *ReadParticle(char *file_name,int time_slice,int start_indx,int N);
+extern PARTICLE *ReadParticle(char *file_name,int time_slice,int start_index,int N);
 extern PBOB *ReadPBOB(char *file_name);
 extern NODE_DESCRIP *ReadNodeDescrip(char *file_name,int cluster_size);
 extern char *CopyAfterEqual(char *target,  char *source);
@@ -96,17 +96,23 @@ int main(int argc, char *argv[])
 
   double v_min                         = 0.0;
   double v_max                         = 0.0;
+  double x0                            = 0.0;
+  double x1                            = 0.0;
   double v                             = 0.0;
+  double av                            = 0.0;
+  double *x                            = NULL;
 
   int i                                = -9999999;
+  int iv                               = -9999999;
   int j                                = -9999999;
   int cluster_size                     = -9999999;
   int total_particles                  = -9999999;
-  int start_indx                       = -9999999;
+  int start_index                      = -9999999;
   int N                                = -9999999;
   int time_slice                       = 1;
   int args_defined                     = -9999999;
   int exit_status                      = EXIT_FAILURE;
+  int *x_index                         = NULL;
 
   file_name = (char *)calloc(MAX_CHARS,sizeof(char));
   args_defined = 0;
@@ -150,8 +156,9 @@ int main(int argc, char *argv[])
   
   total_particles = (int)pbob->total_particles;
 
+  start_index = 0;
   N = total_particles;
-  if ((particle=ReadParticle(file_name,time_slice,start_indx,N))==NULL)
+  if ((particle=ReadParticle(file_name,time_slice,start_index,N))==NULL)
   {
     printf(" -unable to read PARTICLE struct, -aborting \n");
     exit_status = EXIT_FAILURE;
@@ -171,9 +178,39 @@ int main(int argc, char *argv[])
   v_min = LARGE_POSITIVE_DOUBLE;
   v_max = LARGE_NEGATIVE_DOUBLE;
 
+  x       = (double *)calloc(N,sizeof(double));
+  x_index = (int *)calloc(N,sizeof(int));
   for (i=0;i<N;i++)
   {
-    v = (double)particle[j].vx;
+    x[i] = (double)(particle[i].x);
+  }
+  Sort(x,x_index,N);
+  x0 = x[0];
+
+  iv = 0;
+  av = 0.0;
+  x0 = x[0];
+  for (i=0;i<N;i++)
+  {
+    x1 = x[i];
+    v  = (double)(particle[i].vx);
+    av = v + av;
+    if (fabs(x1-x0) > 0.001)
+    {
+      av = av/(double)iv;
+     if (av > v_max)v_max = av;
+     if (av < v_min)v_min = av;
+      printf(" x = %20.10f v = %20.10f\n",x0,av);
+      iv = 0;
+      av = 0.0;
+    }
+    iv++;
+    x0 = x1;
+  }
+
+  for (i=0;i<N;i++)
+  {
+    v = (double)particle[i].vx;
     if (v > v_max)v_max = v;
     if (v < v_min)v_min = v;
   }
