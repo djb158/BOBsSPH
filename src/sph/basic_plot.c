@@ -58,6 +58,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stddef.h>     /* offsetof */
+#include <math.h> 
 #include "sph_types.h"
 #include "pbob.h"
 #include "node_descrip.h"
