@@ -1,4 +1,3 @@
-sbob1   slots=1 max_slots=1
 sbob7   slots=1 max_slots=1
 sbob8   slots=1 max_slots=1
 sbob9   slots=1 max_slots=1
@@ -17,3 +16,4 @@ sbob21  slots=1 max_slots=1
 sbob22  slots=1 max_slots=1
 sbob23  slots=1 max_slots=1
 sbob24  slots=1 max_slots=1
+nnode1  slots=1 max_slots=1
