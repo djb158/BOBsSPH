@@ -1,3 +1,4 @@
+sbob1   slots=1 max_slots=1
 sbob7   slots=1 max_slots=1
 sbob8   slots=1 max_slots=1
 sbob9   slots=1 max_slots=1
@@ -11,7 +12,6 @@ sbob16  slots=1 max_slots=1
 sbob17  slots=1 max_slots=1
 sbob18  slots=1 max_slots=1
 sbob19  slots=1 max_slots=1
-sbob11  slots=1 max_slots=1
 sbob20  slots=1 max_slots=1
 sbob21  slots=1 max_slots=1
 sbob22  slots=1 max_slots=1
