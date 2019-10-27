@@ -217,6 +217,7 @@ int main(int argc, char *argv[])
     {
       av[k] = av[k]/(double)iv;
       xv[k] = x1;
+      printf(" x = %20.10f v  = %20.10f \n",xv[k],av[k]);
       if (av[k] > v_max)v_max = av[k];
       if (av[k] > v_max)v_max = av[k];
       if (xv[k] < x_min)x_min = xv[k];
@@ -229,7 +230,6 @@ int main(int argc, char *argv[])
   }
   k_max = k;
 
-  Hplots(plot_ptr,0);
   xpt = XOR;
   ypt = YOR;
   Plot(plot_ptr,xpt,ypt,3);
@@ -247,8 +247,8 @@ int main(int argc, char *argv[])
     ypt = YOR + PH*(av[k]-v_min)/(v_max-v_min);
     Plot(plot_ptr,xpt,ypt,2);
   }
-  Hplots(plot_ptr,1);
 
+  Hplots(plot_ptr,0);
   fclose(plot_ptr);
 
   exit_status = EXIT_SUCCESS;
