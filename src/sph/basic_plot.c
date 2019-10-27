@@ -176,8 +176,8 @@ int main(int argc, char *argv[])
 
   plot_ptr = fopen("/home/bobs/plot.ps","w+");
   Hplots(plot_ptr,1);
-  XOR =  4.0;
-  YOR =  4.0;
+  XOR =   4.0;
+  YOR =  10.0;
   PL  = 15.0;
   PH  =  4.0;
    
@@ -219,9 +219,9 @@ int main(int argc, char *argv[])
       xv[k] = x1;
       printf(" x = %20.10f v  = %20.10f \n",xv[k],av[k]);
       if (av[k] > v_max)v_max = av[k];
-      if (av[k] > v_max)v_max = av[k];
-      if (xv[k] < x_min)x_min = xv[k];
+      if (av[k] < v_min)v_min = av[k];
       if (xv[k] > x_max)x_max = xv[k];
+      if (xv[k] < x_min)x_min = xv[k];
       iv = 0;
       k++;
     }
