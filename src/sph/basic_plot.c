@@ -202,7 +202,8 @@ int main(int argc, char *argv[])
   for (i=0;i<N;i++)
   {
     x1 = x[i];
-    v  = (double)(particle[i].vx);
+    j = x_index[i];
+    v  = (double)(particle[j].vx);
     av = v + av;
     if (fabs(x1-x0) > 0.001)
     {
