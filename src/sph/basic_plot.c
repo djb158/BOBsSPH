@@ -197,12 +197,13 @@ int main(int argc, char *argv[])
   for (i=0;i<N;i++)
   {
     x1 = x[i];
-    j = x_index[i];
+    j  = x_index[i];
     v  = (double)(particle[j].vx);
     av = v + av;
     if (fabs(x1-x0) > 0.000001)
     {
       av = av/(double)iv;
+      printf(" x = %20.10f v = %20.10f \n",x1,av);
       if (av > v_max)v_max = av;
       if (av < v_min)v_min = av;
       iv = 0;
