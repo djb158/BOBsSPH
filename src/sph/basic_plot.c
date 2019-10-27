@@ -230,6 +230,8 @@ int main(int argc, char *argv[])
   }
   k_max = k;
 
+  v_min = 0.0;
+  v_max = 1.0;
   xpt = XOR;
   ypt = YOR;
   Plot(plot_ptr,xpt,ypt,3);
