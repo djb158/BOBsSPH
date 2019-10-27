@@ -148,6 +148,7 @@ int main(int argc, char *argv[])
     goto RETURN;
   }
   cluster_size = pbob->cluster_size;
+  printf(" cluster_size = %i \n",cluster_size);
   if ((node_descrip=ReadNodeDescrip(file_name,cluster_size))==NULL)
   {
     printf(" -unable to read NODE_DESCRIP struct, -aborting \n");
@@ -159,6 +160,7 @@ int main(int argc, char *argv[])
 
   start_index = 0;
   N = total_particles;
+  printf(" total_particles = %i \n",total_particles);
   if ((particle=ReadParticle(file_name,time_slice,start_index,N))==NULL)
   {
     printf(" -unable to read PARTICLE struct, -aborting \n");
@@ -185,6 +187,7 @@ int main(int argc, char *argv[])
   {
     x[i] = (double)(particle[i].x);
   }
+  printf(" i = %i  x = %20.10f \n",i,x[i]);
   Sort(x,x_index,N);
   x0 = x[0];
 
