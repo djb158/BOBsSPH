@@ -203,7 +203,7 @@ int main(int argc, char *argv[])
     j = x_index[i];
     v  = (double)(particle[j].vx);
     av = v + av;
-    if (fabs(x1-x0) > 0.001)
+    if (fabs(x1-x0) > 0.00001)
     {
       printf(" changing at : %20.10f \n",x1);
       av = av/(double)iv;
