@@ -98,6 +98,8 @@ int main(int argc, char *argv[])
 
   double v_min                         = 0.0;
   double v_max                         = 0.0;
+  double x_min                         = 0.0;
+  double x_max                         = 0.0;
   double x0                            = 0.0;
   double x1                            = 0.0;
   double v                             = 0.0;
