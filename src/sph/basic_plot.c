@@ -101,11 +101,14 @@ int main(int argc, char *argv[])
   double x0                            = 0.0;
   double x1                            = 0.0;
   double v                             = 0.0;
-  double av                            = 0.0;
+  double *av                           = NULL;
+  double *xv                           = NULL;
   double *x                            = NULL;
 
   int i                                = -9999999;
   int j                                = -9999999;
+  int k                                = -9999999;
+  int k_max                            = -9999999;
   int iv                               = -9999999;
   int cluster_size                     = -9999999;
   int total_particles                  = -9999999;
@@ -176,11 +179,11 @@ int main(int argc, char *argv[])
   PL  = 15.0;
   PH  =  4.0;
    
-  xpt = XOR;
-  ypt = YOR;
  
   v_min = LARGE_POSITIVE_DOUBLE;
   v_max = LARGE_NEGATIVE_DOUBLE;
+  x_min = LARGE_POSITIVE_DOUBLE;
+  x_max = LARGE_NEGATIVE_DOUBLE;
 
   x       = (double *)calloc(N,sizeof(double));
   x_index = (int *)calloc(N,sizeof(int));
@@ -192,42 +195,59 @@ int main(int argc, char *argv[])
   Sort(x,x_index,N);
 
   iv = 0;
-  av = 0.0;
+  av = (double *)calloc(N,sizeof(double));
+  xv = (double *)calloc(N,sizeof(double));
+  for (i=0;i<N;i++)
+  {
+    av[i] = 0.0;
+    xv[i] = 0.0;
+  }
+  
   x0 = x[0];
+  k = 0;
   for (i=0;i<N;i++)
   {
     x1 = x[i];
     j  = x_index[i];
     v  = (double)(particle[j].vx);
-    av = v + av;
+    av[k] = v + av[k];
     if (fabs(x1-x0) > 0.000001)
     {
-      av = av/(double)iv;
+      av[k] = av[k]/(double)iv;
+      xv[k] = x1;
       printf(" x = %20.10f v = %20.10f \n",x1,av);
-      if (av > v_max)v_max = av;
-      if (av < v_min)v_min = av;
+      if (av[k] > v_max)v_max = av[k];
+      if (av[k] > v_max)v_max = av[k];
+      if (xv[k] < x_min)x_min = xv[k];
+      if (xv[k] > x_max)x_max = xv[k];
       iv = 0;
-      av = 0.0;
+      k++;
     }
     iv++;
     x0 = x1;
   }
+  k_max = k;
 
-  for (i=0;i<N;i++)
-  {
-    j = x_index[i];
-    v = (double)particle[j].vx;
-    if (v > v_max)v_max = v;
-    if (v < v_min)v_min = v;
-  }
-
+  Hplots(plot_ptr,0);
+  xpt = XOR;
+  ypt = YOR;
   Plot(plot_ptr,xpt,ypt,3);
   Plot(plot_ptr,xpt+PL,ypt,2);
   Plot(plot_ptr,xpt+PL,ypt+PH,2);
   Plot(plot_ptr,xpt,ypt+PH,2);
   Plot(plot_ptr,xpt,ypt,2);
+  k = 0;
+  xpt = XOR + PL*(xv[k]-x_min)/(x_max-x_min);
+  ypt = YOR + PH*(av[k]-v_min)/(v_max-v_min);
+  Plot(plot_ptr,xpt,ypt,3);
+  for (k=0;k<k_max;k++)
+  {
+    xpt = XOR + PL*(xv[k]-x_min)/(x_max-x_min);
+    ypt = YOR + PH*(av[k]-v_min)/(v_max-v_min);
+    Plot(plot_ptr,xpt,ypt,2);
+  }
+  Hplots(plot_ptr,1);
 
-  Hplots(plot_ptr,0);
   fclose(plot_ptr);
 
   exit_status = EXIT_SUCCESS;
