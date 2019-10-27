@@ -215,7 +215,6 @@ int main(int argc, char *argv[])
     {
       av[k] = av[k]/(double)iv;
       xv[k] = x1;
-      printf(" x = %20.10f v = %20.10f \n",x1,av);
       if (av[k] > v_max)v_max = av[k];
       if (av[k] > v_max)v_max = av[k];
       if (xv[k] < x_min)x_min = xv[k];
