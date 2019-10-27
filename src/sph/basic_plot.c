@@ -186,8 +186,8 @@ int main(int argc, char *argv[])
   for (i=0;i<N;i++)
   {
     x[i] = (double)(particle[i].x);
+    printf(" i = %i  x = %20.10f \n",i,x[i]);
   }
-  printf(" i = %i  x = %20.10f \n",i,x[i]);
   Sort(x,x_index,N);
   x0 = x[0];
 
