@@ -188,9 +188,6 @@ int main(int argc, char *argv[])
   {
     x[i] = (double)(particle[i].x);
     x_index[i] = i;
-/*
-    printf("before  i = %i  x = %20.10f \n",i,x[i]);
-*/
   }
   Sort(x,x_index,N);
 
@@ -203,13 +200,11 @@ int main(int argc, char *argv[])
     j = x_index[i];
     v  = (double)(particle[j].vx);
     av = v + av;
-    if (fabs(x1-x0) > 0.00001)
+    if (fabs(x1-x0) > 0.000001)
     {
-      printf(" changing at : %20.10f \n",x1);
       av = av/(double)iv;
       if (av > v_max)v_max = av;
       if (av < v_min)v_min = av;
-      printf(" x = %20.10f v = %20.10f\n",x0,av);
       iv = 0;
       av = 0.0;
     }
