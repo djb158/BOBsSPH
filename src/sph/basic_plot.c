@@ -186,9 +186,14 @@ int main(int argc, char *argv[])
   for (i=0;i<N;i++)
   {
     x[i] = (double)(particle[i].x);
-    printf(" i = %i  x = %20.10f \n",i,x[i]);
+    printf("before  i = %i  x = %20.10f \n",i,x[i]);
   }
   Sort(x,x_index,N);
+  for (i=0;i<N;i++)
+  {
+    x[i] = (double)(particle[i].x);
+    printf("after i = %i  x = %20.10f \n",i,x[i]);
+  }
   x0 = x[0];
 
   iv = 0;
