@@ -105,6 +105,7 @@ int main(int argc, char *argv[])
   double *x                            = NULL;
 
   int i                                = -9999999;
+  int j                                = -9999999;
   int iv                               = -9999999;
   int cluster_size                     = -9999999;
   int total_particles                  = -9999999;
@@ -186,13 +187,18 @@ int main(int argc, char *argv[])
   for (i=0;i<N;i++)
   {
     x[i] = (double)(particle[i].x);
+    x_index[i] = i;
+/*
     printf("before  i = %i  x = %20.10f \n",i,x[i]);
+*/
   }
   Sort(x,x_index,N);
   for (i=0;i<N;i++)
   {
     x[i] = (double)(particle[i].x);
+/*
     printf("after i = %i  x = %20.10f \n",i,x[i]);
+*/
   }
   x0 = x[0];
 
@@ -207,9 +213,10 @@ int main(int argc, char *argv[])
     av = v + av;
     if (fabs(x1-x0) > 0.001)
     {
+      printf(" changing at : %20.10f \n",x1);
       av = av/(double)iv;
-     if (av > v_max)v_max = av;
-     if (av < v_min)v_min = av;
+      if (av > v_max)v_max = av;
+      if (av < v_min)v_min = av;
       printf(" x = %20.10f v = %20.10f\n",x0,av);
       iv = 0;
       av = 0.0;
@@ -220,7 +227,8 @@ int main(int argc, char *argv[])
 
   for (i=0;i<N;i++)
   {
-    v = (double)particle[i].vx;
+    j = x_index[i];
+    v = (double)particle[j].vx;
     if (v > v_max)v_max = v;
     if (v < v_min)v_min = v;
   }
