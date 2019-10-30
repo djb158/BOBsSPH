@@ -144,9 +144,11 @@ int main(int argc, char *argv[])
                  FE_OVERFLOW  |
                  FE_UNDERFLOW); 
 
-  printf(" size of pbob = %i size of node_info = %i \n",(int)sizeof(PBOB),(int)sizeof(NODE_DESCRIP));
-
-  pars = GetPars(argc,argv,rank_0);
+  if ((pars=GetPars(argc,argv,rank_0))==NULL)
+  {
+    exit_status = EXIT_FAILURE;
+    goto BAIL;
+  }
 
 #include "pars_include.h"
 /*                                                                            */
@@ -1370,6 +1372,8 @@ RETURN:
   {
     Free_sph(rank_name);
   }
+
+BAIL:
 
   MPI_Finalize();
 
