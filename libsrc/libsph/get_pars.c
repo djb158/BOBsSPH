@@ -183,7 +183,7 @@ PARS *GetPars(int argc, char *argv[],int rank)
   i = 0;
   fgets(line,MAX_CHARS,par_ptr);
   strncpy(ascii_header[0],line,80);
-  if (strcmp(ascii_header[0],(char *)"############################### ASCII HEADER###################################\n")!=0)
+  if (strncmp(ascii_header[0],(char *)"############################### ASCII HEADER###################################\n",80)!=0)
   {
     exit_status = EXIT_FAILURE;
   }
@@ -200,7 +200,7 @@ PARS *GetPars(int argc, char *argv[],int rank)
   }
   fgets(line,MAX_CHARS,par_ptr);
   strncpy(ascii_header[39],line,80);
-  if (strcmp(ascii_header[39],(char *)"###############################################################################\n")!=0)
+  if (strncmp(ascii_header[39],(char *)"###############################################################################\n",80)!=0)
   {
     exit_status = EXIT_FAILURE;
   }
@@ -534,10 +534,10 @@ PARS *GetPars(int argc, char *argv[],int rank)
     {
       CopyAfterEqual(string1,s1);
       RESTART = 0;
-      if (  (strcmp(string1,(char *)"yes")==0) ||
-            (strcmp(string1,(char *)"YES")==0) ||
-            (strcmp(string1,(char *)"yES")==0) ||
-            (strcmp(string1,(char *)"Yes")==0) )
+      if (  (strncmp(string1,(char *)"yes",3)==0) ||
+            (strncmp(string1,(char *)"YES",3)==0) ||
+            (strncmp(string1,(char *)"yES",3)==0) ||
+            (strncmp(string1,(char *)"Yes",3)==0) )
       {
         RESTART = 1;
       }
