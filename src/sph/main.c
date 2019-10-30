@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
   if ((pars=GetPars(argc,argv,rank_0))==NULL)
   {
     exit_status = EXIT_FAILURE;
-    goto BAIL;
+    goto RETURN;
   }
 
 #include "pars_include.h"
@@ -1301,7 +1301,7 @@ int main(int argc, char *argv[])
   }
 
 RETURN:
-  if (rank < cluster_size)
+  if ((rank < cluster_size) && (rank > -1) )
   {
     if (VERBOSITY > 0)
     {
@@ -1372,8 +1372,6 @@ RETURN:
   {
     Free_sph(rank_name);
   }
-
-BAIL:
 
   MPI_Finalize();
 
