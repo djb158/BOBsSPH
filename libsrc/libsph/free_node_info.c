@@ -64,7 +64,6 @@ int FreeNodeInfo(int cluster_size,PARS *pars)
 
   if ( (node_info == NULL) )
   {
-    exit_status = EXIT_FAILURE;
     goto RETURN;
   }
 
@@ -91,10 +90,9 @@ int FreeNodeInfo(int cluster_size,PARS *pars)
     Free_sph(node_info[i_rank].contains_burn_l); 
   }
   Free_sph(node_info);
-  exit_status = EXIT_SUCCESS; 
 
 RETURN:
-
+  exit_status = EXIT_SUCCESS; 
   verbosity(2,fname,pars);
   return exit_status;
 }
