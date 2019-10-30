@@ -144,13 +144,14 @@ int main(int argc, char *argv[])
                  FE_OVERFLOW  |
                  FE_UNDERFLOW); 
 
-  if ((pars=GetPars(argc,argv,rank_0))==NULL)
+  pars = GetPars(argc,argv,rank_0);
+
+#include "pars_include.h"
+  if (pars==NULL)
   {
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
-
-#include "pars_include.h"
 /*                                                                            */
 /*                                                                            */
   MPI_Comm_group(MPI_COMM_WORLD,&MPI_GROUP_WORLD);
