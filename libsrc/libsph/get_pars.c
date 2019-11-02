@@ -182,8 +182,8 @@ PARS *GetPars(int argc, char *argv[],int rank)
   exit_status = EXIT_SUCCESS;
   i = 0;
   fgets(line,MAX_CHARS,par_ptr);
-  strncpy(ascii_header[0],line,80);
-  if (strncmp(ascii_header[0],(char *)"############################### ASCII HEADER###################################\n",80)!=0)
+  strncpy(ascii_header[0],line,79);
+  if (strncmp(ascii_header[0],(char *)"################################# ASCII HEADER#################################",79)!=0)
   {
     exit_status = EXIT_FAILURE;
   }
