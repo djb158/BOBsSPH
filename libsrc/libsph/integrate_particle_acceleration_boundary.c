@@ -82,7 +82,7 @@ int IntegrateParticleAcceleration_BOUNDARY(double **v,PARS *pars)
   for (index=0;index<n_boundary;index++)
   {
     l       = node_info[rank].boundary[index];
-    species = node_info[rank].species[l];
+    species = node_info[rank].species[l] - (species&MASK_MARKER);
     switch(species)
     {
       case 2049: case 2050:
@@ -123,7 +123,7 @@ int IntegrateParticleAcceleration_BOUNDARY(double **v,PARS *pars)
   for (index=0;index<n_ghost;index++)
   {
     l            = node_info[rank].ghost[index];
-    species      = node_info[rank].species[l];
+    species      = node_info[rank].species[l] - (species&MASK_MARKER);
     i_mirror_raw = node_info[rank].ghost_mirror[index];
     l_mirror     = node_info[rank].inv_raw_index[i_mirror_raw];
 /*                                                                           */

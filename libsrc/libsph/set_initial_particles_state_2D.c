@@ -367,11 +367,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     x = particles[0].x[0][l];
     y = particles[0].x[1][l];
     z = particles[0].x[2][l];
-    if (fabs(z-z3)<EPSILON_DOUBLE ) 
-    {
-      node_info[rank].marker[l4] = l;
-      l4++;
-    }
     if (
           ((ids=SetParticleID_2D(pars,particles,x,y,z)) == NULL)
                             ||
@@ -388,9 +383,18 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
+
     species = ids[0].species;
+
+    if (fabs(z-z3)<EPSILON_DOUBLE ) 
+    {
+      node_info[rank].marker[l4] = l;
+      l4++;
+      species = species + MASK_MARKER;
+    }
+
     node_info[rank].species[l] = species;
-    species_basic = (species&MASK_GHOST) + (species&MASK_BOUND) + (species&MASK_INTER)+ (species&MASK_VOID);
+    species_basic = (species&MASK_GHOST) + (species&MASK_BOUND) + (species&MASK_INTER);
     switch (species_basic)
     {
       case 512:
