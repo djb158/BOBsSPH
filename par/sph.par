@@ -39,7 +39,7 @@
 #                                                                             #
 ###############################################################################
 SHORT_TITLE=Sigalotti 2D shock
-N_STEPS=10
+N_STEPS=100
 RESTART=no
 TIME_STEPS_TO_WRITE=1
 GRAVITY=9.80665
