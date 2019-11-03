@@ -27,6 +27,7 @@
 #include "particles.h"
 #include "pars.h"
 #include "numeric_constants.h"
+#include "mask_defs.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 
