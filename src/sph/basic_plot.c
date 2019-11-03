@@ -59,6 +59,7 @@
 #include <string.h>
 #include <stddef.h>     /* offsetof */
 #include <math.h> 
+#include "sph_main.h"
 #include "sph_types.h"
 #include "pbob.h"
 #include "pars.h"
