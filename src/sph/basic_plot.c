@@ -132,9 +132,11 @@ int main(int argc, char *argv[])
   int exit_status                      = EXIT_FAILURE;
   int *x_index                         = NULL;
 
+  printf(" here 0 \n");
   file_name = (char *)calloc(MAX_CHARS,sizeof(char));
   args_defined = 0;
   i = 0;
+  printf(" here 1 \n");
   while(i<argc)
   {
     string1 = (char *)calloc(MAX_CHARS,sizeof(char));
@@ -147,12 +149,14 @@ int main(int argc, char *argv[])
     free(string1); string1 = NULL;
     i++;
   }
+  printf(" here 2 \n");
   if (args_defined != 1)
   {
     printf(" Usage: basic_plot  file_name=<FILE NAME>\n");
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
+  printf(" here 3 \n");
 
 
   if ( (pbob=ReadPBOB(file_name))==NULL)
@@ -161,10 +165,12 @@ int main(int argc, char *argv[])
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
+  printf(" here 4 \n");
   if (pbob->endian_int == 2)
   {
     goto RETURN;
   }
+  printf(" here 5 \n");
   cluster_size = pbob->cluster_size;
   printf(" cluster_size = %i \n",cluster_size);
   if ((node_descrip=ReadNodeDescrip(file_name,cluster_size))==NULL)
@@ -174,13 +180,6 @@ int main(int argc, char *argv[])
     goto RETURN;
   }
 
-  if (ReadNodeInfo(pars)==EXIT_FAILURE)
-  {
-    printf(" -unable to read NODE INFO struct, -aborting \n");
-    exit_status = EXIT_FAILURE;
-    goto RETURN;
-  }
-  
   total_particles = (int)pbob->total_particles;
 
   start_index = 0;
@@ -211,6 +210,7 @@ int main(int argc, char *argv[])
   for (i=0;i<N;i++)
   {
     species = particle[i].species;
+    printf(" i = %i species = %i \n",i,species);
     if ( (species&MASK_MARKER) == 1)
     {
       x[i]  = (double)(particle[i].x);
