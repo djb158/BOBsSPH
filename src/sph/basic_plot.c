@@ -71,8 +71,10 @@
 #include "numeric_constants.h"
 #include "mask_defs.h"
 
+/*
 typedef enum {FALSE,TRUE} logical;
 #define MAX_CHARS (1024)
+*/
 
 extern PARTICLE *ReadParticle(char *file_name,int time_slice,int start_index,int N);
 extern PBOB *ReadPBOB(char *file_name);
@@ -92,7 +94,7 @@ int main(int argc, char *argv[])
   PARTICLE *particle                   = NULL;
   NODE_DESCRIP *node_descrip           = NULL;
   PBOB *pbob                           = NULL;
-  PAR  *par                            = NULL;
+  PARS *pars                           = NULL;
   
   char *file_name                      = NULL;
   char *string1                        = NULL;
@@ -123,6 +125,7 @@ int main(int argc, char *argv[])
   int cluster_size                     = -9999999;
   int total_particles                  = -9999999;
   int start_index                      = -9999999;
+  int species                          = -9999999;
   int N                                = -9999999;
   int time_slice                       = 1;
   int args_defined                     = -9999999;
