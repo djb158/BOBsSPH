@@ -522,9 +522,9 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
-    species = (double *)calloc(nparticles,sizeof(double));
+    species = (int *)calloc(nparticles,sizeof(int));
     tag37  = 37*(MAX_TAGS)+ i_rank;
-    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag37,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    if ( (MPI_Recv(species,nparticles,MPI_INT,i_rank,tag37,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag37 packet \n",fname);
       exit_status = EXIT_FAILURE;
@@ -757,9 +757,9 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
-    species = (double *)calloc(nparticles,sizeof(double));
+    species = (int *)calloc(nparticles,sizeof(int));
     tag38  = 38*(MAX_TAGS)+ i_rank;
-    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag38,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    if ( (MPI_Recv(species,nparticles,MPI_INT,i_rank,tag38,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag38 packet \n",fname);
       exit_status = EXIT_FAILURE;
@@ -890,9 +890,9 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
-    species = (double *)calloc(nparticles,sizeof(double));
+    species = (int *)calloc(nparticles,sizeof(int));
     tag39  = 39*(MAX_TAGS)+ i_rank;
-    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag39,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    if ( (MPI_Recv(species,nparticles,MPI_INT,i_rank,tag39,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag39 packet \n",fname);
       exit_status = EXIT_FAILURE;
@@ -1025,9 +1025,9 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
-    species = (double *)calloc(nparticles,sizeof(double));
+    species = (int *)calloc(nparticles,sizeof(int));
     tag40  = 40*(MAX_TAGS)+ i_rank;
-    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag40,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    if ( (MPI_Recv(species,nparticles,MPI_INT,i_rank,tag40,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag40 packet \n",fname);
       exit_status = EXIT_FAILURE;
@@ -1159,9 +1159,9 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
-    species = (double *)calloc(nparticles,sizeof(double));
+    species = (int *)calloc(nparticles,sizeof(int));
     tag41  = 41*(MAX_TAGS)+ i_rank;
-    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag41,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    if ( (MPI_Recv(species,nparticles,MPI_INT,i_rank,tag41,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag41 packet \n",fname);
       exit_status = EXIT_FAILURE;
@@ -1294,9 +1294,9 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
-    species = (double *)calloc(nparticles,sizeof(double));
+    species = (int *)calloc(nparticles,sizeof(int));
     tag42  = 42*(MAX_TAGS)+ i_rank;
-    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag42,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    if ( (MPI_Recv(species,nparticles,MPI_INT,i_rank,tag42,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag42 packet \n",fname);
       exit_status = EXIT_FAILURE;

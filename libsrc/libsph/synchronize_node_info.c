@@ -51,8 +51,8 @@ int SynchroniseNodeInfo(PARS *pars)
   int tag38                            = 0;
   int tag39                            = 0;
   int tag40                            = 0;
-  int tag41                            = 0;
   int tag42                            = 0;
+  int tag43                            = 0;
 
 
 #include "pars_include.h"
@@ -1367,8 +1367,8 @@ int SynchroniseNodeInfo(PARS *pars)
 /*                                                                           */
   for (i_rank=0;i_rank<rank;i_rank++)
   {
-    tag41  = 41*(MAX_TAGS)+rank;
-    if ( (MPI_Recv(node_info[i_rank].inv_raw_index,TOTAL_PARTICLES,MPI_INT,i_rank,tag41,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    tag43  = 43*(MAX_TAGS)+rank;
+    if ( (MPI_Recv(node_info[i_rank].inv_raw_index,TOTAL_PARTICLES,MPI_INT,i_rank,tag43,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" SynchroniseNodeInfo(): unable to receive packet \n");
       exit_status = EXIT_FAILURE;
@@ -1379,8 +1379,8 @@ int SynchroniseNodeInfo(PARS *pars)
   {
     if (i_rank!=rank)
     {
-      tag41 = 41*(MAX_TAGS)+i_rank;
-      if ( (MPI_Send(node_info[rank].inv_raw_index,TOTAL_PARTICLES,MPI_INT,i_rank,tag41,MPI_COMM_WORLD)) != MPI_SUCCESS)
+      tag43 = 43*(MAX_TAGS)+i_rank;
+      if ( (MPI_Send(node_info[rank].inv_raw_index,TOTAL_PARTICLES,MPI_INT,i_rank,tag43,MPI_COMM_WORLD)) != MPI_SUCCESS)
       {
         printf(" SynchroniseNodeInfo(): unable to send packet \n");
         exit_status = EXIT_FAILURE;
@@ -1390,8 +1390,8 @@ int SynchroniseNodeInfo(PARS *pars)
   }
   for (i_rank=rank+1;i_rank<=cluster_size;i_rank++)
   {
-    tag41  = 41*(MAX_TAGS)+rank;
-    if ( (MPI_Recv(node_info[i_rank].inv_raw_index,TOTAL_PARTICLES,MPI_INT,i_rank,tag41,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    tag43  = 43*(MAX_TAGS)+rank;
+    if ( (MPI_Recv(node_info[i_rank].inv_raw_index,TOTAL_PARTICLES,MPI_INT,i_rank,tag43,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" SynchroniseNodeInfo(): unable to receive packet \n");
       exit_status = EXIT_FAILURE;
