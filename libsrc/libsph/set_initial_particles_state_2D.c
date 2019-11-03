@@ -391,6 +391,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
       node_info[rank].marker[l4] = l;
       l4++;
       species = species + MASK_MARKER;
+      printf(" l = %i species is :  %i \n",i,species);
     }
 
     node_info[rank].species[l] = species;
