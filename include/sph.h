@@ -29,6 +29,7 @@
 #include "node_descrip.h"
 #include "pbob.h"
 #include "numeric_constants.h"
+#include "mask_defs.h"
 
 extern  int ForceBoundary(PARTICLES *particles_3,PARS *pars);
 extern  int CheckBoundaryPenetration(double **x_3,double **v_3,PARS *pars);

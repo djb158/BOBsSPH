@@ -19,36 +19,13 @@
 |                                                                             |
 \*---------------------------------------------------------------------------*/
 
-#ifndef BOBSSPH_SET_INITIAL_PARTICLE_STATE_2D_H
-#define BOBSSPH_SET_INITIAL_PARTICLE_STATE_2D_H
+#ifndef MASK_DEFS_H 
+#define MASK_DEFS_H
 
-#include "sph_main.h"
-#include "pars.h"
-#include "particles.h"
-#include "numeric_constants.h"
-#include "ids.h"
-#include "mask_defs.h"
+#define MASK_INTER      (512)
+#define MASK_GHOST     (1024)
+#define MASK_BOUND     (2048)
+#define MASK_VOID      (4096)
+#define MASK_MARKER    (8192)
 
-typedef struct
-{
-  double **x;
-  double *rho;
-  double *U;
-  int *raw_index;
-}RAW_PARTICLE;
-
-extern double Minimum_double(double, double);
-extern double Maximum_double(double, double);
-extern int Maximum_int(int a, int b);
-extern int UpdateKernel(PARTICLES *particles,PARS *pars);
-extern PARTICLES *ReadParticleInfo(PARS *pars,int particles_num);
-extern void verbosity(int k, char fname[],PARS *pars);
-extern PARTICLES *CreateParticles(int N,PARS *pars);
-extern int FreeParticles(PARTICLES **particles,PARS *pars,int N);
-extern  int GetNodeInfoStruct(int cluster_size,char *rank_name,double delta,PARS *pars);
-extern  int EquationOfState(PARTICLES *particles,PARS *pars);
-extern IDS *SetParticleID_2D(PARS *pars, PARTICLES *particles, double x, double y, double z);
-
-PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_name);
-
-#endif /* BOBSSPH_SET_INITIAL_PARTICLE_STATE_2D_H */
+#endif  /*  MASK_DEFS_H */

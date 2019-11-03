@@ -65,8 +65,10 @@
 #include "node_descrip.h"
 #include "node_info.h"
 #include "particle.h"
+#include "mask_defs.h"
 #include "sorting_functions.h"
 #include "numeric_constants.h"
+#include "mask_defs.h"
 
 typedef enum {FALSE,TRUE} logical;
 #define MAX_CHARS (1024)

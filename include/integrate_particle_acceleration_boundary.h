@@ -26,6 +26,7 @@
 #include "pars.h"
 #include "particles.h"
 #include "numeric_constants.h"
+#include "mask_defs.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
 int IntegrateParticleAcceleration_BOUNDARY(double **vel,PARS *pars);

@@ -27,6 +27,7 @@
 #include "particles.h"
 #include "numeric_constants.h"
 #include "ids.h"
+#include "mask_defs.h"
 
 typedef struct
 {

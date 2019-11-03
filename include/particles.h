@@ -26,11 +26,6 @@
 
 #define STEPS_TO_REINDEX  (2)
 #define N_WIN             (2)
-#define MASK_INTER      (512)
-#define MASK_GHOST     (1024)
-#define MASK_BOUND     (2048)
-#define MASK_VOID      (4096)
-#define MASK_MARKER    (8192)
 
 typedef struct
 {

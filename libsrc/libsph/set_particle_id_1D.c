@@ -12,7 +12,7 @@ IDS *SetParticleID_1D(PARS *pars, PARTICLES *particles, double x, double y, doub
   double z0                            = LARGE_NEGATIVE_DOUBLE;
 
   int exit_status                      = EXIT_FAILURE;
-  int species                               = EXIT_FAILURE;
+  int species                          = EXIT_FAILURE;
   int i                                = LARGE_NEGATIVE_INT;
   int j                                = LARGE_NEGATIVE_INT;
   int l                                = LARGE_NEGATIVE_INT;
