@@ -117,7 +117,7 @@ PARTICLE *Assemble_PARTICLE(PARTICLES *particles,PARS *pars,int *unique_particle
       species                = particles[0].species[i];
       species_basic          = (species&MASK_GHOST) + (species&MASK_BOUND) + (species&MASK_INTER); // need parenthesis to prevent optimization
       particle[j].index      = (u_int64_t)particles[0].raw_index[i];
-      particle[j].species    = (u_int32_t)species_basic;
+      particle[j].species    = (u_int32_t)species;
       particle[j].start_node = (u_int32_t)particles[0].rank;  // need to correct this
       particle[j].end_node   = (u_int32_t)particles[0].rank;
       particle[j].time_slice = (u_int32_t)time_slice;
