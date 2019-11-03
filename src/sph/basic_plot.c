@@ -1,4 +1,4 @@
-/*---------------------------------------------------------------------------*\
+*---------------------------------------------------------------------------*\
 |                                                                             |
 |  File: read_pbob_file.c                                                     |
 |                                                                             |
@@ -61,7 +61,9 @@
 #include <math.h> 
 #include "sph_types.h"
 #include "pbob.h"
+#include "pars.h"
 #include "node_descrip.h"
+#include "node_info.h"
 #include "particle.h"
 #include "sorting_functions.h"
 #include "numeric_constants.h"
@@ -74,8 +76,11 @@ extern PBOB *ReadPBOB(char *file_name);
 extern NODE_DESCRIP *ReadNodeDescrip(char *file_name,int cluster_size);
 extern char *CopyAfterEqual(char *target,  char *source);
 extern logical ContainsString(char *string1,char *string2);
+extern int  ReadNodeInfo(PARS *pars);
 extern void Hplots(FILE *plot_file,int condition);
 extern void Plot(FILE *plot_file,float x, float y,int num);
+
+NODE_INFO *node_info;
 
 int main(int argc, char *argv[])
 {
@@ -84,7 +89,7 @@ int main(int argc, char *argv[])
   PARTICLE *particle                   = NULL;
   NODE_DESCRIP *node_descrip           = NULL;
   PBOB *pbob                           = NULL;
-
+  PAR  *par                            = NULL;
   
   char *file_name                      = NULL;
   char *string1                        = NULL;
@@ -143,6 +148,7 @@ int main(int argc, char *argv[])
     goto RETURN;
   }
 
+
   if ( (pbob=ReadPBOB(file_name))==NULL)
   {
     printf(" -unable to read PBOB struct, -aborting \n");
@@ -158,6 +164,13 @@ int main(int argc, char *argv[])
   if ((node_descrip=ReadNodeDescrip(file_name,cluster_size))==NULL)
   {
     printf(" -unable to read NODE_DESCRIP struct, -aborting \n");
+    exit_status = EXIT_FAILURE;
+    goto RETURN;
+  }
+
+  if (ReadNodeInfo(pars)==EXIT_FAILURE)
+  {
+    printf(" -unable to read NODE INFO struct, -aborting \n");
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
@@ -191,45 +204,17 @@ int main(int argc, char *argv[])
   x_index = (int *)calloc(N,sizeof(int));
   for (i=0;i<N;i++)
   {
-    x[i] = (double)(particle[i].x);
-    x_index[i] = i;
-  }
-  Sort(x,x_index,N);
-
-  iv = 0;
-  av = (double *)calloc(N,sizeof(double));
-  xv = (double *)calloc(N,sizeof(double));
-  for (i=0;i<N;i++)
-  {
-    av[i] = 0.0;
-    xv[i] = 0.0;
-  }
-  
-  x0 = x[0];
-  k = 0;
-  for (i=0;i<N;i++)
-  {
-    x1 = x[i];
-    j  = x_index[i];
-    v  = (double)(particle[j].vx);
-    av[k] = v + av[k];
-    if (fabs(x1-x0) > 0.000001)
+    species = particle[i].species;
+    if ( (species&MASK_MARKER) == 1)
     {
-      av[k] = av[k]/(double)iv;
-      xv[k] = x1;
-      printf(" x = %20.10f v  = %20.10f \n",xv[k],av[k]);
-      if (av[k] > v_max)v_max = av[k];
-      if (av[k] < v_min)v_min = av[k];
-      if (xv[k] > x_max)x_max = xv[k];
-      if (xv[k] < x_min)x_min = xv[k];
-      iv = 0;
-      k++;
+      x[i]  = (double)(particle[i].x);
+      av[i] = (double)(particle[j].vx);
+      printf(" i = %i  x = %20.10f v = %20.10f \n",i,x[i],av[i]);
     }
-    iv++;
-    x0 = x1;
   }
-  k_max = k;
 
+
+/*
   v_min = 0.0;
   v_max = 1.0;
   xpt = XOR;
@@ -252,6 +237,7 @@ int main(int argc, char *argv[])
 
   Hplots(plot_ptr,0);
   fclose(plot_ptr);
+*/
 
   exit_status = EXIT_SUCCESS;
 RETURN:
