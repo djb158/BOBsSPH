@@ -69,7 +69,6 @@ int Set_N(PARS *pars)
   double *X                            = NULL;
   double *Y                            = NULL;
   double *Z                            = NULL;
-  double *species                      = NULL;
   double *P                            = NULL;
   double *RHO                          = NULL;
   double *divV                         = NULL;
@@ -79,6 +78,7 @@ int Set_N(PARS *pars)
   double *VY                           = NULL;
   double *VZ                           = NULL;
 
+  int  *species                        = NULL;
   int num_ints                         = LARGE_NEGATIVE_INT;
   int num                              = LARGE_NEGATIVE_INT;
   int tag1                             = LARGE_NEGATIVE_INT;
@@ -206,9 +206,9 @@ int Set_N(PARS *pars)
       exit_status = EXIT_FAILURE;
       goto RETURN;
     }
-    species = (double *)calloc(nparticles,sizeof(double));
+    species = (int *)calloc(nparticles,sizeof(int));
     tag36  = 36*(MAX_TAGS)+ i_rank;
-    if ( (MPI_Recv(species,nparticles,MPI_DOUBLE,i_rank,tag36,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
+    if ( (MPI_Recv(species,nparticles,MPI_INT,i_rank,tag36,MPI_COMM_WORLD,&mpi_status)) !=MPI_SUCCESS)
     {
       printf(" %s(): unable to receive tag36 packet \n",fname);
       exit_status = EXIT_FAILURE;

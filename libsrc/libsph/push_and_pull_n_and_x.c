@@ -115,7 +115,7 @@ PARTICLES *Push_and_Pull_N_and_X(PARTICLES *particles_3,PARS *pars)
     goto RETURN;
   }
   tag36  = 36*(MAX_TAGS)+rank;
-  if ( (MPI_Send(particles_3[0].species,nparticles,MPI_DOUBLE,cluster_size,tag36,MPI_COMM_WORLD)) != MPI_SUCCESS)
+  if ( (MPI_Send(particles_3[0].species,nparticles,MPI_INT,cluster_size,tag36,MPI_COMM_WORLD)) != MPI_SUCCESS)
   {
     printf(" %s(): unable to send tag36 packet \n",fname);
     exit_status = EXIT_FAILURE;
