@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
   double x_max                         = 0.0;
   double x0                            = 0.0;
   double x1                            = 0.0;
-  double v                             = 0.0;
+  double v0                            = 0.0;
   double *av                           = NULL;
   double *xv                           = NULL;
   double *x                            = NULL;
@@ -132,11 +132,9 @@ int main(int argc, char *argv[])
   int exit_status                      = EXIT_FAILURE;
   int *x_index                         = NULL;
 
-  printf(" here 0 \n");
   file_name = (char *)calloc(MAX_CHARS,sizeof(char));
   args_defined = 0;
   i = 0;
-  printf(" here 1 \n");
   while(i<argc)
   {
     string1 = (char *)calloc(MAX_CHARS,sizeof(char));
@@ -149,14 +147,12 @@ int main(int argc, char *argv[])
     free(string1); string1 = NULL;
     i++;
   }
-  printf(" here 2 \n");
   if (args_defined != 1)
   {
     printf(" Usage: basic_plot  file_name=<FILE NAME>\n");
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
-  printf(" here 3 \n");
 
 
   if ( (pbob=ReadPBOB(file_name))==NULL)
@@ -165,12 +161,10 @@ int main(int argc, char *argv[])
     exit_status = EXIT_FAILURE;
     goto RETURN;
   }
-  printf(" here 4 \n");
   if (pbob->endian_int == 2)
   {
     goto RETURN;
   }
-  printf(" here 5 \n");
   cluster_size = pbob->cluster_size;
   printf(" cluster_size = %i \n",cluster_size);
   if ((node_descrip=ReadNodeDescrip(file_name,cluster_size))==NULL)
@@ -206,21 +200,33 @@ int main(int argc, char *argv[])
   x_max = LARGE_NEGATIVE_DOUBLE;
 
   x       = (double *)calloc(N,sizeof(double));
+  av      = (double *)calloc(N,sizeof(double));
   x_index = (int *)calloc(N,sizeof(int));
+  k = 0;
   for (i=0;i<N;i++)
   {
+    x[i]        = LARGE_NEGATIVE_DOUBLE + (double)i;
+    x_index[i]  = LARGE_NEGATIVE_INT;
+    av[i] = LARGE_NEGATIVE_DOUBLE + (double)i;
     species = particle[i].species;
-    printf(" i = %i species = %i \n",i,species);
     if ( (species&MASK_MARKER) == MASK_MARKER)
     {
-      x[i]  = (double)(particle[i].x);
-      av[i] = (double)(particle[j].vx);
-      printf(" i = %i  x = %20.10f v = %20.10f \n",i,x[i],av[i]);
+      x[k]  = (double)(particle[i].x);
+      av[k] = (double)(particle[i].vx);
+      x_index[k]  = k;
+      k++;
     }
   }
+  k_max = k;
+  Sort(x,x_index,k_max);
+  for (k=0;k<k_max;k++)
+  {
+    x0 = x[k];
+    j  = x_index[k];
+    v0 = av[k];
+    printf(" x = %20.10f v = %20.10f \n",x0,v0);
+  }
 
-
-/*
   v_min = 0.0;
   v_max = 1.0;
   xpt = XOR;
@@ -231,19 +237,24 @@ int main(int argc, char *argv[])
   Plot(plot_ptr,xpt,ypt+PH,2);
   Plot(plot_ptr,xpt,ypt,2);
   k = 0;
-  xpt = XOR + PL*(xv[k]-x_min)/(x_max-x_min);
-  ypt = YOR + PH*(av[k]-v_min)/(v_max-v_min);
+  x0 = x[k];
+  j  = x_index[k];
+  v0 = av[k];
+  xpt = XOR + PL*(x0-x_min)/(x_max-x_min);
+  ypt = YOR + PH*(v0-v_min)/(v_max-v_min);
   Plot(plot_ptr,xpt,ypt,3);
   for (k=0;k<k_max;k++)
   {
-    xpt = XOR + PL*(xv[k]-x_min)/(x_max-x_min);
-    ypt = YOR + PH*(av[k]-v_min)/(v_max-v_min);
+    x0 = x[k];
+    j  = x_index[k];
+    v0 = av[k];
+    xpt = XOR + PL*(x0-x_min)/(x_max-x_min);
+    ypt = YOR + PH*(v0-v_min)/(v_max-v_min);
     Plot(plot_ptr,xpt,ypt,2);
   }
 
   Hplots(plot_ptr,0);
   fclose(plot_ptr);
-*/
 
   exit_status = EXIT_SUCCESS;
 RETURN:
