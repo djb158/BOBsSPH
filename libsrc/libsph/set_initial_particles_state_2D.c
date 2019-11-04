@@ -430,10 +430,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
     }
     free(ids); ids = NULL;
     particles[0].species[l] = node_info[rank].species[l];
-    if (particles[0].species[l] > 8000)
-    {
-      printf(" l = %i species is :  %i \n",i,particles[0].species[l]);
-    }
   }
 
   node_info[rank].n_interior              = l0;
