@@ -211,7 +211,7 @@ int main(int argc, char *argv[])
   {
     species = particle[i].species;
     printf(" i = %i species = %i \n",i,species);
-    if ( (species&MASK_MARKER) == 1)
+    if ( (species&MASK_MARKER) == MASK_MARKER)
     {
       x[i]  = (double)(particle[i].x);
       av[i] = (double)(particle[j].vx);
