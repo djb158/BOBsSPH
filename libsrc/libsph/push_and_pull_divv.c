@@ -80,7 +80,7 @@ int Push_and_Pull_divV(PARTICLES *particles,PARS *pars,PARTICLES *x_particles)
     goto RETURN;
   }
   tag42  = 42*(MAX_TAGS)+rank;
-  if ( (MPI_Send(particles[0].species,nparticles,MPI_DOUBLE,cluster_size,tag42,MPI_COMM_WORLD)) != MPI_SUCCESS)
+  if ( (MPI_Send(particles[0].species,nparticles,MPI_INT,cluster_size,tag42,MPI_COMM_WORLD)) != MPI_SUCCESS)
   {
     printf(" %s(): unable to send tag42 packet \n",fname);
     exit_status = EXIT_FAILURE;
