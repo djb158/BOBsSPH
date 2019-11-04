@@ -222,6 +222,8 @@ int main(int argc, char *argv[])
   for (k=0;k<k_max;k++)
   {
     x0 = x[k];
+    if (x0 < x_min)x_min = x0;
+    if (x0 > x_max)x_max = x0;
     j  = x_index[k];
     v0 = av[k];
     printf(" x = %20.10f v = %20.10f \n",x0,v0);
