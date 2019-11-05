@@ -28,8 +28,10 @@
 #include "pars.h"
 #include "numeric_constants.h"
 #include "mask_defs.h"
+#include "float32_t.h"
 
 extern void verbosity(int k, char fname[],PARS *pars);
+extern float32_t FLOAT32_T(double a);
 
 PARTICLE *Assemble_PARTICLE(PARTICLES *particles,PARS *pars,int *unique_particles,int time_slice,double **vorticity);
 

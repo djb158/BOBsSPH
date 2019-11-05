@@ -62,7 +62,10 @@ int ReadNodeInfo(PARS *pars)
   int i                                = 0;
 
 #include  "pars_include.h"
-  verbosity(1,fname,pars);
+  if (pars != NULL)
+  {
+    verbosity(1,fname,pars);
+  }
 
   in_file_name = (char *)calloc(MAX_CHARS,sizeof(char));
 
@@ -104,6 +107,9 @@ int ReadNodeInfo(PARS *pars)
 RETURN:
   Free_sph(in_file_name);
 
-  verbosity(2,fname,pars);
+  if (pars != NULL)
+  {
+    verbosity(2,fname,pars);
+  }
   return exit_status;
 }

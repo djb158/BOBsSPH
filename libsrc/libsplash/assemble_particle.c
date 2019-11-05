@@ -116,31 +116,34 @@ PARTICLE *Assemble_PARTICLE(PARTICLES *particles,PARS *pars,int *unique_particle
     {
       species                = particles[0].species[i];
       species_basic          = (species&MASK_GHOST) + (species&MASK_BOUND) + (species&MASK_INTER); // need parenthesis to prevent optimization
+
       particle[j].index      = (u_int64_t)particles[0].raw_index[i];
+
       particle[j].species    = (u_int32_t)species;
       particle[j].start_node = (u_int32_t)particles[0].rank;  // need to correct this
       particle[j].end_node   = (u_int32_t)particles[0].rank;
       particle[j].time_slice = (u_int32_t)time_slice;
-      particle[j].time       = (float32_t)particles[0].t;
-      particle[j].x          = (float32_t)particles[0].x[0][i];
-      particle[j].y          = (float32_t)particles[0].x[1][i];
-      particle[j].z          = (float32_t)particles[0].x[2][i];
-      particle[j].vx         = (float32_t)particles[0].v[0][i];
-      particle[j].vy         = (float32_t)particles[0].v[1][i];
-      particle[j].vz         = (float32_t)particles[0].v[2][i];
-      particle[j].ax         = (float32_t)particles[0].dvdt[0][i];
-      particle[j].ay         = (float32_t)particles[0].dvdt[1][i];
-      particle[j].az         = (float32_t)particles[0].dvdt[2][i];
 
-      particle[j].vortx      = (float32_t)vorticity[0][i];
-      particle[j].vorty      = (float32_t)vorticity[1][i];
-      particle[j].vortz      = (float32_t)vorticity[2][i];
-      particle[j].U          = (float32_t)particles[0].U[i];
-      particle[j].dUdt       = (float32_t)particles[0].dUdt[i];
-      particle[j].h          = (float32_t)particles[0].h[i];
-      particle[j].rho        = (float32_t)particles[0].rho[i];
-      particle[j].p          = (float32_t)particles[0].p[i];
-      particle[j].m          = (float32_t)particles[0].m[i];
+      particle[j].time       = FLOAT32_T(particles[0].t);
+      particle[j].x          = FLOAT32_T(particles[0].x[0][i]);
+      particle[j].y          = FLOAT32_T(particles[0].x[1][i]);
+      particle[j].z          = FLOAT32_T(particles[0].x[2][i]);
+      particle[j].vx         = FLOAT32_T(particles[0].v[0][i]);
+      particle[j].vy         = FLOAT32_T(particles[0].v[1][i]);
+      particle[j].vz         = FLOAT32_T(particles[0].v[2][i]);
+      particle[j].ax         = FLOAT32_T(particles[0].dvdt[0][i]);
+      particle[j].ay         = FLOAT32_T(particles[0].dvdt[1][i]);
+      particle[j].az         = FLOAT32_T(particles[0].dvdt[2][i]);
+
+      particle[j].vortx      = FLOAT32_T(vorticity[0][i]);
+      particle[j].vorty      = FLOAT32_T(vorticity[1][i]);
+      particle[j].vortz      = FLOAT32_T(vorticity[2][i]);
+      particle[j].U          = FLOAT32_T(particles[0].U[i]);
+      particle[j].dUdt       = FLOAT32_T(particles[0].dUdt[i]);
+      particle[j].h          = FLOAT32_T(particles[0].h[i]);
+      particle[j].rho        = FLOAT32_T(particles[0].rho[i]);
+      particle[j].p          = FLOAT32_T(particles[0].p[i]);
+      particle[j].m          = FLOAT32_T(particles[0].m[i]);
       j++;
     }
   }

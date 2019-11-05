@@ -19,23 +19,12 @@
 |                                                                             |
 \*---------------------------------------------------------------------------*/
 
-#ifndef BOBSSPH_ASSEMBLE_PBOB_H
-#define BOBSSPH_ASSEMBLE_PBOB_H
+#ifndef BOBSSPH_FLOAT32_T_H
+#define BOBSSPH_FLOAT32_T_H
 
-#include <string.h>
-#include "numeric_constants.h"
-#include "sph_main.h"
-#include "pars.h"
-#include "particle.h"
-#include "node_descrip.h"
-#include "pbob.h"
-#include "float32_t.h"
+#include "sph_types.h"
+#include <float.h> 
 
-extern void verbosity(int k, char fname[],PARS *pars);
-extern int BigOrLittleEndian();
-extern char *CopyAfterEqual(char *target,  char *source);
-extern float32_t FLOAT32_T(double a);
-
-PBOB *Assemble_PBOB(PARS pars,double time,int cluster_size);
+float32_t FLOAT32_T(double a);
 
 #endif

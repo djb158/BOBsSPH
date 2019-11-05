@@ -369,84 +369,84 @@ PBOB *Assemble_PBOB(PARS *pars,double time,int cluster_size)
 /*                                                                           */
 /*                 time                                                      */
 /*                                                                           */
-  pbob[0].time = (float32_t)time;
+  pbob[0].time = FLOAT32_T(time);
 /*                                                                           */
 /*                 kernel_width                                              */
 /*                                                                           */
-  pbob[0].kernel_width = (float32_t)KERNEL_WIDTH;
+  pbob[0].kernel_width = FLOAT32_T(KERNEL_WIDTH);
 /*                                                                           */
 /*                 gravity                                                    */
 /*                                                                           */
-  pbob[0].gravity = (float32_t)GRAVITY;
+  pbob[0].gravity = FLOAT32_T(GRAVITY);
 /*                                                                           */
 /*                 X0                                                        */
 /*                                                                           */
-  pbob[0].X0 = (float32_t)X0;
+  pbob[0].X0 = FLOAT32_T(X0);
 /*                                                                           */
 /*                 X1                                                        */
 /*                                                                           */
-  pbob[0].X1 = (float32_t)X1;
+  pbob[0].X1 = FLOAT32_T(X1);
 /*                                                                           */
 /*                 Y0                                                        */
 /*                                                                           */
-  pbob[0].Y0 = (float32_t)Y0;
+  pbob[0].Y0 = FLOAT32_T(Y0);
 /*                                                                           */
 /*                 Y1                                                        */
 /*                                                                           */
-  pbob[0].Y1 = (float32_t)Y1;
+  pbob[0].Y1 = FLOAT32_T(Y1);
 /*                                                                           */
 /*                 Z0                                                        */
 /*                                                                           */
-  pbob[0].Z0 = (float32_t)Z0;
+  pbob[0].Z0 = FLOAT32_T(Z0);
 /*                                                                           */
 /*                 Z1                                                        */
 /*                                                                           */
-  pbob[0].Z1 = (float32_t)Z1;
+  pbob[0].Z1 = FLOAT32_T(Z1);
 /*                                                                           */
 /*                 ALPHA                                                     */
 /*                                                                           */
-  pbob[0].alpha = (float32_t)ALPHA;
+  pbob[0].alpha = FLOAT32_T(ALPHA);
 /*                                                                           */
 /*                 BETA                                                      */
 /*                                                                           */
-  pbob[0].beta = (float32_t)BETA;
+  pbob[0].beta = FLOAT32_T(BETA);
 /*                                                                           */
 /*                 ETA                                                       */
 /*                                                                           */
-  pbob[0].eta = (float32_t)ETA;
+  pbob[0].eta = FLOAT32_T(ETA);
 /*                                                                           */
 /*                 G1                                                        */
 /*                                                                           */
-  pbob[0].g1 = (float32_t)G1;
+  pbob[0].g1 = FLOAT32_T(G1);
 /*                                                                           */
 /*                 G2                                                        */
 /*                                                                           */
-  pbob[0].g2 = (float32_t)G2;
+  pbob[0].g2 = FLOAT32_T(G2);
 /*                                                                           */
 /*                 gamma                                                     */
 /*                                                                           */
-  pbob[0].gamma = (float32_t)GAMMA;
+  pbob[0].gamma = FLOAT32_T(GAMMA);
 /*                                                                           */
 /*                 KAPPA                                                     */
 /*                                                                           */
-  pbob[0].kappa = (float32_t)KAPPA;
+  pbob[0].kappa = FLOAT32_T(KAPPA);
 /*                                                                           */
 /*                 EPSILON                                                   */
 /*                                                                           */
-  pbob[0].epsilon = (float32_t)EPSILON;
+  pbob[0].epsilon = FLOAT32_T(EPSILON);
 /*                                                                           */
 /*                 10 X floats                                               */
 /*                                                                           */
-  pbob[0].unused_float1  = (float32_t)LARGE_NEGATIVE_DOUBLE;
-  pbob[0].unused_float2  = (float32_t)LARGE_NEGATIVE_DOUBLE;
-  pbob[0].unused_float3  = (float32_t)LARGE_NEGATIVE_DOUBLE;
-  pbob[0].unused_float4  = (float32_t)LARGE_NEGATIVE_DOUBLE;
-  pbob[0].unused_float5  = (float32_t)LARGE_NEGATIVE_DOUBLE;
-  pbob[0].unused_float6  = (float32_t)LARGE_NEGATIVE_DOUBLE;
-  pbob[0].unused_float7  = (float32_t)LARGE_NEGATIVE_DOUBLE;
-  pbob[0].unused_float8  = (float32_t)LARGE_NEGATIVE_DOUBLE;
-  pbob[0].unused_float9  = (float32_t)LARGE_NEGATIVE_DOUBLE;
-  pbob[0].unused_float10 = (float32_t)LARGE_NEGATIVE_DOUBLE;
+  pbob[0].unused_float1  = FLOAT32_T(LARGE_NEGATIVE_DOUBLE);
+  pbob[0].unused_float2  = FLOAT32_T(LARGE_NEGATIVE_DOUBLE);
+  pbob[0].unused_float3  = FLOAT32_T(LARGE_NEGATIVE_DOUBLE);
+  pbob[0].unused_float4  = FLOAT32_T(LARGE_NEGATIVE_DOUBLE);
+  pbob[0].unused_float5  = FLOAT32_T(LARGE_NEGATIVE_DOUBLE);
+  pbob[0].unused_float6  = FLOAT32_T(LARGE_NEGATIVE_DOUBLE);
+  pbob[0].unused_float7  = FLOAT32_T(LARGE_NEGATIVE_DOUBLE);
+  pbob[0].unused_float8  = FLOAT32_T(LARGE_NEGATIVE_DOUBLE);
+  pbob[0].unused_float9  = FLOAT32_T(LARGE_NEGATIVE_DOUBLE);
+  pbob[0].unused_float10 = FLOAT32_T(LARGE_NEGATIVE_DOUBLE);
 
   exit_status = EXIT_SUCCESS;
 

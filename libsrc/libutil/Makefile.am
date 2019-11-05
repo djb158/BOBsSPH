@@ -11,6 +11,7 @@ libutil_la_SOURCES = \
 	contains_string.c \
 	copy_after_equal.c \
 	copy_up_to_colon.c \
+	float32_t.c \
 	initialize_pars.c \
 	is_nan_or_inf.c \
 	maximum_double.c \

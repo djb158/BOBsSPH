@@ -25,6 +25,7 @@ include_HEADERS = \
 	dwdy.h \
 	dwdz.h \
 	equation_of_state.h \
+	float32_t.h \
 	free_matrix.h \
 	free_node_info.h \
 	free_particles.h \
