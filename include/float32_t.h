@@ -23,6 +23,7 @@
 #define BOBSSPH_FLOAT32_T_H
 
 #include "sph_types.h"
+#include "numeric_constants.h"
 #include <float.h> 
 
 float32_t FLOAT32_T(double a);
