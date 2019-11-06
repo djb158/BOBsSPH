@@ -24,6 +24,7 @@
 
 #include "sph_types.h"
 #include "numeric_constants.h"
+#include <math.h>
 #include <float.h> 
 
 float32_t FLOAT32_T(double a);
