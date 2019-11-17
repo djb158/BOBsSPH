@@ -362,6 +362,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   }
   fclose(file_ptr);
   free(file_name);
+  exit (0);
 
 
   if ( (EquationOfState(particles,pars))==EXIT_FAILURE )

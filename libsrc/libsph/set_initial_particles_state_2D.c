@@ -96,6 +96,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   int species                          = LARGE_NEGATIVE_INT;
   int species_basic                    = LARGE_NEGATIVE_INT;
 
+  double X1_old                        = LARGE_NEGATIVE_DOUBLE;
   double val0                          = LARGE_NEGATIVE_DOUBLE;
   double val1                          = LARGE_NEGATIVE_DOUBLE;
   double val2                          = LARGE_NEGATIVE_DOUBLE;
@@ -131,8 +132,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   double PRES_r                        = 0.0;
   double U_l                           = 0.0;
   double U_r                           = 0.0;
-  double *X                            = NULL;
-  double *Z                            = NULL;
   double d                             = 0.0;
   double KK                            = 2.0;
   double dz                            = 0.0;
@@ -179,12 +178,11 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
 /*                                                                            */
 /*                                                                            */
 /*                                                                            */
-  X   = (double *)calloc(PARTICLES_IN_X,sizeof(double));
-  Z   = (double *)calloc(PARTICLES_IN_Z,sizeof(double));
+  X1_old = (X1 + X0)/2.0;
   dz  = (Z1-Z0)/(double)(PARTICLES_IN_Z-2*ZERO-1);
   dx  = 1.0/(double)(CENTRE_POINT-ZERO);
-  dx2 = 1.0/(double)(PARTICLES_IN_X-ZERO/2-CENTRE_POINT);
-  printf(" dx2 = %20.10f X1 = %20.10f \n",dx2,X1);
+  dx2 = 1.0/(double)(PARTICLES_IN_X-ZERO_H-CENTRE_POINT);
+  printf(" dx2 = %20.10f X1_old = %20.10f \n",dx2,X1_old);
   dz2 = 2.0*dz;
   d   = dx2/2.0;
   raw_index = 0;
@@ -206,6 +204,14 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
           raw_particle[0].U[raw_index]          = U_l;
           raw_particle[0].raw_index[raw_index]  = raw_index;
           raw_index++;
+
+          raw_particle[0].x[0][raw_index]       = 2.0*X1_old - x;
+          raw_particle[0].x[1][raw_index]       = 0.0;
+          raw_particle[0].x[2][raw_index]       = z;
+          raw_particle[0].rho[raw_index]        = RHO_r;
+          raw_particle[0].U[raw_index]          = U_r;
+          raw_particle[0].raw_index[raw_index]  = raw_index;
+          raw_index++;
         }
       }
       else
@@ -220,14 +226,22 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
           raw_particle[0].U[raw_index]          = (U_l    +   U_r*exp(x/d))/(1.0+exp(x/d));
           raw_particle[0].raw_index[raw_index]  = raw_index;
           raw_index++;
+
+          raw_particle[0].x[0][raw_index]       = 2.0*X1_old - x;
+          raw_particle[0].x[1][raw_index]       = 0.0;
+          raw_particle[0].x[2][raw_index]       = z;
+          raw_particle[0].rho[raw_index]        = RHO_r;
+          raw_particle[0].U[raw_index]          = U_r;
+          raw_particle[0].raw_index[raw_index]  = raw_index;
+          raw_index++;
         }
       }
     }
     else
     {
-      x = X1*((double)(i-CENTRE_POINT)*dx2);
+      x = X1_old*((double)(i-CENTRE_POINT)*dx2);
 /*
-      printf(" X = %20.10f %20.10f %20.10f %20.10f \n",x,X1,((double)(i-CENTRE_POINT),dx2));
+      printf(" X = %20.10f %20.10f %20.10f %20.10f \n",x,X1_old,((double)(i-CENTRE_POINT),dx2));
 */
       if (i>CENTRE_POINT+20)
       {
@@ -241,6 +255,17 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
           raw_particle[0].U[raw_index]          = U_r;
           raw_particle[0].raw_index[raw_index]  = raw_index;
           raw_index++;
+
+          if (i < PARTICLES_IN_X-ZERO_H)
+          {
+            raw_particle[0].x[0][raw_index]       = 2.0*X1_old - x;
+            raw_particle[0].x[1][raw_index]       = 0.0;
+            raw_particle[0].x[2][raw_index]       = z;
+            raw_particle[0].rho[raw_index]        = RHO_r;
+            raw_particle[0].U[raw_index]          = U_r;
+            raw_particle[0].raw_index[raw_index]  = raw_index;
+            raw_index++;
+          }
         }
       }
       else
@@ -253,6 +278,14 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
           raw_particle[0].x[2][raw_index]       = z;
           raw_particle[0].rho[raw_index]        = (RHO_l + RHO_r*exp(x/d))/(1.0+exp(x/d));
           raw_particle[0].U[raw_index]          = (U_l   +   U_r*exp(x/d))/(1.0+exp(x/d));
+          raw_particle[0].raw_index[raw_index]  = raw_index;
+          raw_index++;
+
+          raw_particle[0].x[0][raw_index]       = 2.0*X1_old - x;
+          raw_particle[0].x[1][raw_index]       = 0.0;
+          raw_particle[0].x[2][raw_index]       = z;
+          raw_particle[0].rho[raw_index]        = RHO_r;
+          raw_particle[0].U[raw_index]          = U_r;
           raw_particle[0].raw_index[raw_index]  = raw_index;
           raw_index++;
         }
@@ -329,6 +362,7 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
   }
   fclose(file_ptr);
   free(file_name);
+  exit (0);
 
 
   if ( (EquationOfState(particles,pars))==EXIT_FAILURE )
@@ -503,14 +537,6 @@ PARTICLES *SetInitialParticlesState2D(PARS *pars,int particles_num,char *rank_na
 RETURN:
 /*                                                                            */
 /*                                                                            */
-  if (X)
-  {
-    Free_sph(X);
-  }
-  if (Z)
-  {
-    Free_sph(Z);
-  }
   if (raw_particle)
   {
     Free_sph(raw_particle[0].x[0]);
