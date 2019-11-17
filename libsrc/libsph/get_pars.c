@@ -565,7 +565,7 @@ PARS *GetPars(int argc, char *argv[],int rank)
   pars[0].PARTICLES_IN_Z_H       = pars[0].PARTICLES_IN_Z/2;
   pars[0].N_CENTRE               = ((pars[0].CENTRE_POINT+1)*pars[0].PARTICLES_IN_Z);
   pars[0].ZERO_H                 = pars[0].ZERO/2;
-  pars[0].TOTAL_PARTICLES_GUESS  = pars[0].PARTICLES_IN_X*pars[0].PARTICLES_IN_Y*pars[0].PARTICLES_IN_Z;
+  pars[0].TOTAL_PARTICLES_GUESS  = pars[0].PARTICLES_IN_X*2*pars[0].PARTICLES_IN_Y*pars[0].PARTICLES_IN_Z;
   pars[0].NPARTICLES_EXTRA       = pars[0].NPARTICLES + pars[0].EXTRA;
   pars[0].TOTAL_PARTICLES        = LARGE_NEGATIVE_INT;
   pars[0].NPARTICLES             = LARGE_NEGATIVE_INT;
